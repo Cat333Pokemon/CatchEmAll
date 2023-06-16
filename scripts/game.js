@@ -1,5 +1,24 @@
+let engames = []; //enabled game list
+
 function game(g){
     if (!!window[g]){
+
+        engames = [g];
+        let x = document.querySelectorAll(".btndown");
+        for (let w = 0; w < x.length; w++){
+            x[w].classList.remove("btndown");
+        }
+        document.getElementById("btn" + g).classList.add("btndown");
+        //uncomment this logic when allowing multiple games
+        /*if (engames.includes(g)){
+            engames.splice(engames.indexOf(g),1);
+            document.getElementById("btn" + g).classList.remove("btndown");
+        }else{
+            engames.push(g);
+            document.getElementById("btn" + g).classList.add("btndown");
+        }*/
+
+
     //if (g.indexOf("_") > -1 && !!window[g.split("_")[0]]){
         let m = document.getElementById("monsters").querySelectorAll(".mon");
         let i,mu;
@@ -41,9 +60,9 @@ function game(g){
                 for (i = 0; i < gm.choices[c][j].length; i++){
                     m[gm.choices[c][j][i] - 1].classList.add("sChoice");
                     if (i > 0) //evolution of choice
-                        m[gm.choices[c][j][i] - 1].querySelector(".num").innerHTML = "Evolves from " + c;
+                        m[gm.choices[c][j][i] - 1].querySelector(".num").innerHTML = "Evolves from<br />" + c;
                     else //choice itself
-                        m[gm.choices[c][j][i] - 1].querySelector(".num").innerHTML = "Choose 1 " + c;
+                        m[gm.choices[c][j][i] - 1].querySelector(".num").innerHTML = "Choose 1<br />" + c;
                     
                     //This logic breaks if some of the choices give you more Pokémon than others
                     if (j > 0) //only can pick one of a choice in a run
@@ -78,7 +97,10 @@ function game(g){
         document.getElementById("cLimited").innerHTML = lic;
         document.getElementById("cChoice").innerHTML = chyes + "/" + (chno + chyes);
         document.getElementById("cTrade").innerHTML = trc;
-        document.getElementById("cUnavailable").innerHTML = unc + " (" + (unc + chno) + ")";
+        document.getElementById("cUnavailable").innerHTML = unc;
+        
+        document.getElementById("cAvailable").innerHTML = ulc + lic + chyes + (engames.length > 1 ? trc : 0); //logic must be more complex for trades
+        document.getElementById("cTotalUnavailable").innerHTML = unc + chno + (engames.length > 1 ? 0 : trc);
                 
     }else
         alert("Not added yet.");

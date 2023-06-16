@@ -3,6 +3,7 @@ var generations = [0, 151, 251, 386, 493, 649, 721, 809, 905, 1010];
 
 var red = {
     total: 151,
+    breeding: false,
     choices: {"Starter":[[1,2,3],[4,5,6],[7,8,9]],"Hitmon":[[106],[107]],"Eeveelution":[[134],[135],[136]],"Fossil":[[138,139],[140,141]]},
     unlimited: [10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,29,30,32,33,35,39,41,42,43,44,45,46,47,48,49,50,51,
         54,55,56,57,58,59,60,61,62,63,64,66,67,72,73,74,75,77,78,79,80,81,82,84,85,86,87,88,89,90,91,92,93,95,96,97,98,99,
@@ -13,8 +14,10 @@ var red = {
     trade: [65,68,76,94]
 };
 
+//Japanese Green/International Blue
 var green = {
     total: 151,
+    breeding: false,
     choices: {"Starter":[[1,2,3],[4,5,6],[7,8,9]],"Hitmon":[[106],[107]],"Eeveelution":[[134],[135],[136]],"Fossil":[[138,139],[140,141]]},
     unlimited: [10,11,12,13,14,15,16,17,18,19,20,21,22,25,26,27,28,29,30,32,33,35,37,38,39,41,42,46,47,48,49,50,51,52,53,
         54,55,60,61,62,63,64,66,67,69,70,71,72,73,74,75,77,78,79,80,81,82,84,85,86,87,88,89,90,91,92,93,95,96,97,98,99,
@@ -23,4 +26,33 @@ var green = {
         108:"In-game Trade",122:"In-game Trade",124:"In-game Trade",131:"Only One",133:"Only One",142:"Only One",143:"Only Two",
         144:"Only One",145:"Only One",146:"Only One",150:"Only One"},
     trade: [65,68,76,94]
+};
+
+//Japanese Blue
+var blue = {
+    total: 151,
+    breeding: false,
+    choices: {"Starter":[[1,2,3],[4,5,6],[7,8,9]],"Hitmon":[[106],[107]],"Eeveelution":[[134],[135],[136]],"Fossil":[[138,139],[140,141]]},
+    unlimited: [10,11,12,13,14,15,16,17,18,19,20,21,22,25,26,27,28,29,30,32,33,35,39,41,42,43,44,45,46,47,48,49,50,51,52,53,
+        54,55,58,59,60,61,62,63,64,66,67,72,73,74,75,77,78,79,80,81,82,84,85,86,87,88,89,90,91,92,93,95,96,97,98,99,
+        100,101,102,103,104,105,108,109,110,111,112,113,114,116,117,118,119,120,121,123,124,127,129,130,132,137,147,148,149],
+    limited: {31:"Limited Moon Stones",34:"Limited Moon Stones",36:"Limited Moon Stones",40:"Limited Moon Stones",76:"In-game Trade",
+        83:"In-game Trade",94:"In-game Trade",115:"In-game Trade",
+        122:"In-game Trade",128:"In-game Trade",131:"Only One",133:"Only One",142:"Only One",143:"Only Two",
+        144:"Only One",145:"Only One",146:"Only One",150:"Only One"},
+    trade: [65,68]
+};
+
+var yellow = {
+    total: 151,
+    breeding: false,
+    choices: {"Hitmon":[[106],[107]],"Eeveelution":[[134],[135],[136]],"Fossil":[[138,139],[140,141]]},
+    unlimited: [10,11,12,16,17,18,19,20,21,22,27,28,29,30,32,33,35,37,38,39,41,42,43,44,45,46,47,48,49,50,51,
+        54,55,56,57,58,59,60,61,62,63,64,66,67,69,70,71,72,73,74,75,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,95,96,97,98,99,
+        100,101,102,103,104,105,108,111,112,113,114,115,116,117,118,119,120,121,123,127,128,129,130,132,137,147,148,149],
+    limited: {1:"Only One",2:"Only One",3:"Only One",4:"Only One",5:"Only One",6:"Only One",7:"Only One",8:"Only One",9:"Only One",
+        25:"Only One",31:"Limited Moon Stones",34:"Limited Moon Stones",36:"Limited Moon Stones",40:"Limited Moon Stones",68:"In-game Trade",
+        122:"In-game Trade",131:"Only One",133:"Only One",142:"Only One",143:"Only Two",
+        144:"Only One",145:"Only One",146:"Only One",150:"Only One"},
+    trade: [65,76,94]
 };

@@ -13,7 +13,7 @@ for (let i = 1; i < 152; i++){
     let ne = document.createElement("div");
     let ni = document.createElement("img");
     ne.className = "mon"
-    ni.src = "images/" + i + ".png";
+    ni.src = "images/pkm/" + i + ".png";
     ni.alt = pokemonlist[i];
     ne.innerHTML = pokemonlist[i] + "<br />";
     ne.appendChild(ni);
