@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Catch 'em All</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="scripts/catchable.js"></script>
+    <script src="scripts/game.js"></script>
+</head>
+<body>
+    <h1>Catch 'em All</h1>
+
+    <p>I am playing:</p>
+    <p>
+        <button onclick="game('red');">Red</button>
+        <button onclick="game('green');">International Blue/Japanese Green</button>
+        <button onclick="game('blue');">Japanese Blue</button>
+        <button onclick="game('yellow');">Yellow</button>
+    </p>
+
+    <div id="counts">
+        <div class="sUnlimited">Unlimited Quantity:<br /><span id="cUnlimited">0</span></div>
+        <div class="sLimited">Limited Quantity:<br /><span id="cLimited">0</span></div>
+        <div class="sChoice">Choices:<br /><span id="cChoice">0</span></div>
+        <div class="sTrade">External Trades:<br /><span id="cTrade">0</span></div>
+        <div class="sUnavailable">Unavailable (With Unchosen):<br /><span id="cUnavailable">0</span></div>
+    </div>
+
+    <div id="monsters"></div>
+
+    <script src="scripts/makepage.js"></script>
+</body>
+</html>
