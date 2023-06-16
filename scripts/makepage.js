@@ -1,7 +1,8 @@
 let m = document.getElementById("monsters");
 let g = 0;
-for (let i = 1; i < 152; i++){
-//for (let i = 1; i < pokemonlist.length; i++){
+document.getElementById("cTotal").innerHTML = pokemonlist.length - 1;
+//for (let i = 1; i < 252; i++){
+for (let i = 1; i < pokemonlist.length; i++){
     if (i > generations[g]){
         let nh = document.createElement("h2");
         nh.className = "genhead";
@@ -20,3 +21,5 @@ for (let i = 1; i < 152; i++){
     ne.innerHTML += '<br /><span dt="' + i + '" class="num">' + i + '</span>';
     m.appendChild(ne);
 }
+
+//game("gold");

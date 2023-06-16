@@ -8,29 +8,28 @@
     <script src="scripts/game.js"></script>
 </head>
 <body>
+    <div id="leftmenu">
+        I<br />
+        <button id="btnred" onclick="game('red');" title="Red"><img src="images/games/red.png" /></button><br />
+        <button id="btngreen" onclick="game('green');" title="Japanese Green/International Blue"><img src="images/games/green.png" /></button><br />
+        <button id="btnblue" onclick="game('blue');" title="Japanese Blue"><img src="images/games/blue.png" /></button><br />
+        <button id="btnyellow" onclick="game('yellow');" title="Yellow"><img src="images/games/yellow.png" /></button><br />
+        <button id="btnstadium" onclick="game('stadium');" title="Japanese Stadium 2/International Stadium"><img src="images/games/stadium.png" /></button><br /><br />
+        II<br />
+        <button id="btngold" onclick="game('gold');" title="Gold"><img src="images/games/gold.png" /></button><br />
+        <button id="btnsilver" onclick="game('silver');" title="Silver"><img src="images/games/silver.png" /></button><br />
+        <button id="btncrystal" onclick="game('crystal');" title="Crystal"><img src="images/games/crystal.png" /></button><br />
+        <button id="btnstadium2" onclick="game('stadium2');" title="Japanese Stadium GS/Interanational Stadium 2"><img src="images/games/stadium2.png" /></button><br /><br />
+        III<br />
+        <button id="btnruby" onclick="game('ruby');" title="Ruby"><img src="images/games/ruby.png" /></button><br />
+        <button id="btnsapphire" onclick="game('sapphire');" title="Sapphire"><img src="images/games/sapphire.png" /></button><br />
+        <button id="btnemerald" onclick="game('emerald');" title="Emerald"><img src="images/games/emerald.png" /></button><br />
+        <button id="btnfirered" onclick="game('firered');" title="FireRed"><img src="images/games/firered.png" /></button><br />
+        <button id="btnleafgreen" onclick="game('leafgreen');" title="LeafGreen"><img src="images/games/leafgreen.png" /></button><br />
+        <button id="btncolosseum" onclick="game('colosseum');" title="Colosseum"><img src="images/games/colosseum.png" /></button><br />
+        <button id="btnxd" onclick="game('xd');" title="XD"><img src="images/games/xd.png" /></button><br />
+    </div>
     <h1>Catch 'em All</h1>
-
-    <p>I am playing:</p>
-    <p>Gen 1:
-        <button id="btnred" onclick="game('red');"><img src="images/games/red.png" /> Red</button>
-        <button id="btngreen" onclick="game('green');"><img src="images/games/green.png" /> Japanese Green/International Blue</button>
-        <button id="btnblue" onclick="game('blue');"><img src="images/games/blue.png" /> Japanese Blue</button>
-        <button id="btnyellow" onclick="game('yellow');"><img src="images/games/yellow.png" /> Yellow</button>
-    </p>
-    <p>Gen 2:
-        <button id="btngold" onclick="game('gold');"><img src="images/games/gold.png" /> Gold</button>
-        <button id="btnsilver" onclick="game('silver');"><img src="images/games/silver.png" /> Silver</button>
-        <button id="btncrystal" onclick="game('crystal');"><img src="images/games/crystal.png" /> Crystal</button>
-    </p>
-    <p>Gen 3:
-        <button id="btnruby" onclick="game('ruby');"><img src="images/games/ruby.png" /> Ruby</button>
-        <button id="btnsapphire" onclick="game('sapphire');"><img src="images/games/sapphire.png" /> Sapphire</button>
-        <button id="btnemerald" onclick="game('emerald');"><img src="images/games/emerald.png" /> Emerald</button>
-        <button id="btnfirered" onclick="game('firered');"><img src="images/games/firered.png" /> FireRed</button>
-        <button id="btnleafgreen" onclick="game('leafgreen');"><img src="images/games/leafgreen.png" /> LeafGreen</button>
-        <button id="btncolosseum" onclick="game('colosseum');"><img src="images/games/colosseum.png" /> Colosseum</button>
-        <button id="btnxd" onclick="game('xd');"><img src="images/games/xd.png" /> XD</button>
-    </p>
 
     <div id="counts">
         <div class="sUnlimited">Unlimited:<p id="cUnlimited">0</p></div>
@@ -40,8 +39,27 @@
         <div class="sUnavailable">Unavailable:<p id="cUnavailable">0</p></div>
     </div>
 
-    <p><b>Totals</b><br />Available: <span id="cAvailable">0</span><br />
-    Unavailable: <span id="cTotalUnavailable">0</span></p>
+    <p><b>Total (<span id="cTotal">0</span>)</b>
+        <br />Available: <span id="cAvailable">0</span><br />
+        Unavailable: <span id="cTotalUnavailable">0</span>
+    </p>
+
+    <details>
+        <summary>Explanation</summary>
+        <p>Choose a game on the left.</p>
+        <dl>
+            <dt class="sUnlimited">Unlimited</dt>
+            <dd>Obtainable in unlimited numbers, either in the wild, by purchase, or through breeding</dd>
+            <dt class="sLimited">Limited</dt>
+            <dd>Available in limited numbers and cannot be bred for more</dd>
+            <dt class="sChoice">Choices</dt>
+            <dd>Choices between two or more options that cannot be bred for the others</dd>
+            <dt class="sTrade">Trades</dt>
+            <dd>Trade evolutions only available by trading with another game, may also be limited due to items</dd>
+            <dt class="sUnavailable">Unavailable</dt>
+            <dd>Not available whatsoever</dd>
+        </dl>
+    </details>
 
     <div id="monsters"></div>
 

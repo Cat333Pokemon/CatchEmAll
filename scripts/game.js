@@ -45,9 +45,52 @@ function game(g){
             m[gm.unlimited[i] - 1].classList.add("sUnlimited");
             ulc++;
         }
+
+        //Limited Pokémon that can be bred, without choices
+        //commented out because this will only be for Gen 1, and I haven't added that part yet
+        /*
+        for (i = 0; i < gm.limitedBreedable.length; i++){
+            if (gm.breeding){
+                m[gm.limitedBreedable[i] - 1].classList.add("sUnlimited");
+                m[gm.limitedBreedable[i] - 1].querySelector(".num").innerHTML = "Breedable";
+                ulc++;
+            }else{
+                m[gm.limitedBreedable[i] - 1].classList.add("sLimited");
+                m[gm.limitedBreedable[i] - 1].querySelector(".num").innerHTML = "Only One";
+                lic++;
+            }
+        }*/
+
+        //Limited Pokémon that can be bred, but requires a choice if not
+        //commented out because this will only be for Gen 1, and I haven't added that part yet
+        /*
+        for (let c in gm.choicesBreedable){
+            for (let j = 0; j < gm.choicesBreedable[c].length; j++){
+                for (i = 0; i < gm.choicesBreedable[c][j].length; i++){
+                    if (gm.breeding){
+                        m[gm.choicesBreedable[c][j][i] - 1].classList.add("sUnlimited");
+                        m[gm.choicesBreedable[c][j][i] - 1].querySelector(".num").innerHTML = "Breedable";
+                        ulc++;
+                    }else{
+                        m[gm.choicesBreedable[c][j][i] - 1].classList.add("sChoice");
+                        if (i > 0)
+                            m[gm.choicesBreedable[c][j][i] - 1].querySelector(".num").innerHTML = "Evolves from<br />" + c;
+                        else
+                            m[gm.choicesBreedable[c][j][i] - 1].querySelector(".num").innerHTML = "Choose 1<br />" + c;
+
+                        //This logic breaks if some of the choices give you more Pokémon than others
+                        if (j > 0) //only can pick one of a choice in a run
+                            chno++;
+                        else
+                            chyes++;
+                    }
+                }
+            }
+        }*/
+
         for (i = 0; i < gm.trade.length; i++){
             m[gm.trade[i] - 1].classList.add("sTrade");
-            m[gm.trade[i] - 1].querySelector(".num").innerHTML = "External Trade";
+            m[gm.trade[i] - 1].querySelector(".num").innerHTML = "Trade Evolution";
             trc++;
         }
         for (let c in gm.limited){
@@ -86,10 +129,12 @@ function game(g){
             }*/
 
         for (i = 0; i < m.length; i++){
-            if (m[i].getAttribute("class") === "mon"){ //has not been changed
+            if (m[i].getAttribute("class") === "mon" && i < gm.total){ //has not been changed
                 m[i].classList.add("sUnavailable");
-                m[i].querySelector(".num").innerHTML = "Unavailable";
+                //m[i].querySelector(".num").innerHTML = "Unavailable";
                 unc++;
+            }else if (i >= gm.total){
+                m[i].classList.add("sFuture");
             }
         }
 
@@ -98,10 +143,11 @@ function game(g){
         document.getElementById("cChoice").innerHTML = chyes + "/" + (chno + chyes);
         document.getElementById("cTrade").innerHTML = trc;
         document.getElementById("cUnavailable").innerHTML = unc;
-        
-        document.getElementById("cAvailable").innerHTML = ulc + lic + chyes + (engames.length > 1 ? trc : 0); //logic must be more complex for trades
-        document.getElementById("cTotalUnavailable").innerHTML = unc + chno + (engames.length > 1 ? 0 : trc);
+        let tot = ulc + lic + chyes + (engames.length > 1 ? trc : 0); //logic must be more complex for trades
+        document.getElementById("cTotal").innerHTML = gm.total;
+        document.getElementById("cAvailable").innerHTML = tot;
+        document.getElementById("cTotalUnavailable").innerHTML = gm.total - tot;
                 
     }else
-        alert("Not added yet.");
+        alert("Not added yet: " + g);
 }

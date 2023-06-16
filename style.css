@@ -1,3 +1,7 @@
+body{
+    font-family:Georgia, 'Times New Roman', 'Liberation Serif', Times, serif;
+    margin-left: 50px;
+}
 .genhead{
     clear: left;
 }
@@ -33,6 +37,9 @@
     background-color: #333;
     color: #FFF;
 }
+.sFuture{
+    display: none;
+}
 #counts div{
     float: left;
     width: 100px;
@@ -42,6 +49,19 @@
 #counts div p{
     text-align: right;
     margin: 0;
+}
+
+/* menu buttons */
+#leftmenu{
+    background-color: #EEE;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 29px;
+    padding: 0 5px;
+    border-right: 1px #000 solid;
+    text-align: center;
 }
 button{
     background-color: #DDD;
@@ -54,4 +74,7 @@ button img{
     background-color: #333;
     color: #FFF;
     border-color: #333;
+}
+summary{
+    cursor: pointer;
 }
