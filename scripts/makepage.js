@@ -22,4 +22,4 @@ for (let i = 1; i < pokemonlist.length; i++){
     m.appendChild(ne);
 }
 
-//game("gold");
+game("ruby");

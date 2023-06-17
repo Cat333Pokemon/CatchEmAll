@@ -63,6 +63,7 @@ function game(g){
 
         //Limited Pokémon that can be bred, but requires a choice if not
         //commented out because this will only be for Gen 1, and I haven't added that part yet
+        //Might be needed for Ruby and Sapphire too
         /*
         for (let c in gm.choicesBreedable){
             for (let j = 0; j < gm.choicesBreedable[c].length; j++){
@@ -92,6 +93,13 @@ function game(g){
             m[gm.trade[i] - 1].classList.add("sTrade");
             m[gm.trade[i] - 1].querySelector(".num").innerHTML = "Trade Evolution";
             trc++;
+        }
+        if (!!gm.special){
+            for (i = 0; i < gm.special.length; i++){
+                m[gm.special[i] - 1].classList.add("sTrade");
+                m[gm.special[i] - 1].querySelector(".num").innerHTML = "Special Acquisition";
+                trc++;
+            }
         }
         for (let c in gm.limited){
             m[c - 1].classList.add("sLimited");
