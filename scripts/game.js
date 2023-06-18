@@ -106,14 +106,23 @@ function game(g){
             m[c - 1].querySelector(".num") . innerHTML = gm.limited[c];
             lic++;
         }
+        if (!!gm.evolvesFromLimited){
+            for (i = 0; i < gm.evolvesFromLimited.length; i++){
+                m[gm.evolvesFromLimited[i] - 1].classList.add("sLimitedEvolution");
+                m[gm.evolvesFromLimited[i] - 1].querySelector(".num").innerHTML = "Evolves from Limited";
+                lic++;
+            }
+        }
         for (let c in gm.choices){
             for (let j = 0; j < gm.choices[c].length; j++){
                 for (i = 0; i < gm.choices[c][j].length; i++){
-                    m[gm.choices[c][j][i] - 1].classList.add("sChoice");
-                    if (i > 0) //evolution of choice
+                    if (i > 0){ //evolution of choice
+                        m[gm.choices[c][j][i] - 1].classList.add("sChoiceEvolution");
                         m[gm.choices[c][j][i] - 1].querySelector(".num").innerHTML = "Evolves from<br />" + c;
-                    else //choice itself
+                    }else{ //choice itself
+                        m[gm.choices[c][j][i] - 1].classList.add("sChoice");
                         m[gm.choices[c][j][i] - 1].querySelector(".num").innerHTML = "Choose 1<br />" + c;
+                    }
                     
                     //This logic breaks if some of the choices give you more Pokémon than others
                     if (j > 0) //only can pick one of a choice in a run

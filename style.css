@@ -27,8 +27,14 @@ body{
 .sLimited{
     background-color: #AEE;
 }
+.sLimitedEvolution{
+    background-color: #7BB;
+}
 .sChoice{
     background-color: #EEA;
+}
+.sChoiceEvolution{
+    background-color: #BB7;
 }
 .sTrade{
     background-color: #EAA;
