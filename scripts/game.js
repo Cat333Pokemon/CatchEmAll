@@ -20,14 +20,16 @@ function game(g){
 
 
     //if (g.indexOf("_") > -1 && !!window[g.split("_")[0]]){
+        let ulc = 0, trc = 0, lic = 0, chyes = 0, chno = 0, chldex, unc = 0; //counts for top
         let m = document.getElementById("monsters").querySelectorAll(".mon");
         let i,mu;
-        let ulc = 0, trc = 0, lic = 0, chyes = 0, chno = 0, chldex, unc = 0; //counts for top
         //remove all classes and reset number
         for (i = 0; i < m.length; i++){
             m[i].setAttribute("class", "mon");
-            mu = m[i].querySelector('.num');
+            mu = m[i].getElementsByClassName('num')[0];
             mu.innerHTML = mu.getAttribute("dt");
+            mu = m[i].getElementsByClassName('check')[0]; //remove checkmark
+            mu.style.display = "none";
         }
 
         /*let gm = window[g.split("_")[0]];

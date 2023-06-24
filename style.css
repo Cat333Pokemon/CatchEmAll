@@ -15,10 +15,13 @@ body{
     float: left;
     text-align: center;
     font-size: small;
+    user-select: none;
+    cursor: pointer;
 }
 .mon img{
     width: 80px;
     height: 80px;
+    pointer-events: none;
 }
 
 .sUnlimited{
@@ -46,6 +49,18 @@ body{
 .sFuture{
     display: none;
 }
+.sCaptured{
+    opacity: 20%;
+}
+.check{
+    font-size: 80pt;
+    position: absolute;
+    width: 115px;
+    text-align: center;
+    display: none;
+}
+
+
 #counts div{
     float: left;
     width: 100px;
@@ -69,9 +84,10 @@ body{
     border-right: 1px #000 solid;
     text-align: center;
 }
-button{
+#leftmenu button{
     background-color: #DDD;
     border: 2px #DDD outset;
+    cursor: pointer;
 }
 button img{
     vertical-align: top;

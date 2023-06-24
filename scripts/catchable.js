@@ -76,6 +76,55 @@ var pokemonlist = ["","Bulbasaur","Ivysaur","Venusaur","Charmander","Charmeleon"
 "Iron Jugulis","Iron Moth","Iron Thorns","Frigibax","Arctibax","Baxcalibur","Gimmighoul","Gholdengo","Wo-Chien","Chien-Pao","Ting-Lu","Chi-Yu",
 "Roaring Moon","Iron Valiant","Koraidon","Miraidon","Walking Wake","Iron Leaves"];
 
+// new structure for future usage
+var pokemon = [
+    {},
+    /*0001*/ {name: "Bulbasaur", evolve: {2: {level: 16}}, breed: {1: null}},
+    /*0002*/ {name: "Ivysaur", evolve: {3: {level: 32}}, breed: {1: null}},
+    /*0003*/ {name: "Venusaur", breed: {1: null}},
+    /*0004*/ {name: "Charmander", evolve: {5: {level: 16}}, breed: {4: null}},
+    /*0005*/ {name: "Charmeleon", evolve: {6: {level: 36}}, breed: {4: null}},
+    /*0006*/ {name: "Charizard", breed: {4: null}},
+    /*0007*/ {name: "Squirtle", evolve: {8: {level: 16}}, breed: {7: null}},
+    /*0008*/ {name: "Wartortle", evolve: {9: {level: 36}}, breed: {7: null}},
+    /*0009*/ {name: "Blastoise", breed: {7: null}},
+    /*0010*/ {name: "Caterpie", evolve: {11: {level: 7}}, breed: {10: null}},
+    /*0011*/ {name: "Metapod", evolve: {12: {level: 10}}, breed: {10: null}},
+    /*0012*/ {name: "Butterfree", breed: {10: null}},
+    /* ... */
+    /*0133*/ /*{name: "Eevee", evolve: {
+        134: {item: "water-stone"},
+        135: {item: "thunder-stone"},
+        136: {item: "fire-stone"},
+        196: {friendship: "day"},
+        197: {friendship: "night"},
+        470: {location: "moss-rock",},
+        471: {location: "ice-rock",},
+        700: "affection"
+    }, breed: 133},
+    134: {name: "Vaporeon", breed: 133},
+    135: {name: "Jolteon", breed: 133},
+    136: {name: "Flareon", breed: 133},
+    196: {name: "Espeon", breed: 133},
+    197: {name: "Umbreon", breed: 133},
+    470: {name: "Leafeon", breed: 133},
+    471: {name: "Glaceon", breed: 133},
+    700: {name: "Sylveon", breed: 133},*/
+]
+
+//All Pokémon are assumed to be breedable except these
+var neverBreedable = [30,31,144,145,146,150,151,201,243,244,245,249,250,251,377,378,379,380,381,382,383,384,385,386,
+    480,481,482,483,484,485,486,487,488,491,492,493,494,638,639,640,641,642,643,644,645,646,647,648,649,
+    716,717,718,719,720,721,772,773,785,786,787,788,789,790,791,792,793,794,795,796,797,798,799,800,801,802,803,804,
+    805,806,807,808,809,880,881,882,883,888,889,890,891,892,893,894,895,896,897,898,905,
+    984,985,986,987,988,989,990,991,992,993,994,995,999,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010];
+
+//These Pokémon can breed if they evolve
+var babies = [172,173,174,175,236,238,239,240,298,360,406,433,438,439,440,446,447,458,848];
+
+//Manaphy is special because it can breed and produce Phione, but Phione cannot evolve into Manaphy
+
+
 var generations = [0, 151, 251, 386, 493, 649, 721, 809, 905, 1010];
 
 var red = {
@@ -85,7 +134,7 @@ var red = {
     unlimited: [10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,29,30,32,33,35,39,41,42,43,44,45,46,47,48,49,50,51,
         54,55,56,57,58,59,60,61,62,63,64,66,67,72,73,74,75,77,78,79,80,81,82,84,85,86,87,88,89,90,91,92,93,95,96,97,98,99,
         100,101,102,103,104,105,109,110,111,112,113,114,115,116,117,118,119,120,121,123,125,128,129,130,132,137,147,148,149],
-    limited: {31:"Limited Moon Stones",34:"Limited Moon Stones",36:"Limited Moon Stones",40:"Limited Moon Stones",83:"In-game Trade",
+    limited: {31:"Five Moon Stones",34:"Five Moon Stones",36:"Five Moon Stones",40:"Five Moon Stones",83:"In-game Trade",
         108:"In-game Trade",122:"In-game Trade",124:"In-game Trade",131:"Only One",133:"Only One",142:"Only One",143:"Only Two",
         144:"Only One",145:"Only One",146:"Only One",150:"Only One"},
     limitedBreedable: [],
@@ -101,7 +150,7 @@ var green = {
     unlimited: [10,11,12,13,14,15,16,17,18,19,20,21,22,25,26,27,28,29,30,32,33,35,37,38,39,41,42,46,47,48,49,50,51,52,53,
         54,55,60,61,62,63,64,66,67,69,70,71,72,73,74,75,77,78,79,80,81,82,84,85,86,87,88,89,90,91,92,93,95,96,97,98,99,
         100,101,102,103,104,105,109,110,111,112,113,114,115,116,117,118,119,120,121,126,127,128,129,130,132,137,147,148,149],
-    limited: {31:"Limited Moon Stones",34:"Limited Moon Stones",36:"Limited Moon Stones",40:"Limited Moon Stones",83:"In-game Trade",
+    limited: {31:"Five Moon Stones",34:"Five Moon Stones",36:"Five Moon Stones",40:"Five Moon Stones",83:"In-game Trade",
         108:"In-game Trade",122:"In-game Trade",124:"In-game Trade",131:"Only One",133:"Only One",142:"Only One",143:"Only Two",
         144:"Only One",145:"Only One",146:"Only One",150:"Only One"},
     limitedBreedable: [],
@@ -117,7 +166,7 @@ var blue = {
     unlimited: [10,11,12,13,14,15,16,17,18,19,20,21,22,25,26,27,28,29,30,32,33,35,39,41,42,43,44,45,46,47,48,49,50,51,52,53,
         54,55,58,59,60,61,62,63,64,66,67,72,73,74,75,77,78,79,80,81,82,84,85,86,87,88,89,90,91,92,93,95,96,97,98,99,
         100,101,102,103,104,105,108,109,110,111,112,113,114,116,117,118,119,120,121,123,124,127,129,130,132,137,147,148,149],
-    limited: {31:"Limited Moon Stones",34:"Limited Moon Stones",36:"Limited Moon Stones",40:"Limited Moon Stones",76:"In-game Trade",
+    limited: {31:"Five Moon Stones",34:"Five Moon Stones",36:"Five Moon Stones",40:"Five Moon Stones",76:"In-game Trade",
         83:"In-game Trade",94:"In-game Trade",115:"In-game Trade",
         122:"In-game Trade",128:"In-game Trade",131:"Only One",133:"Only One",142:"Only One",143:"Only Two",
         144:"Only One",145:"Only One",146:"Only One",150:"Only One"},
@@ -134,7 +183,7 @@ var yellow = {
         54,55,56,57,58,59,60,61,62,63,64,66,67,69,70,71,72,73,74,75,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,95,96,97,98,99,
         100,101,102,103,104,105,108,111,112,113,114,115,116,117,118,119,120,121,123,127,128,129,130,132,137,147,148,149],
     limited: {1:"Only One",2:"Only One",3:"Only One",4:"Only One",5:"Only One",6:"Only One",7:"Only One",8:"Only One",9:"Only One",
-        25:"Starter",31:"Limited Moon Stones",34:"Limited Moon Stones",36:"Limited Moon Stones",40:"Limited Moon Stones",68:"In-game Trade",
+        25:"Starter",31:"Five Moon Stones",34:"Five Moon Stones",36:"Five Moon Stones",40:"Five Moon Stones",68:"In-game Trade",
         122:"In-game Trade",131:"Only One",133:"Only One",142:"Only One",143:"Only Two",
         144:"Only One",145:"Only One",146:"Only One",150:"Only One"},
     limitedBreedable: [],
