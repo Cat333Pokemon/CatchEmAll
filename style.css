@@ -93,7 +93,7 @@ button img{
     vertical-align: top;
 }
 .btndown {
-    background-color: #333;
+    background-color: #333 !important;
     color: #FFF;
     border-color: #333;
 }
