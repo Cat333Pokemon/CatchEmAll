@@ -128,6 +128,7 @@ var babies = [172,173,174,175,236,238,239,240,298,360,406,433,438,439,440,446,44
 var generations = [0, 151, 251, 386, 493, 649, 721, 809, 905, 1010];
 
 var red = {
+    generation: 1,
     total: 151,
     breeding: false,
     choices: {"Starter":[[1,2,3],[4,5,6],[7,8,9]],"Hitmon":[[106],[107]],"Eeveelution":[[134],[135],[136]],"Fossil":[[138,139],[140,141]]},
@@ -144,6 +145,7 @@ var red = {
 
 //Japanese Green/International Blue
 var green = {
+    generation: 1,
     total: 151,
     breeding: false,
     choices: {"Starter":[[1,2,3],[4,5,6],[7,8,9]],"Hitmon":[[106],[107]],"Eeveelution":[[134],[135],[136]],"Fossil":[[138,139],[140,141]]},
@@ -160,6 +162,7 @@ var green = {
 
 //Japanese Blue
 var blue = {
+    generation: 1,
     total: 151,
     breeding: false,
     choices: {"Starter":[[1,2,3],[4,5,6],[7,8,9]],"Hitmon":[[106],[107]],"Eeveelution":[[134],[135],[136]],"Fossil":[[138,139],[140,141]]},
@@ -176,6 +179,7 @@ var blue = {
 };
 
 var yellow = {
+    generation: 1,
     total: 151,
     breeding: false,
     choices: {"Hitmon":[[106],[107]],"Eeveelution":[[134],[135],[136]],"Fossil":[[138,139],[140,141]]},
@@ -207,6 +211,7 @@ var gold = {
     trade: [65,68,76,94,186,199,208,212,230,233]
 }*/
 var gold = {
+    generation: 2,
     total: 251,
     breeding: true,
     choices: {"Starter":[[152,153,154],[155,156,157],[158,159,160]],
@@ -222,6 +227,7 @@ var gold = {
 }
 
 var silver = {
+    generation: 2,
     total: 251,
     breeding: true,
     choices: {"Starter":[[152,153,154],[155,156,157],[158,159,160]],
@@ -237,6 +243,7 @@ var silver = {
 }
 
 var crystal = {
+    generation: 2,
     total: 251,
     breeding: true,
     choices: {"Starter":[[152,153,154],[155,156,157],[158,159,160]]},
@@ -251,6 +258,7 @@ var crystal = {
 }
 
 var ruby = {
+    generation: 3,
     total: 386,
     breeding: false, /* No Ditto, so starters, the fossil, and Castform require females to get more */
     choices: {"Starter":[[252,253,254],[255,256,257],[258,259,260]],"Fossil":[[345,346],[347,348]],"Moon Stone":[[40],[301]]},
@@ -265,6 +273,7 @@ var ruby = {
     trade: [65,68,76,367,368]
 }
 var sapphire = {
+    generation: 3,
     total: 386,
     breeding: false, /* No Ditto, so starters, the fossil, and Castform require females to get more */
     choices: {"Starter":[[252,253,254],[255,256,257],[258,259,260]],"Fossil":[[345,346],[347,348]]},
@@ -279,6 +288,7 @@ var sapphire = {
     trade: [65,68,76,367,368]
 }
 var emerald = {
+    generation: 3,
     total: 386,
     breeding: true,
     choices: {"Starter":[[252,253,254],[255,256,257],[258,259,260]],"Eon Duo":[[380],[381]],"Moon Stone":[[40],[301]]},
@@ -294,6 +304,7 @@ var emerald = {
     special: [152,153,154,155,156,157,158,159,160]
 }
 var firered = {
+    generation: 3,
     total: 386,
     breeding: true,
     choices: {"Starter":[[1,2,3],[4,5,6],[7,8,9]],"Fossil":[[138,139],[140,141]],"Legendary Beast":[[243],[244],[245]]},
@@ -308,6 +319,7 @@ var firered = {
     special: [196,197]
 }
 var leafgreen = {
+    generation: 3,
     total: 386,
     breeding: true,
     choices: {"Starter":[[1,2,3],[4,5,6],[7,8,9]],"Fossil":[[138,139],[140,141]],"Legendary Beast":[[243],[244],[245]]},
@@ -323,6 +335,7 @@ var leafgreen = {
 }
 
 var colosseum = {
+    generation: 3,
     total: 386,
     breeding: false,
     choices: {},
@@ -344,6 +357,7 @@ var colosseum = {
 }
 
 var xd = {
+    generation: 3,
     total: 386,
     breeding: false,
     choices: {"Eeveelution":[[134],[135],[136],[196],[197]],"Fire Stone":[[38],[59]],"Leaf Stone":[[71],[275]]},

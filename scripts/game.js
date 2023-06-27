@@ -1,4 +1,5 @@
 let engames = []; //enabled game list
+var pagetitle = "Catch 'em All: ";
 
 function game(g){
     if (!!window[g]){
@@ -9,6 +10,8 @@ function game(g){
             x[w].classList.remove("btndown");
         }
         document.getElementById("btn" + g).classList.add("btndown");
+        document.title = document.getElementById("pagetitle").innerHTML = pagetitle + document.getElementById("btn" + g).title;
+        
         //uncomment this logic when allowing multiple games
         /*if (engames.includes(g)){
             engames.splice(engames.indexOf(g),1);
@@ -153,8 +156,16 @@ function game(g){
                 //m[i].querySelector(".num").innerHTML = "Unavailable";
                 unc++;
             }else if (i >= gm.total){
-                m[i].classList.add("sFuture");
+                m[i].classList.add("sFuture"); //hide later Pokémon
             }
+        }
+
+        //hide later generation headers
+        for (i = 1; i <= generations.length; i++){
+            if (i > gm.generation)
+                document.getElementById("genhead" + i).style.display = "none";
+            else
+                document.getElementById("genhead" + i).style.display = "";
         }
 
         document.getElementById("cUnlimited").innerHTML = ulc;

@@ -6,6 +6,7 @@ for (let i = 1; i < pokemonlist.length; i++){
     if (i > generations[g]){
         let nh = document.createElement("h2");
         nh.className = "genhead";
+        nh.id = "genhead" + (g + 1);
         nh.innerHTML = "Generation " + (g + 1);
         m.appendChild(nh);
         g++;
