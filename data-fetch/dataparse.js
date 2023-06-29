@@ -1,7 +1,7 @@
 /* This must be run from an HTTP server. To run it locally, you can use something like Python:
-    python -m http.server
+    python3 -m http.server
 */
-async function parselocations() {
+async function parse_locations() {
     let notUnlimited = ["gift", "gift-egg", "only-one"]; //methods that don't give an unlimited number
     let x = {}, w;
     for (let ir = 1; ir <= 721; ir++){
@@ -47,17 +47,22 @@ async function parselocations() {
     document.getElementById("x").innerHTML = JSON.stringify(x);
 }
 
-async function parseevolutions() {
+async function parse_evolutions() {
     let notUnlimited = ["gift", "gift-egg", "only-one"]; //methods that don't give an unlimited number
     let x = {}, w;
-    for (let ir = 1; ir <= 100; ir++){ //538
-        const response = await fetch("./cache/evolution/"+ir+".json");        
-        const jsonData = await response.json();
-        //console.log(doevo(jsonData.chain));
-        document.getElementById("x").innerHTML += JSON.stringify(doevo(jsonData.chain), null, 4) + "\n";
+    for (let ir = 1; ir <= 538; ir++){ //538
+        const response = await fetch("./cache/evolution/"+ir+".json");
+        if (response.status === 200){
+            const jsonData = await response.json();
+            //console.log(doevo(jsonData.chain));
+            w = doevo(jsonData.chain);
+            x[Object.keys(w)[0]] = w[Object.keys(w)[0]];
+        }
     }
+    document.getElementById("x").innerHTML = JSON.stringify(x, null, 4);
 }
 
+// iterative helper function for parse_evolutions()
 function doevo(evo){
     let w = [], keylength;
     console.log(evo);
@@ -103,6 +108,6 @@ function doevo(evo){
         return {[evo.species.url.split("pokemon-species/")[1].split("/")[0]]: w}; //just get Pokédex number
 }
 
-//parselocations();
+//parse_locations();
 
-parseevolutions();
+parse_evolutions();
