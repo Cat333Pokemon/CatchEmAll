@@ -2,7 +2,8 @@ let engames = []; //enabled game list
 var pagetitle = "Catch 'em All: ";
 
 function game(g){
-    if (!!window[g]){
+    if (!!games[g]){
+    //if (!!window[g]){
 
         engames = [g];
         let x = document.querySelectorAll(".btndown");
@@ -45,7 +46,8 @@ function game(g){
                 m[k - 1].classList.add("sTrade");
         }*/
 
-        let gm = window[g];
+        //let gm = window[g];
+        let gm = games[g];
         for (i = 0; i < gm.unlimited.length; i++){
             m[gm.unlimited[i] - 1].classList.add("sUnlimited");
             ulc++;
@@ -94,10 +96,12 @@ function game(g){
             }
         }*/
 
-        for (i = 0; i < gm.trade.length; i++){
-            m[gm.trade[i] - 1].classList.add("sTrade");
-            m[gm.trade[i] - 1].querySelector(".num").innerHTML = "Trade Evolution";
-            trc++;
+        if (!!gm.trade){
+            for (i = 0; i < gm.trade.length; i++){
+                m[gm.trade[i] - 1].classList.add("sTrade");
+                m[gm.trade[i] - 1].querySelector(".num").innerHTML = "Trade Evolution";
+                trc++;
+            }
         }
         if (!!gm.special){
             for (i = 0; i < gm.special.length; i++){
@@ -106,10 +110,12 @@ function game(g){
                 trc++;
             }
         }
-        for (let c in gm.limited){
-            m[c - 1].classList.add("sLimited");
-            m[c - 1].querySelector(".num") . innerHTML = gm.limited[c];
-            lic++;
+        if (!!gm.limited){
+            for (let c in gm.limited){
+                m[c - 1].classList.add("sLimited");
+                m[c - 1].querySelector(".num") . innerHTML = gm.limited[c];
+                lic++;
+            }
         }
         if (!!gm.evolvesFromLimited){
             for (i = 0; i < gm.evolvesFromLimited.length; i++){
@@ -118,25 +124,27 @@ function game(g){
                 lic++;
             }
         }
-        for (let c in gm.choices){
-            for (let j = 0; j < gm.choices[c].length; j++){
-                for (i = 0; i < gm.choices[c][j].length; i++){
-                    if (i > 0){ //evolution of choice
-                        m[gm.choices[c][j][i] - 1].classList.add("sChoiceEvolution");
-                        m[gm.choices[c][j][i] - 1].querySelector(".num").innerHTML = "Evolves from<br />" + c;
-                    }else{ //choice itself
-                        m[gm.choices[c][j][i] - 1].classList.add("sChoice");
-                        m[gm.choices[c][j][i] - 1].querySelector(".num").innerHTML = "Choose 1<br />" + c;
-                    }
-                    
-                    //This logic breaks if some of the choices give you more Pokémon than others
-                    if (j > 0) //only can pick one of a choice in a run
-                        chno++;
-                    else
-                        chyes++;
+        if (!!gm.choices){
+            for (let c in gm.choices){
+                for (let j = 0; j < gm.choices[c].length; j++){
+                    for (i = 0; i < gm.choices[c][j].length; i++){
+                        if (i > 0){ //evolution of choice
+                            m[gm.choices[c][j][i] - 1].classList.add("sChoiceEvolution");
+                            m[gm.choices[c][j][i] - 1].querySelector(".num").innerHTML = "Evolves from<br />" + c;
+                        }else{ //choice itself
+                            m[gm.choices[c][j][i] - 1].classList.add("sChoice");
+                            m[gm.choices[c][j][i] - 1].querySelector(".num").innerHTML = "Choose 1<br />" + c;
+                        }
+                        
+                        //This logic breaks if some of the choices give you more Pokémon than others
+                        if (j > 0) //only can pick one of a choice in a run
+                            chno++;
+                        else
+                            chyes++;
 
-                    if (j == 0 && i == 0)
-                        chldex++; //Living Dex, only applicable without breeding
+                        if (j == 0 && i == 0)
+                            chldex++; //Living Dex, only applicable without breeding
+                    }
                 }
             }
         }
@@ -161,7 +169,7 @@ function game(g){
         }
 
         //hide later generation headers
-        for (i = 1; i <= generations.length; i++){
+        for (i = 1; i < generations.length; i++){
             if (i > gm.generation)
                 document.getElementById("genhead" + i).style.display = "none";
             else
