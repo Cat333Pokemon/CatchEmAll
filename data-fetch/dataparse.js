@@ -62,7 +62,7 @@ async function parse_evolutions() {
     document.getElementById("x").innerHTML = JSON.stringify(x, null, 4);
 }
 
-// iterative helper function for parse_evolutions()
+// recursive helper function for parse_evolutions()
 function doevo(evo){
     let w = [], keylength, onegame = false;
     let gender = ["","female","male"];
@@ -151,6 +151,8 @@ function doevo(evo){
                         evo.evolution_details[i] = {trade_with_item: evo.evolution_details[i].held_item.name};
                     else if (keylength == 2 && "trade_species" in evo.evolution_details[i]) //trade for another Pokémon
                         evo.evolution_details[i] = {trade_for: evo.evolution_details[i].trade_species.name};
+                    else
+                        onegame = "unknown";
                     break;
                 case "spin":
                     if (onegame === false) //mix of true and false
@@ -158,6 +160,8 @@ function doevo(evo){
                     
                     if (keylength == 1)
                         evo.evolution_details[i] = {spin: true};
+                    else
+                        onegame = "unknown";
                     break;
                 case "shed":
                     if (onegame === false) //mix of true and false
@@ -165,6 +169,8 @@ function doevo(evo){
                     
                     if (keylength == 1)
                         evo.evolution_details[i] = {shed: true};
+                    else
+                        onegame = "unknown";
                     break;
                 case "other":
                     onegame = "unknown";
@@ -172,6 +178,8 @@ function doevo(evo){
                         evo.evolution_details[i] = {other: true};
                     else if (keylength == 2 && "min_level" in evo.evolution_details[i])
                         evo.evolution_details[i] = {other_level: evo.evolution_details[i].min_level};
+                    else
+                        onegame = "unknown";
                     break;
                 case "agile-style-move":
                 case "strong-style-move":
@@ -179,19 +187,27 @@ function doevo(evo){
                         onegame = "variable";
                     if (keylength == 2 && "known_move" in evo.evolution_details[i])
                         evo.evolution_details[i] = {move_special: {move: evo.evolution_details[i].known_move.name, action: evo.evolution_details[i].trigger.name}};
+                    else
+                        onegame = "unknown";
                     break;
                 case "tower-of-darkness":
                 case "tower-of-waters":
                     if (onegame === false) //mix of true and false
                         onegame = "variable";
-                    evo.evolution_details[i] = {interact: evo.evolution_details[i].trigger.name};
+                    if (keylength == 1)
+                        evo.evolution_details[i] = {interact: evo.evolution_details[i].trigger.name};
+                    else
+                        onegame = "unknown";
                     break;
                 case "recoil-damage":
                 case "take-damage":
                 case "three-critical-hits":
                     if (onegame === false) //mix of true and false
                         onegame = "variable";
-                    evo.evolution_details[i] = {battle: evo.evolution_details[i].trigger.name};
+                    if (keylength == 1)
+                        evo.evolution_details[i] = {battle: evo.evolution_details[i].trigger.name};
+                    else
+                        onegame = "unknown";
                     break;
                 default:
                     onegame = "unknown";
