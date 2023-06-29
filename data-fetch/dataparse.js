@@ -64,7 +64,7 @@ async function parse_evolutions() {
 
 // iterative helper function for parse_evolutions()
 function doevo(evo){
-    let w = [], keylength;
+    let w = [], keylength, onegame = false;
     console.log(evo);
     //document.getElementById("x").innerHTML += evo.species.name + "\n";
     if ("evolves_to" in evo){
@@ -73,6 +73,7 @@ function doevo(evo){
         }
     }
     if (evo.evolution_details.length > 0){
+        onegame = true; //doable with one game
         for (let i = 0; i < evo.evolution_details.length; i++){
             //remove all nulls from evolution methods
             evo.evolution_details[i] = Object.fromEntries(Object.entries(evo.evolution_details[i]).filter(([_, v]) =>
@@ -80,30 +81,91 @@ function doevo(evo){
             keylength = Object.keys(evo.evolution_details[i]).length;
             switch (evo.evolution_details[i].trigger.name){
                 case "level-up": //several sub-methods on this one
+                    if (onegame === false) //mix of true and false
+                        onegame = "variable";
+                    
                     if (keylength == 2 && "min_level" in evo.evolution_details[i]) //regular level-up
                         evo.evolution_details[i] = {level: evo.evolution_details[i].min_level};
+                    else if (keylength == 3 && "min_level" in evo.evolution_details[i] && "time_of_day" in evo.evolution_details[i]){ //time-based level-up
+                        evo.evolution_details[i] = {level_time: evo.evolution_details[i].min_level};
+                        /*if (evo.evolution_details[i].time_of_day == "day")
+                            evo.evolution_details[i] = {level_day: evo.evolution_details[i].min_level};
+                        else if (evo.evolution_details[i].time_of_day == "night")
+                            evo.evolution_details[i] = {level_night: evo.evolution_details[i].min_level};
+                        else //don't think there are any yet
+                            onegame = "unknown";
+                            //leaving this part commented out in case getting the actual time matters
+                        */
+                    }else if (keylength == 3 && "min_level" in evo.evolution_details[i] && "gender" in evo.evolution_details[i]) //specific gender level-up
+                        evo.evolution_details[i] = {level_gender: evo.evolution_details[i].min_level};
+                        //gender not shown
+                    else if (keylength == 3 && "min_level" in evo.evolution_details[i] && "relative_physical_stats" in evo.evolution_details[i]) //level-up with stats check
+                        evo.evolution_details[i] = {level_stats: evo.evolution_details[i].min_level};
+                        //more logic needed if you care about the actual stats check
                     else if (keylength == 2 && "min_happiness" in evo.evolution_details[i]) //happiness level-up
-                        evo.evolution_details[i] = {happiness: evo.evolution_details[i].min_happiness};
+                        evo.evolution_details[i] = {level_happiness: evo.evolution_details[i].min_happiness};
+                        else if (keylength == 3 && "min_happiness" in evo.evolution_details[i] && "time_of_day" in evo.evolution_details[i]) //time-based happiness level-up
+                        evo.evolution_details[i] = {level_happiness_time: evo.evolution_details[i].min_happiness};
+                        //time of day not shown
+                    else if (keylength == 3 && "min_happiness" in evo.evolution_details[i] && "known_move_type" in evo.evolution_details[i]) //happiness level-up with move type
+                        evo.evolution_details[i] = {level_happiness_move_type: evo.evolution_details[i].known_move_type.name};
+                        //happiness level not shown
+                    else if (keylength == 3 && "min_affection" in evo.evolution_details[i] && "known_move_type" in evo.evolution_details[i]) //affection level-up with move type
+                        evo.evolution_details[i] = {level_affection_move_type: evo.evolution_details[i].known_move_type.name};
+                        //affection level not shown
+                    else if (keylength == 2 && "held_item" in evo.evolution_details[i]) //currently unused; level up while holding item
+                        evo.evolution_details[i] = {level_item: evo.evolution_details[i].held_item.name};
+                    else if (keylength == 3 && "held_item" in evo.evolution_details[i] && "time_of_day" in evo.evolution_details[i]) //time-based level-up while holding item
+                        evo.evolution_details[i] = {level_item_time: evo.evolution_details[i].held_item.name};
+                        //time of day not shown
+                    else if (keylength == 2 && "min_beauty" in evo.evolution_details[i]) //level up with high beauty
+                        evo.evolution_details[i] = {level_beauty: evo.evolution_details[i].min_beauty};
+                        //time of day not shown
                     else if (keylength == 2 && "known_move" in evo.evolution_details[i]) //level up while knowing move
-                        evo.evolution_details[i] = {level_up_move: evo.evolution_details[i].known_move.name};
+                        evo.evolution_details[i] = {level_move: evo.evolution_details[i].known_move.name};
                     else if (keylength == 2 && "location" in evo.evolution_details[i]) //level up in a location
-                        evo.evolution_details[i] = {level_up_location: evo.evolution_details[i].location.name};
+                        evo.evolution_details[i] = {level_location: evo.evolution_details[i].location.name};
+                    else
+                        onegame = "unknown";
                     break;
                 case "use-item":
+                    if (onegame === false) //mix of true and false
+                        onegame = "variable";
+                    
                     if (keylength == 2 && "item" in evo.evolution_details[i]) //use an item
                         evo.evolution_details[i] = {item: evo.evolution_details[i].item.name};
+                    else if (keylength == 3 && "item" in evo.evolution_details[i] && "time_of_day" in evo.evolution_details[i]) //use an item
+                        evo.evolution_details[i] = {item_time: evo.evolution_details[i].item.name};
+                        //time of day not shown
+                    else
+                        onegame = "unknown";
                     break;
                 case "trade":
+                    if (onegame === true && i == 0) //not unknown and evaluating 1st method
+                        onegame = false;
+                    else if (onegame === true) //evaluating 2nd+ method
+                        onegame = "variable";
+                    
                     if (keylength == 1) //trade evolution without item
                         evo.evolution_details[i] = {trade: true};
                     else if (keylength == 2 && "held_item" in evo.evolution_details[i]) //trade evolution with item
-                        evo.evolution_details[i] = {trade_with_item: evo.evolution_details[i].held_item.name}; 
+                        evo.evolution_details[i] = {trade_with_item: evo.evolution_details[i].held_item.name};
+                    else if (keylength == 2 && "trade_species" in evo.evolution_details[i]) //trade for another Pokémon
+                        evo.evolution_details[i] = {trade_for: evo.evolution_details[i].trade_species.name};
+                    break;
+                case "recoil-damage":
+                case "take-damage":
+                case "three-critical-hits":
+                    if (onegame === false) //mix of true and false
+                        onegame = "variable";
+                    evo.evolution_details[i] = {battle: evo.evolution_details[i].trigger.name};
                     break;
                 default:
-                    
+                    onegame = "unknown";
             }
         }
-        return {[evo.species.url.split("pokemon-species/")[1].split("/")[0]]: w, method: evo.evolution_details}; //just get Pokédex number
+        return {[evo.species.url.split("pokemon-species/")[1].split("/")[0]]: w, method: evo.evolution_details, onegame: onegame}; //just get Pokédex number
+            // (evo.evolution_details.length == 1 ? onegame : "unknown")
     }else
         return {[evo.species.url.split("pokemon-species/")[1].split("/")[0]]: w}; //just get Pokédex number
 }
