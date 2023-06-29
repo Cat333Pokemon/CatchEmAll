@@ -48,7 +48,6 @@ async function parse_locations() {
 }
 
 async function parse_evolutions() {
-    let notUnlimited = ["gift", "gift-egg", "only-one"]; //methods that don't give an unlimited number
     let x = {}, w;
     for (let ir = 1; ir <= 538; ir++){ //538
         const response = await fetch("./cache/evolution/"+ir+".json");
