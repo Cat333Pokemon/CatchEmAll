@@ -84,7 +84,10 @@ function doevo(evo){
                     if (onegame === false) //mix of true and false
                         onegame = "variable";
                     
-                    if (keylength == 2 && "min_level" in evo.evolution_details[i]) //regular level-up
+                    if (keylength == 1){ //unknown level-up
+                        evo.evolution_details[i] = {level_unknown: true};
+                        onegame = "unknown";
+                    }else if (keylength == 2 && "min_level" in evo.evolution_details[i]) //regular level-up
                         evo.evolution_details[i] = {level: evo.evolution_details[i].min_level};
                     else if (keylength == 3 && "min_level" in evo.evolution_details[i] && "time_of_day" in evo.evolution_details[i]){ //time-based level-up
                         evo.evolution_details[i] = {level_time: evo.evolution_details[i].min_level};
@@ -99,9 +102,18 @@ function doevo(evo){
                     }else if (keylength == 3 && "min_level" in evo.evolution_details[i] && "gender" in evo.evolution_details[i]) //specific gender level-up
                         evo.evolution_details[i] = {level_gender: evo.evolution_details[i].min_level};
                         //gender not shown
+                    else if (keylength == 3 && "min_level" in evo.evolution_details[i] && "needs_overworld_rain" in evo.evolution_details[i]) //level up in rain
+                        evo.evolution_details[i] = {level_rain: evo.evolution_details[i].min_level};
+                    else if (keylength == 3 && "min_level" in evo.evolution_details[i] && "turn_upside_down" in evo.evolution_details[i]) //level up while held upside-down
+                        evo.evolution_details[i] = {level_upside_down: evo.evolution_details[i].min_level};
                     else if (keylength == 3 && "min_level" in evo.evolution_details[i] && "relative_physical_stats" in evo.evolution_details[i]) //level-up with stats check
                         evo.evolution_details[i] = {level_stats: evo.evolution_details[i].min_level};
                         //more logic needed if you care about the actual stats check
+                    else if (keylength == 3 && "min_level" in evo.evolution_details[i] && "party_type" in evo.evolution_details[i]) //level-up with Pokémon of type in party
+                        evo.evolution_details[i] = {level_party_type: evo.evolution_details[i].min_level};
+                        //party type not shown
+                    else if (keylength == 2 && "party_species" in evo.evolution_details[i]) //level-up with Pokémon in party
+                        evo.evolution_details[i] = {level_party: evo.evolution_details[i].party_species.name};
                     else if (keylength == 2 && "min_happiness" in evo.evolution_details[i]) //happiness level-up
                         evo.evolution_details[i] = {level_happiness: evo.evolution_details[i].min_happiness};
                         else if (keylength == 3 && "min_happiness" in evo.evolution_details[i] && "time_of_day" in evo.evolution_details[i]) //time-based happiness level-up
@@ -137,6 +149,9 @@ function doevo(evo){
                     else if (keylength == 3 && "item" in evo.evolution_details[i] && "time_of_day" in evo.evolution_details[i]) //use an item
                         evo.evolution_details[i] = {item_time: evo.evolution_details[i].item.name};
                         //time of day not shown
+                    else if (keylength == 3 && "item" in evo.evolution_details[i] && "gender" in evo.evolution_details[i]) //use an item
+                        evo.evolution_details[i] = {item_gender: evo.evolution_details[i].item.name};
+                        //gender not shown
                     else
                         onegame = "unknown";
                     break;
@@ -152,6 +167,41 @@ function doevo(evo){
                         evo.evolution_details[i] = {trade_with_item: evo.evolution_details[i].held_item.name};
                     else if (keylength == 2 && "trade_species" in evo.evolution_details[i]) //trade for another Pokémon
                         evo.evolution_details[i] = {trade_for: evo.evolution_details[i].trade_species.name};
+                    break;
+                case "spin":
+                    if (onegame === false) //mix of true and false
+                        onegame = "variable";
+                    
+                    if (keylength == 1)
+                        evo.evolution_details[i] = {spin: true};
+                    break;
+                case "shed":
+                    if (onegame === false) //mix of true and false
+                        onegame = "variable";
+                    
+                    if (keylength == 1)
+                        evo.evolution_details[i] = {shed: true};
+                    break;
+                case "other":
+                    onegame = "unknown";
+                    if (keylength == 1)
+                        evo.evolution_details[i] = {other: true};
+                    else if (keylength == 2 && "min_level" in evo.evolution_details[i])
+                        evo.evolution_details[i] = {other_level: evo.evolution_details[i].min_level};
+                    break;
+                case "agile-style-move":
+                case "strong-style-move":
+                    if (onegame === false) //mix of true and false
+                        onegame = "variable";
+                    if (keylength == 2 && "known_move" in evo.evolution_details[i])
+                        evo.evolution_details[i] = {move_special: evo.evolution_details[i].known_move.name};
+                        //move style not shown
+                    break;
+                case "tower-of-darkness":
+                case "tower-of-waters":
+                    if (onegame === false) //mix of true and false
+                        onegame = "variable";
+                    evo.evolution_details[i] = {interact: evo.evolution_details[i].trigger.name};
                     break;
                 case "recoil-damage":
                 case "take-damage":
