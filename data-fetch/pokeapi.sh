@@ -3,6 +3,18 @@
 # Use this file to fetch data from pokeapi.co; these data should be cached to prevent
 # constantly fetching resources
 
+# Create necessary folders
+if [ ! -d cache/evolution ]; then
+  mkdir -p cache/evolution;
+fi
+if [ ! -d cache/pokemon ]; then
+  mkdir -p cache/pokemon;
+fi
+if [ ! -d cache/encounters ]; then
+  mkdir -p cache/encounters;
+fi
+
+
 # Evolution chains
 for i in {1..538}; do #currently highest value: 538
     if [ ! -f "cache/evolution/$i.json" ]; then
