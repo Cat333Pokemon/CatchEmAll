@@ -14,6 +14,11 @@ function dbg(msg){
     }
 }
 
+function variableEvolutions(thismon){
+    //check ones like Pikachu in Yellow, Feebas by version, Eevee by version, etc.
+    //checks for Gen 7 should be added in the future
+}
+
 //using evolutions `evo`, highlight item in `mons` with the specified class `cls`, plus item list and size of generation
 function highlightEvolutions(thismon, mons, cls, items, total){
     if (evolutions[thismon].length > 0){
