@@ -27,6 +27,9 @@ body{
 .sUnlimited{
     background-color: #AEA;
 }
+.sUnlimitedEvolution{
+    background-color: #7B7;
+}
 .sLimited{
     background-color: #AEE;
 }
@@ -58,6 +61,12 @@ body{
     width: 115px;
     text-align: center;
     display: none;
+}
+dt{
+    width: 10em;
+}
+dd{
+    margin-bottom: 0.7em;
 }
 
 

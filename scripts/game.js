@@ -1,6 +1,30 @@
 let engames = []; //enabled game list
 var pagetitle = "Catch 'em All: ";
 
+//using evolutions `evo`, highlight item in `mons` with the specified class `cls`
+function highlightEvolutions(thismon, mons, cls){
+    for (let i = 0; i < evolutions[thismon].length; i++){
+        console.log(evolutions[thismon][i]);
+        if (evolutions[thismon][i].onegame === true){ //can evolve in one game
+            if (mons[evolutions[thismon][i].evolution - 1].classList.length == 1)
+                mons[evolutions[thismon][i].evolution - 1].classList.add(cls);
+        
+            //iterate by checking next evolution
+            if (evolutions[evolutions[thismon][i].evolution].length > 0)
+                highlightEvolutions(evolutions[thismon][i].evolution, mons, cls);
+            //ulc++; //unlimited
+        }else{ //mark as "trade" for now
+            if (mons[evolutions[thismon][i].evolution - 1].classList.length == 1)
+                mons[evolutions[thismon][i].evolution - 1].classList.add("sTrade");
+        
+            //iterate by checking next evolution
+            if (evolutions[evolutions[thismon][i].evolution].length > 0)
+                highlightEvolutions(evolutions[thismon][i].evolution, mons, "sTrade");
+            //trc++; //trade
+        }
+    }
+}
+
 function game(g){
     if (!!games[g]){
     //if (!!window[g]){
@@ -49,7 +73,9 @@ function game(g){
         //let gm = window[g];
         let gm = games[g];
         for (i = 0; i < gm.unlimited.length; i++){
+            m[gm.unlimited[i] - 1].classList.remove("sUnlimitedEvolution"); //remove evolution class if set earlier
             m[gm.unlimited[i] - 1].classList.add("sUnlimited");
+            highlightEvolutions(gm.unlimited[i], m, "sUnlimitedEvolution");
             ulc++;
         }
 
@@ -96,6 +122,15 @@ function game(g){
             }
         }*/
 
+
+        if (!!gm.limited){ //order is these are important for classes
+            for (let c in gm.limited){
+                m[c - 1].classList.add("sLimited");
+                m[c - 1].querySelector(".num") . innerHTML = gm.limited[c];
+                highlightEvolutions(c, m, "sLimitedEvolution");
+                lic++;
+            }
+        }
         if (!!gm.trade){
             for (i = 0; i < gm.trade.length; i++){
                 m[gm.trade[i] - 1].classList.add("sTrade");
@@ -110,13 +145,7 @@ function game(g){
                 trc++;
             }
         }
-        if (!!gm.limited){
-            for (let c in gm.limited){
-                m[c - 1].classList.add("sLimited");
-                m[c - 1].querySelector(".num") . innerHTML = gm.limited[c];
-                lic++;
-            }
-        }
+        
         if (!!gm.evolvesFromLimited){
             for (i = 0; i < gm.evolvesFromLimited.length; i++){
                 m[gm.evolvesFromLimited[i] - 1].classList.add("sLimitedEvolution");
@@ -176,11 +205,17 @@ function game(g){
                 document.getElementById("genhead" + i).style.display = "";
         }
 
-        document.getElementById("cUnlimited").innerHTML = ulc;
-        document.getElementById("cLimited").innerHTML = lic;
+        document.getElementById("cUnlimited").innerHTML =
+            document.querySelectorAll(".mon.sUnlimited").length + " + " +
+            document.querySelectorAll(".mon.sUnlimitedEvolution:not(.sFuture)").length;
+        document.getElementById("cLimited").innerHTML =
+            document.querySelectorAll(".mon.sLimited").length + " + " +
+            document.querySelectorAll(".mon.sLimitedEvolution:not(.sFuture)").length;
         document.getElementById("cChoice").innerHTML = chyes + "/" + (chno + chyes);
-        document.getElementById("cTrade").innerHTML = trc;
-        document.getElementById("cUnavailable").innerHTML = unc;
+        document.getElementById("cTrade").innerHTML =
+            document.querySelectorAll(".mon.sTrade:not(.sFuture)").length;
+        document.getElementById("cUnavailable").innerHTML =
+            document.querySelectorAll(".mon.sUnavailable").length;
         let tot = ulc + lic + chyes + (engames.length > 1 ? trc : 0); //logic must be more complex for trades
         document.getElementById("cTotal").innerHTML = gm.total;
         document.getElementById("cAvailable").innerHTML = tot;

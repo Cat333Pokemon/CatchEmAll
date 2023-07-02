@@ -1,4 +1,5 @@
-{
+/* Converting the format of the evolutions data to be a bit flatter */
+var evolutions = {
     "1": [
         {
             "2": [
@@ -5499,4 +5500,33 @@
     "1008": [],
     "1009": [],
     "1010": []
+};
+
+var evonew = {};
+
+//add to evonew; k = key, v = value
+function evopush(k, v){
+    //document.getElementById("x").innerHTML += k + "\n";
+
+    if (!(k in evonew)) //start empty array for these evolutions
+        evonew[k] = [];
+    
+    let f; //used for evolution key
+    for (let i = 0; i < v.length; i++){
+        
+        f = Object.keys(v[i])[0];
+        evonew[k].push({
+            evolution: f, //this should always provide the numeric value
+            methods: v[i].method,
+            onegame: v[i].onegame
+        });
+
+        evopush(f, v[i][f]); //iterate to third stages (and beyond?)
+    }
 }
+
+
+for (k in evolutions){
+    evopush(k, evolutions[k]);
+}
+document.getElementById("x").innerHTML = JSON.stringify(evonew);
