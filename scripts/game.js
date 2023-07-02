@@ -1,37 +1,81 @@
 let engames = []; //enabled game list
+let itemcounter = {}; //item counter for this game
 var pagetitle = "Catch 'em All: ";
 
 // inline debugger
 function dbg(msg){
-    document.getElementById("debugbox").style.display = '';
-    document.getElementById("debughead").style.backgroundColor = '#F88';
-    document.getElementById("debug").innerHTML += "<br />" + msg;
-    console.log(msg);
+    if (msg === null){ //clear it instead
+        document.getElementById("debugbox").style.display = 'none';
+        document.getElementById("debug").innerHTML = "";
+    }else{
+        document.getElementById("debugbox").style.display = '';
+        document.getElementById("debug").innerHTML += "<br />" + msg;
+        console.log(msg);
+    }
 }
 
-//using evolutions `evo`, highlight item in `mons` with the specified class `cls`
-function highlightEvolutions(thismon, mons, cls){
-    for (let i = 0; i < evolutions[thismon].length; i++){
-        console.log(evolutions[thismon][i]);
-        if (evolutions[thismon][i].onegame === true){ //can evolve in one game
-            if (mons[evolutions[thismon][i].evolution - 1].classList.length == 1){
-                mons[evolutions[thismon][i].evolution - 1].classList.add(cls);
-                mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML = "Requires Evolution";
+//using evolutions `evo`, highlight item in `mons` with the specified class `cls`, plus item list and size of generation
+function highlightEvolutions(thismon, mons, cls, items, total){
+    if (evolutions[thismon].length > 0){
+        for (let i = 0; i < evolutions[thismon].length; i++){
+            //Skip Pokémon past this generation, and any with more classes that should've already been iterated
+            if (evolutions[thismon][i].evolution <= total && mons[evolutions[thismon][i].evolution - 1].classList.length == 1){ 
+                if (evolutions[thismon][i].onegame === true){ //can evolve in one game
+                    if (evolutions[thismon][i].methods.length > 1){
+                        //more than one method; not added yet
+                    }else{
+                        let k = Object.keys(evolutions[thismon][i].methods[0])[0];
+                        if (["level"].includes(k)){ //doable unlimited in most games
+                            mons[evolutions[thismon][i].evolution - 1].classList.add(cls);
+                            mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML = "Requires Evolution";
+                            //iterate by checking next evolution
+                            highlightEvolutions(evolutions[thismon][i].evolution, mons, cls, items, total);
+                        }else if (k == "item"){
+                            let uitem = evolutions[thismon][i].methods[0][k];
+                            console.log(items);
+                            /*if (!(uitem in itemcounter)) //how many of each item are needed
+                                itemcounter[uitem] = 1;
+                            else
+                                itemcounter[uitem]++;*/
+                            mons[evolutions[thismon][i].evolution - 1].setAttribute("itemNeeded", uitem);
+
+                            if (uitem in items){
+                                
+                                
+                                mons[evolutions[thismon][i].evolution - 1].classList.add("sLimited");
+                                mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML =
+                                    "Only " + items[uitem] + " " + uitem;
+                                //iterate by checking next evolution
+                                highlightEvolutions(evolutions[thismon][i].evolution, mons, "sLimited", items, total);
+                            }else{
+                                mons[evolutions[thismon][i].evolution - 1].classList.add(cls);
+                                mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML =
+                                    "Unlimited " + uitem;
+                                //iterate by checking next evolution
+                                highlightEvolutions(evolutions[thismon][i].evolution, mons, cls, items, total);
+                            }
+                        }
+                    }
+                    
+                    //ulc++; //unlimited
+                }else{ //mark as "trade" for now
+                    mons[evolutions[thismon][i].evolution - 1].classList.add("sTrade");
+                    mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML = "Requires Trading";
+                
+                    //iterate by checking next evolution
+                    highlightEvolutions(evolutions[thismon][i].evolution, mons, "sTrade", items, total);
+                    //trc++; //trade
+                }
+            }else{
+                if (evolutions[thismon][i].evolution > total){
+                    dbg("Pokédex number too high: #" + (evolutions[thismon][i].evolution));
+                }else if (mons[evolutions[thismon][i].evolution - 1].classList.contains("sUnlimitedEvolution")){
+                    dbg("Removing evolution requirement: #" + (evolutions[thismon][i].evolution - 1));
+                }else{
+                    dbg("Already iterated: #" + (evolutions[thismon][i].evolution));
+                }
             }
-            //iterate by checking next evolution
-            if (evolutions[evolutions[thismon][i].evolution].length > 0)
-                highlightEvolutions(evolutions[thismon][i].evolution, mons, cls);
-            //ulc++; //unlimited
-        }else{ //mark as "trade" for now
-            if (mons[evolutions[thismon][i].evolution - 1].classList.length == 1){
-                mons[evolutions[thismon][i].evolution - 1].classList.add("sTrade");
-                mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML = "Requires Trading";
-            }
-        
-            //iterate by checking next evolution
-            if (evolutions[evolutions[thismon][i].evolution].length > 0)
-                highlightEvolutions(evolutions[thismon][i].evolution, mons, "sTrade");
-            //trc++; //trade
+            
         }
     }
 }
@@ -40,7 +84,9 @@ function game(g){
     if (!!games[g]){
     //if (!!window[g]){
 
+        dbg(null); //clear debugger
         engames = [g];
+        //itemcounter = {};
         let x = document.querySelectorAll(".btndown");
         for (let w = 0; w < x.length; w++){
             x[w].classList.remove("btndown");
@@ -82,12 +128,18 @@ function game(g){
         }*/
 
         //let gm = window[g];
+
+        //Unlimited MUST be first!
         let gm = games[g];
         for (i = 0; i < gm.unlimited.length; i++){
-            m[gm.unlimited[i] - 1].classList.remove("sUnlimitedEvolution"); //remove evolution class if set earlier
-            m[gm.unlimited[i] - 1].classList.remove("sTrade"); //remove trade class if set earlier
-            m[gm.unlimited[i] - 1].classList.add("sUnlimited");
-            highlightEvolutions(gm.unlimited[i], m, "sUnlimitedEvolution");
+            if (m[gm.unlimited[i] - 1].classList.contains("sLimited"))
+                dbg("Removing limited class: #" + gm.unlimited[i]);
+            m[gm.unlimited[i] - 1].setAttribute("class", "mon sUnlimited"); //remove other classes if set earlier
+            m[gm.unlimited[i] - 1].removeAttribute("itemNeeded"); //no item needed if available in unlimited quantity
+            //m[gm.unlimited[i] - 1].classList.remove("sUnlimitedEvolution"); //remove evolution class if set earlier
+            //m[gm.unlimited[i] - 1].classList.remove("sTrade"); //remove trade class if set earlier
+            //m[gm.unlimited[i] - 1].classList.add("sUnlimited");
+            highlightEvolutions(gm.unlimited[i], m, "sUnlimitedEvolution", ("items" in gm ? gm.items : {}), gm.total);
             m[gm.unlimited[i] - 1].querySelector(".num").innerHTML = "Unlimited";
             ulc++;
         }
@@ -141,10 +193,10 @@ function game(g){
                 if (m[c - 1].classList.length == 1){ //not already on unlimited list
                     m[c - 1].classList.add("sLimited");
                     m[c - 1].querySelector(".num") . innerHTML = gm.limited[c];
-                    highlightEvolutions(c, m, "sLimitedEvolution");
+                    highlightEvolutions(c, m, "sLimitedEvolution", ("items" in gm ? gm.items : {}), gm.total);
                     lic++;
                 }else{
-                    dbg("Extraneous unlimited (also in limited list): #" + c);
+                    dbg("Extraneous unlimited (also in limited list) - this is OK: #" + c);
                     m[c - 1].querySelector(".num") . innerHTML = "Unlimited Via Evolution";
                     //This is OK because an unlimited number are available via evolution, but a limited number can be caught directly
                 }
@@ -220,8 +272,6 @@ function game(g){
             }else if(m[i].classList.length > 2){ //too many classes on this mon
                 console.log(m[i].classList);
                 dbg("Too many classes: #" + (i + 1) + " (" + m[i].classList.toString() + ")");
-            }else if(m[i].classList.contains("sUnlimitedEvolution")){
-                //m[i].querySelector(".num").innerHTML = "Requires Evolution";
             }
         }
 
@@ -233,19 +283,53 @@ function game(g){
                 document.getElementById("genhead" + i).style.display = "";
         }
 
-
-        document.getElementById("cUnlimited").innerHTML =
-            document.querySelectorAll(".mon.sUnlimited").length + " + " +
-            document.querySelectorAll(".mon.sUnlimitedEvolution:not(.sFuture)").length;
-        document.getElementById("cLimited").innerHTML =
-            document.querySelectorAll(".mon.sLimited").length + " + " +
+        //counters
+        ulc = document.querySelectorAll(".mon.sUnlimited").length +
+            document.querySelectorAll(".mon.sUnlimitedEvolution:not(.sFuture)").length
+        uli = document.querySelectorAll(".mon.sLimited").length +
             document.querySelectorAll(".mon.sLimitedEvolution:not(.sFuture)").length;
+
+        console.log(`unlimited: ${uli}, chyes: ${chyes}, chno: ${chno}`);
+
+        itemcounter = {};
+        let itNeeded = document.querySelectorAll(".mon[itemNeeded]");
+        for (let j = 0; j < itNeeded.length; j++){
+            if (itNeeded[j].getAttribute("itemNeeded") in itemcounter)
+                itemcounter[itNeeded[j].getAttribute("itemNeeded")]++;
+            else
+                itemcounter[itNeeded[j].getAttribute("itemNeeded")] = 1;
+        }
+        document.getElementById("itemsNeeded").innerHTML = "";
+        let ics = Object.keys(itemcounter).sort();
+        let avl;
+        for (let k of ics){
+            document.getElementById("itemsNeeded").innerHTML += `<br /><b>${k}:</b> ${itemcounter[k]} needed (${(k in gm.items ? gm.items[k] : "unlimited")} available)`;
+            if (k in gm.items && itemcounter[k] > gm.items[k]){
+                dbg(`Not enough items: ${k}. ${gm.items[k]} available but ${itemcounter[k]} needed.`);
+                
+                //not enough items, so change these to choices instead of fully available
+                itNeeded = document.querySelectorAll('.mon[itemNeeded="'+k+'"]');
+                uli -= itNeeded.length;
+                chyes += gm.items[k];
+                chno += (itemcounter[k] - gm.items[k]);
+                for (let p = 0; p < itNeeded.length; p++){
+                    itNeeded[p].setAttribute("class", "mon sChoice");
+                }
+            }
+        }
+        
+        console.log(`unlimited: ${uli}, chyes: ${chyes}, chno: ${chno}`);
+
+        //display counters on screen
+        document.getElementById("cUnlimited").innerHTML = ulc;
+        document.getElementById("cLimited").innerHTML = uli;
         document.getElementById("cChoice").innerHTML = chyes + "/" + (chno + chyes);
         document.getElementById("cTrade").innerHTML =
             document.querySelectorAll(".mon.sTrade:not(.sFuture)").length;
         document.getElementById("cUnavailable").innerHTML =
             document.querySelectorAll(".mon.sUnavailable").length;
         let tot = ulc + lic + chyes + (engames.length > 1 ? trc : 0); //logic must be more complex for trades
+
         document.getElementById("cTotal").innerHTML = gm.total;
         document.getElementById("cAvailable").innerHTML = tot;
         document.getElementById("cTotalUnavailable").innerHTML = gm.total - tot;

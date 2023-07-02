@@ -55,10 +55,11 @@
         <div class="sUnavailable">Unavailable:<p id="cUnavailable">0</p></div>
     </div>
 
-    <p><b>Total (<span id="cTotal">0</span>)</b>
-        <br />Available: <span id="cAvailable">0</span><br />
-        Unavailable: <span id="cTotalUnavailable">0</span>
+    <p><u>Total (<span id="cTotal">0</span>)</u>
+        <br /><b>Available:</b> <span id="cAvailable">0</span><br />
+        <b>Unavailable:</b> <span id="cTotalUnavailable">0</span>
     </p>
+    <p><u>Items Needed:</u><span id="itemsNeeded"></span></p>
 
     <details>
         <summary>Explanation</summary>
@@ -82,7 +83,7 @@
 
     <!-- inline debugging with notification -->
     <details id="debugbox" style="display: none;">
-        <summary id="debughead">Debug</summary>
+        <summary id="debughead" style="background-color: #F88;">Debug</summary>
         <div id="debug"></div>
     </details> 
 
