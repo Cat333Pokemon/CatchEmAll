@@ -15,6 +15,7 @@ for (let i = 1; i < pokemonlist.length; i++){
     let ne = document.createElement("div");
     let ni = document.createElement("img");
     ne.className = "mon"
+    ne.title = i; //this should be commented out when done because it gets in the way
     ni.src = "images/pkm/" + i + ".png";
     ni.alt = pokemonlist[i];
     ne.innerHTML = '<div class="check">&#10004;</div>' + pokemonlist[i] + "<br />";

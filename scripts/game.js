@@ -1,21 +1,32 @@
 let engames = []; //enabled game list
 var pagetitle = "Catch 'em All: ";
 
+// inline debugger
+function dbg(msg){
+    document.getElementById("debugbox").style.display = '';
+    document.getElementById("debughead").style.backgroundColor = '#F88';
+    document.getElementById("debug").innerHTML += "<br />" + msg;
+    console.log(msg);
+}
+
 //using evolutions `evo`, highlight item in `mons` with the specified class `cls`
 function highlightEvolutions(thismon, mons, cls){
     for (let i = 0; i < evolutions[thismon].length; i++){
         console.log(evolutions[thismon][i]);
         if (evolutions[thismon][i].onegame === true){ //can evolve in one game
-            if (mons[evolutions[thismon][i].evolution - 1].classList.length == 1)
+            if (mons[evolutions[thismon][i].evolution - 1].classList.length == 1){
                 mons[evolutions[thismon][i].evolution - 1].classList.add(cls);
-        
+                mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML = "Requires Evolution";
+            }
             //iterate by checking next evolution
             if (evolutions[evolutions[thismon][i].evolution].length > 0)
                 highlightEvolutions(evolutions[thismon][i].evolution, mons, cls);
             //ulc++; //unlimited
         }else{ //mark as "trade" for now
-            if (mons[evolutions[thismon][i].evolution - 1].classList.length == 1)
+            if (mons[evolutions[thismon][i].evolution - 1].classList.length == 1){
                 mons[evolutions[thismon][i].evolution - 1].classList.add("sTrade");
+                mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML = "Requires Trading";
+            }
         
             //iterate by checking next evolution
             if (evolutions[evolutions[thismon][i].evolution].length > 0)
@@ -74,8 +85,10 @@ function game(g){
         let gm = games[g];
         for (i = 0; i < gm.unlimited.length; i++){
             m[gm.unlimited[i] - 1].classList.remove("sUnlimitedEvolution"); //remove evolution class if set earlier
+            m[gm.unlimited[i] - 1].classList.remove("sTrade"); //remove trade class if set earlier
             m[gm.unlimited[i] - 1].classList.add("sUnlimited");
             highlightEvolutions(gm.unlimited[i], m, "sUnlimitedEvolution");
+            m[gm.unlimited[i] - 1].querySelector(".num").innerHTML = "Unlimited";
             ulc++;
         }
 
@@ -125,10 +138,16 @@ function game(g){
 
         if (!!gm.limited){ //order is these are important for classes
             for (let c in gm.limited){
-                m[c - 1].classList.add("sLimited");
-                m[c - 1].querySelector(".num") . innerHTML = gm.limited[c];
-                highlightEvolutions(c, m, "sLimitedEvolution");
-                lic++;
+                if (m[c - 1].classList.length == 1){ //not already on unlimited list
+                    m[c - 1].classList.add("sLimited");
+                    m[c - 1].querySelector(".num") . innerHTML = gm.limited[c];
+                    highlightEvolutions(c, m, "sLimitedEvolution");
+                    lic++;
+                }else{
+                    dbg("Extraneous unlimited (also in limited list): #" + c);
+                    m[c - 1].querySelector(".num") . innerHTML = "Unlimited Via Evolution";
+                    //This is OK because an unlimited number are available via evolution, but a limited number can be caught directly
+                }
             }
         }
         if (!!gm.trade){
@@ -157,6 +176,9 @@ function game(g){
             for (let c in gm.choices){
                 for (let j = 0; j < gm.choices[c].length; j++){
                     for (i = 0; i < gm.choices[c][j].length; i++){
+                        //This should not be populated for evolutions of unlimited, but may be for limited
+                        m[gm.choices[c][j][i] - 1].classList.remove("sLimitedEvolution");
+
                         if (i > 0){ //evolution of choice
                             m[gm.choices[c][j][i] - 1].classList.add("sChoiceEvolution");
                             m[gm.choices[c][j][i] - 1].querySelector(".num").innerHTML = "Evolves from<br />" + c;
@@ -187,13 +209,19 @@ function game(g){
                 m[i].querySelector(".num").innerHTML = "Unavailable";
             }*/
 
+        //set unavailable, and set footers instead of Pokédex number
         for (i = 0; i < m.length; i++){
-            if (m[i].getAttribute("class") === "mon" && i < gm.total){ //has not been changed
+            if (i >= gm.total){
+                m[i].classList.add("sFuture"); //hide later Pokémon regardless of what happens below
+            }else if (m[i].classList.length == 1 && m[i].getAttribute("class") === "mon" && i < gm.total){ //has not been changed
                 m[i].classList.add("sUnavailable");
-                //m[i].querySelector(".num").innerHTML = "Unavailable";
+                m[i].querySelector(".num").innerHTML = "Unavailable";
                 unc++;
-            }else if (i >= gm.total){
-                m[i].classList.add("sFuture"); //hide later Pokémon
+            }else if(m[i].classList.length > 2){ //too many classes on this mon
+                console.log(m[i].classList);
+                dbg("Too many classes: #" + (i + 1) + " (" + m[i].classList.toString() + ")");
+            }else if(m[i].classList.contains("sUnlimitedEvolution")){
+                //m[i].querySelector(".num").innerHTML = "Requires Evolution";
             }
         }
 
@@ -204,6 +232,7 @@ function game(g){
             else
                 document.getElementById("genhead" + i).style.display = "";
         }
+
 
         document.getElementById("cUnlimited").innerHTML =
             document.querySelectorAll(".mon.sUnlimited").length + " + " +
