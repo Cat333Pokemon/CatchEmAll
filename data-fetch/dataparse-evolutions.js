@@ -5517,7 +5517,7 @@ function evopush(k, v){
         f = Object.keys(v[i])[0];
         evonew[k].push({
             evolution: f, //this should always provide the numeric value
-            methods: v[i].method,
+            method: ("method" in v[i] ? (v[i].method.length > 1 ? v[i].method : v[i].method[0]) : {}),
             onegame: v[i].onegame
         });
 

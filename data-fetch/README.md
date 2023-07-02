@@ -14,6 +14,6 @@ The contents of this folder are not needed for the application to function. Inst
 
 5. Navigate to the server in your browser to perform the parsing. Open the console log with F12 to see the current status. When finished, the parsed object should be printed on your screen.
 
-6. Manipulate the object as needed. For instance, the evolution chains contain a lot of extraneous information not used by this application.
+6. Manipulate the object as needed. For instance, the evolution chains contain a lot of extraneous information not used by this application. I trimmed down the methods afterwards to only have one per Pokémon then moved that data to separate objects.
 
 7. Shut down the local server with `Ctrl-C`.
