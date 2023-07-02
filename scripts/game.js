@@ -21,17 +21,16 @@ function highlightEvolutions(thismon, mons, cls, items, total){
             //Skip Pokémon past this generation, and any with more classes that should've already been iterated
             if (evolutions[thismon][i].evolution <= total && mons[evolutions[thismon][i].evolution - 1].classList.length == 1){ 
                 if (evolutions[thismon][i].onegame === true){ //can evolve in one game
-                    if (evolutions[thismon][i].methods.length > 1){
-                        //more than one method; not added yet
-                    }else{
-                        let k = Object.keys(evolutions[thismon][i].methods[0])[0];
-                        if (["level"].includes(k)){ //doable unlimited in most games
+                    for (let w = 0; w < evolutions[thismon][i].methods.length; w++){
+                        let k = Object.keys(evolutions[thismon][i].methods[w])[0];
+                        if (["level"].includes(k)){ //doable unlimited in all games
                             mons[evolutions[thismon][i].evolution - 1].classList.add(cls);
                             mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML = "Requires Evolution";
                             //iterate by checking next evolution
                             highlightEvolutions(evolutions[thismon][i].evolution, mons, cls, items, total);
+                            break; //don't check other methods
                         }else if (k == "item"){
-                            let uitem = evolutions[thismon][i].methods[0][k];
+                            let uitem = evolutions[thismon][i].methods[w][k];
                             console.log(items);
                             /*if (!(uitem in itemcounter)) //how many of each item are needed
                                 itemcounter[uitem] = 1;
@@ -40,8 +39,7 @@ function highlightEvolutions(thismon, mons, cls, items, total){
                             mons[evolutions[thismon][i].evolution - 1].setAttribute("itemNeeded", uitem);
 
                             if (uitem in items){
-                                
-                                
+                                //This could potentially be moved to the item checking at the bottom of game()
                                 mons[evolutions[thismon][i].evolution - 1].classList.add("sLimited");
                                 mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML =
                                     "Only " + items[uitem] + " " + uitem;
@@ -115,6 +113,12 @@ function game(g){
             mu.innerHTML = mu.getAttribute("dt");
             mu = m[i].getElementsByClassName('check')[0]; //remove checkmark
             mu.style.display = "none";
+        }
+
+        //remove all items needed
+        let itNeeded = document.querySelectorAll(".mon[itemNeeded]");
+        for (let j = 0; j < itNeeded.length; j++){
+            itNeeded[j].removeAttribute("itemNeeded");
         }
 
         /*let gm = window[g.split("_")[0]];
@@ -289,10 +293,12 @@ function game(g){
         uli = document.querySelectorAll(".mon.sLimited").length +
             document.querySelectorAll(".mon.sLimitedEvolution:not(.sFuture)").length;
 
-        console.log(`unlimited: ${uli}, chyes: ${chyes}, chno: ${chno}`);
+        //console.log(`limited: ${uli}, chyes: ${chyes}, chno: ${chno}`);
 
+
+        //Item checking should be handled here
         itemcounter = {};
-        let itNeeded = document.querySelectorAll(".mon[itemNeeded]");
+        itNeeded = document.querySelectorAll(".mon[itemNeeded]");
         for (let j = 0; j < itNeeded.length; j++){
             if (itNeeded[j].getAttribute("itemNeeded") in itemcounter)
                 itemcounter[itNeeded[j].getAttribute("itemNeeded")]++;
@@ -302,23 +308,24 @@ function game(g){
         document.getElementById("itemsNeeded").innerHTML = "";
         let ics = Object.keys(itemcounter).sort();
         let avl;
+        let gt = ("items" in gm ? gm.items : {});
         for (let k of ics){
-            document.getElementById("itemsNeeded").innerHTML += `<br /><b>${k}:</b> ${itemcounter[k]} needed (${(k in gm.items ? gm.items[k] : "unlimited")} available)`;
-            if (k in gm.items && itemcounter[k] > gm.items[k]){
-                dbg(`Not enough items: ${k}. ${gm.items[k]} available but ${itemcounter[k]} needed.`);
+            document.getElementById("itemsNeeded").innerHTML += `<br /><b>${k}:</b> ${itemcounter[k]} needed (${(k in gt ? gt[k] : "unlimited")} available)`;
+            if (k in gt && itemcounter[k] > gt[k]){
+                dbg(`Not enough items: ${k}. ${gt[k]} available but ${itemcounter[k]} needed.`);
                 
                 //not enough items, so change these to choices instead of fully available
                 itNeeded = document.querySelectorAll('.mon[itemNeeded="'+k+'"]');
                 uli -= itNeeded.length;
-                chyes += gm.items[k];
-                chno += (itemcounter[k] - gm.items[k]);
+                chyes += gt[k];
+                chno += (itemcounter[k] - gt[k]);
                 for (let p = 0; p < itNeeded.length; p++){
                     itNeeded[p].setAttribute("class", "mon sChoice");
                 }
             }
         }
         
-        console.log(`unlimited: ${uli}, chyes: ${chyes}, chno: ${chno}`);
+        //console.log(`limited: ${uli}, chyes: ${chyes}, chno: ${chno}`);
 
         //display counters on screen
         document.getElementById("cUnlimited").innerHTML = ulc;
