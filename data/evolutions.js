@@ -1,116 +1,116 @@
 // Evolution methods changed in Generation 7
 var evolutions_7 = {
-"19": [
-    {
-    "evolution": "20",
-    "method": 
+    "19": [
         {
-        "level_time": {
-            "level": 20,
-            "time_of_day": "night"
+            "evolution": "20",
+            "method":
+            {
+                "level_time": {
+                    "level": 20,
+                    "time_of_day": "night"
+                }
+            },
+            "onegame": true
         }
+    ],
+    "27": [
+        {
+            "evolution": "28",
+            "method":
+            {
+                "item": "ice-stone"
+            }
+            ,
+            "onegame": true
+        }
+    ],
+    "37": [
+        {
+            "evolution": "38",
+            "method":
+            {
+                "item": "ice-stone"
+            }
+            ,
+            "onegame": true
+        }
+    ],
+    "52": [
+        {
+            "evolution": "53",
+            "method":
+            {
+                "level_happiness": 160
+            }
+            ,
+            "onegame": true
+        }
+    ],
+    "79": [
+        {
+            "evolution": "80",
+            "method":
+            {
+                "item": "galarica-cuff"
+            }
+            ,
+            "onegame": true
         },
-    "onegame": true
-    }
-],
-"27": [
-    {
-    "evolution": "28",
-    "method": 
         {
-        "item": "ice-stone"
+            "evolution": "199",
+            "method":
+            {
+                "item": "galarica-wreath"
+            }
+            ,
+            "onegame": true
         }
-    ,
-    "onegame": true
-    }
-],
-"37": [
-    {
-    "evolution": "38",
-    "method": 
+    ],
+    "104": [
         {
-        "item": "ice-stone"
+            "evolution": "105",
+            "method":
+            {
+                "level_time": {
+                    "level": 28,
+                    "time_of_day": "night"
+                }
+            }
+            ,
+            "onegame": true
         }
-    ,
-    "onegame": true
-    }
-],
-"52": [
-    {
-    "evolution": "53",
-    "method": 
+    ],
+    "133": [
         {
-        "level_happiness": 160
-        }
-    ,
-    "onegame": true
-    }
-],
-"79": [
-    {
-    "evolution": "80",
-    "method": 
+            "evolution": "470",
+            "method":
+            {
+                "item": "leaf-stone"
+            }
+            ,
+            "onegame": true
+        },
         {
-        "item": "galarica-cuff"
+            "evolution": "471",
+            "method":
+            {
+                "item": "ice-stone"
+            }
+            ,
+            "onegame": true
         }
-    ,
-    "onegame": true
-    },
-    {
-    "evolution": "199",
-    "method": 
+    ],
+    "554": [
         {
-        "item": "galarica-wreath"
+            "evolution": "555",
+            "method":
+            {
+                "item": "ice-stone"
+            }
+            ,
+            "onegame": true
         }
-    ,
-    "onegame": true
-    }
-],
-"104": [
-    {
-    "evolution": "105",
-    "method": 
-        {
-        "level_time": {
-            "level": 28,
-            "time_of_day": "night"
-        }
-        }
-    ,
-    "onegame": true
-    }
-],
-"133": [
-    {
-    "evolution": "470",
-    "method": 
-        {
-        "item": "leaf-stone"
-        }
-    ,
-    "onegame": true
-    },
-    {
-    "evolution": "471",
-    "method": 
-        {
-        "item": "ice-stone"
-        }
-    ,
-    "onegame": true
-    }
-],
-"554": [
-    {
-    "evolution": "555",
-    "method": 
-        {
-        "item": "ice-stone"
-        }
-    ,
-    "onegame": true
-    }
-],
+    ],
 };
 
 //methods that changed in Gen 8
@@ -148,7 +148,7 @@ var evolutions_8 = {
         "onegame": "unknown"
         }
     ],
-}
+};
 
 var evolutions_9 = {
     "739": [
@@ -208,805 +208,672 @@ var evolutions_by_form = {
 };
 
 var evolutions_feebas =
-    {
+{
     "evolution": "350",
     "methods": [
         {
-        "level_beauty": {
-            "beauty": 171
-        }
+            "level_beauty": {
+                "beauty": 171
+            }
         },
         {
-        "trade_with_item": "prism-scale"
+            "trade_with_item": "prism-scale"
         },
         {
-        "level_beauty": {
-            "beauty": 170
-        }
+            "level_beauty": {
+                "beauty": 170
+            }
         }
     ],
     "onegame": "variable"
-    };
+};
 
 var evolutions = {
     "1": [
         {
             "evolution": "2",
-            "methods": [
-                {
-                    "level": 16
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 16
+            }
         }
     ],
     "2": [
         {
             "evolution": "3",
-            "methods": [
-                {
-                    "level": 32
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 32
+            }
         }
     ],
     "3": [],
     "4": [
         {
             "evolution": "5",
-            "methods": [
-                {
-                    "level": 16
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 16
+            }
         }
     ],
     "5": [
         {
             "evolution": "6",
-            "methods": [
-                {
-                    "level": 36
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 36
+            }
         }
     ],
     "6": [],
     "7": [
         {
             "evolution": "8",
-            "methods": [
-                {
-                    "level": 16
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 16
+            }
         }
     ],
     "8": [
         {
             "evolution": "9",
-            "methods": [
-                {
-                    "level": 36
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 36
+            }
         }
     ],
     "9": [],
     "10": [
         {
             "evolution": "11",
-            "methods": [
-                {
-                    "level": 7
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 7
+            }
         }
     ],
     "11": [
         {
             "evolution": "12",
-            "methods": [
-                {
-                    "level": 10
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 10
+            }
         }
     ],
     "12": [],
     "13": [
         {
             "evolution": "14",
-            "methods": [
-                {
-                    "level": 7
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 7
+            }
         }
     ],
     "14": [
         {
             "evolution": "15",
-            "methods": [
-                {
-                    "level": 10
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 10
+            }
         }
     ],
     "15": [],
     "16": [
         {
             "evolution": "17",
-            "methods": [
-                {
-                    "level": 18
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 18
+            }
         }
     ],
     "17": [
         {
             "evolution": "18",
-            "methods": [
-                {
-                    "level": 36
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 36
+            }
         }
     ],
     "18": [],
     "19": [
         {
             "evolution": "20",
-            "methods": [
-                {
-                    "level": 20
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 20
+            }
         }
     ],
     "20": [],
     "21": [
         {
             "evolution": "22",
-            "methods": [
-                {
-                    "level": 20
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 20
+            }
         }
     ],
     "22": [],
     "23": [
         {
             "evolution": "24",
-            "methods": [
-                {
-                    "level": 22
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 22
+            }
         }
     ],
     "24": [],
     "25": [
         {
             "evolution": "26",
-            "methods": [
-                {
-                    "item": "thunder-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "thunder-stone"
+            }
         }
     ],
     "26": [],
     "27": [
         {
             "evolution": "28",
-            "methods": [
-                {
-                    "level": 22
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 22
+            }
         }
     ],
     "28": [],
     "29": [
         {
             "evolution": "30",
-            "methods": [
-                {
-                    "level": 16
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 16
+            }
         }
     ],
     "30": [
         {
             "evolution": "31",
-            "methods": [
-                {
-                    "item": "moon-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "moon-stone"
+            }
         }
     ],
     "31": [],
     "32": [
         {
             "evolution": "33",
-            "methods": [
-                {
-                    "level": 16
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 16
+            }
         }
     ],
     "33": [
         {
             "evolution": "34",
-            "methods": [
-                {
-                    "item": "moon-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "moon-stone"
+            }
         }
     ],
     "34": [],
     "35": [
         {
             "evolution": "36",
-            "methods": [
-                {
-                    "item": "moon-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "moon-stone"
+            }
         }
     ],
     "36": [],
     "37": [
         {
             "evolution": "38",
-            "methods": [
-                {
-                    "item": "fire-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "fire-stone"
+            }
         }
     ],
     "38": [],
     "39": [
         {
             "evolution": "40",
-            "methods": [
-                {
-                    "item": "moon-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "moon-stone"
+            }
         }
     ],
     "40": [],
     "41": [
         {
             "evolution": "42",
-            "methods": [
-                {
-                    "level": 22
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 22
+            }
         }
     ],
     "42": [
         {
             "evolution": "169",
-            "methods": [
-                {
-                    "level_happiness": 160
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_happiness": 160
+            }
         }
     ],
     "43": [
         {
             "evolution": "44",
-            "methods": [
-                {
-                    "level": 21
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 21
+            }
         }
     ],
     "44": [
         {
             "evolution": "45",
-            "methods": [
-                {
-                    "item": "leaf-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "leaf-stone"
+            }
         },
         {
             "evolution": "182",
-            "methods": [
-                {
-                    "item": "sun-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "sun-stone"
+            }
         }
     ],
     "45": [],
     "46": [
         {
             "evolution": "47",
-            "methods": [
-                {
-                    "level": 24
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 24
+            }
         }
     ],
     "47": [],
     "48": [
         {
             "evolution": "49",
-            "methods": [
-                {
-                    "level": 31
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 31
+            }
         }
     ],
     "49": [],
     "50": [
         {
             "evolution": "51",
-            "methods": [
-                {
-                    "level": 26
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 26
+            }
         }
     ],
     "51": [],
     "52": [
         {
             "evolution": "53",
-            "methods": [
-                {
-                    "level": 28
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 28
+            }
         },
         {
             "evolution": "863",
-            "methods": [
-                {
-                    "level": 28
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 28
+            }
         }
     ],
     "53": [],
     "54": [
         {
             "evolution": "55",
-            "methods": [
-                {
-                    "level": 33
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 33
+            }
         }
     ],
     "55": [],
     "56": [
         {
             "evolution": "57",
-            "methods": [
-                {
-                    "level": 28
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 28
+            }
         }
     ],
     "57": [
         {
             "evolution": "979",
-            "methods": [
-                {
-                    "move_special": {"move": "rage-fist", "action": "use-20-times"}
+            "onegame": true,
+            "method": {
+                "move_special": {
+                    "move": "rage-fist",
+                    "action": "use-20-times"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "58": [
         {
             "evolution": "59",
-            "methods": [
-                {
-                    "item": "fire-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "fire-stone"
+            }
         }
     ],
     "59": [],
     "60": [
         {
             "evolution": "61",
-            "methods": [
-                {
-                    "level": 25
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 25
+            }
         }
     ],
     "61": [
         {
             "evolution": "62",
-            "methods": [
-                {
-                    "item": "water-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "water-stone"
+            }
         },
         {
             "evolution": "186",
-            "methods": [
-                {
-                    "trade_with_item": "kings-rock"
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade_with_item": "kings-rock"
+            }
         }
     ],
     "62": [],
     "63": [
         {
             "evolution": "64",
-            "methods": [
-                {
-                    "level": 16
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 16
+            }
         }
     ],
     "64": [
         {
             "evolution": "65",
-            "methods": [
-                {
-                    "trade": true
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade": true
+            }
         }
     ],
     "65": [],
     "66": [
         {
             "evolution": "67",
-            "methods": [
-                {
-                    "level": 28
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 28
+            }
         }
     ],
     "67": [
         {
             "evolution": "68",
-            "methods": [
-                {
-                    "trade": true
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade": true
+            }
         }
     ],
     "68": [],
     "69": [
         {
             "evolution": "70",
-            "methods": [
-                {
-                    "level": 21
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 21
+            }
         }
     ],
     "70": [
         {
             "evolution": "71",
-            "methods": [
-                {
-                    "item": "leaf-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "leaf-stone"
+            }
         }
     ],
     "71": [],
     "72": [
         {
             "evolution": "73",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "73": [],
     "74": [
         {
             "evolution": "75",
-            "methods": [
-                {
-                    "level": 25
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 25
+            }
         }
     ],
     "75": [
         {
             "evolution": "76",
-            "methods": [
-                {
-                    "trade": true
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade": true
+            }
         }
     ],
     "76": [],
     "77": [
         {
             "evolution": "78",
-            "methods": [
-                {
-                    "level": 40
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 40
+            }
         }
     ],
     "78": [],
     "79": [
         {
             "evolution": "80",
-            "methods": [
-                {
-                    "level": 37
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 37
+            }
         },
         {
             "evolution": "199",
-            "methods": [
-                {
-                    "trade_with_item": "kings-rock"
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade_with_item": "kings-rock"
+            }
         }
     ],
     "80": [],
     "81": [
         {
             "evolution": "82",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "82": [
         {
             "evolution": "462",
-            "methods": [
-                {
-                    "level_location": "magnetic-field"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_location": "magnetic-field"
+            }
         }
     ],
     "83": [
         {
             "evolution": "865",
-            "methods": [
-                {
-                    "battle": "three-critical-hits"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "battle": "three-critical-hits"
+            }
         }
     ],
     "84": [
         {
             "evolution": "85",
-            "methods": [
-                {
-                    "level": 31
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 31
+            }
         }
     ],
     "85": [],
     "86": [
         {
             "evolution": "87",
-            "methods": [
-                {
-                    "level": 34
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 34
+            }
         }
     ],
     "87": [],
     "88": [
         {
             "evolution": "89",
-            "methods": [
-                {
-                    "level": 38
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 38
+            }
         }
     ],
     "89": [],
     "90": [
         {
             "evolution": "91",
-            "methods": [
-                {
-                    "item": "water-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "water-stone"
+            }
         }
     ],
     "91": [],
     "92": [
         {
             "evolution": "93",
-            "methods": [
-                {
-                    "level": 25
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 25
+            }
         }
     ],
     "93": [
         {
             "evolution": "94",
-            "methods": [
-                {
-                    "trade": true
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade": true
+            }
         }
     ],
     "94": [],
     "95": [
         {
             "evolution": "208",
-            "methods": [
-                {
-                    "trade_with_item": "metal-coat"
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade_with_item": "metal-coat"
+            }
         }
     ],
     "96": [
         {
             "evolution": "97",
-            "methods": [
-                {
-                    "level": 26
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 26
+            }
         }
     ],
     "97": [],
     "98": [
         {
             "evolution": "99",
-            "methods": [
-                {
-                    "level": 28
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 28
+            }
         }
     ],
     "99": [],
     "100": [
         {
             "evolution": "101",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "101": [],
     "102": [
         {
             "evolution": "103",
-            "methods": [
-                {
-                    "item": "leaf-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "leaf-stone"
+            }
         }
     ],
     "103": [],
     "104": [
         {
             "evolution": "105",
-            "methods": [
-                {
-                    "level": 28
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 28
+            }
         }
     ],
     "105": [],
@@ -1015,169 +882,139 @@ var evolutions = {
     "108": [
         {
             "evolution": "463",
-            "methods": [
-                {
-                    "level_move": "rollout"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_move": "rollout"
+            }
         }
     ],
     "109": [
         {
             "evolution": "110",
-            "methods": [
-                {
-                    "level": 35
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 35
+            }
         }
     ],
     "110": [],
     "111": [
         {
             "evolution": "112",
-            "methods": [
-                {
-                    "level": 42
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 42
+            }
         }
     ],
     "112": [
         {
             "evolution": "464",
-            "methods": [
-                {
-                    "trade_with_item": "protector"
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade_with_item": "protector"
+            }
         }
     ],
     "113": [
         {
             "evolution": "242",
-            "methods": [
-                {
-                    "level_happiness": 160
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_happiness": 160
+            }
         }
     ],
     "114": [
         {
             "evolution": "465",
-            "methods": [
-                {
-                    "level_move": "ancient-power"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_move": "ancient-power"
+            }
         }
     ],
     "115": [],
     "116": [
         {
             "evolution": "117",
-            "methods": [
-                {
-                    "level": 32
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 32
+            }
         }
     ],
     "117": [
         {
             "evolution": "230",
-            "methods": [
-                {
-                    "trade_with_item": "dragon-scale"
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade_with_item": "dragon-scale"
+            }
         }
     ],
     "118": [
         {
             "evolution": "119",
-            "methods": [
-                {
-                    "level": 33
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 33
+            }
         }
     ],
     "119": [],
     "120": [
         {
             "evolution": "121",
-            "methods": [
-                {
-                    "item": "water-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "water-stone"
+            }
         }
     ],
     "121": [],
     "122": [
         {
             "evolution": "866",
-            "methods": [
-                {
-                    "level": 42
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 42
+            }
         }
     ],
     "123": [
         {
             "evolution": "212",
-            "methods": [
-                {
-                    "trade_with_item": "metal-coat"
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade_with_item": "metal-coat"
+            }
         },
         {
             "evolution": "900",
-            "methods": [
-                {
-                    "item": "black-augurite"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "black-augurite"
+            }
         }
     ],
     "124": [],
     "125": [
         {
             "evolution": "466",
-            "methods": [
-                {
-                    "trade_with_item": "electirizer"
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade_with_item": "electirizer"
+            }
         }
     ],
     "126": [
         {
             "evolution": "467",
-            "methods": [
-                {
-                    "trade_with_item": "magmarizer"
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade_with_item": "magmarizer"
+            }
         }
     ],
     "127": [],
@@ -1185,12 +1022,10 @@ var evolutions = {
     "129": [
         {
             "evolution": "130",
-            "methods": [
-                {
-                    "level": 20
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 20
+            }
         }
     ],
     "130": [],
@@ -1199,84 +1034,68 @@ var evolutions = {
     "133": [
         {
             "evolution": "134",
-            "methods": [
-                {
-                    "item": "water-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "water-stone"
+            }
         },
         {
             "evolution": "135",
-            "methods": [
-                {
-                    "item": "thunder-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "thunder-stone"
+            }
         },
         {
             "evolution": "136",
-            "methods": [
-                {
-                    "item": "fire-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "fire-stone"
+            }
         },
         {
             "evolution": "196",
-            "methods": [
-                {
-                    "level_happiness_time": {
-                        "happiness": 160,
-                        "time_of_day": "day"
-                    }
+            "onegame": true,
+            "method": {
+                "level_happiness_time": {
+                    "happiness": 160,
+                    "time_of_day": "day"
                 }
-            ],
-            "onegame": true
+            }
         },
         {
             "evolution": "197",
-            "methods": [
-                {
-                    "level_happiness_time": {
-                        "happiness": 160,
-                        "time_of_day": "night"
-                    }
+            "onegame": true,
+            "method": {
+                "level_happiness_time": {
+                    "happiness": 160,
+                    "time_of_day": "night"
                 }
-            ],
-            "onegame": true
+            }
         },
         {
             "evolution": "470",
-            "methods": [
-                {
-                    "level_location": "moss-rock"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_location": "moss-rock"
+            }
         },
         {
             "evolution": "471",
-            "methods": [
-                {
-                    "level_location": "ice-rock"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_location": "ice-rock"
+            }
         },
         {
             "evolution": "700",
-            "methods": [
-                {
-                    "level_affection_move_type": {
-                        "affection": 2,
-                        "move_type": "fairy"
-                    }
+            "onegame": true,
+            "method": {
+                "level_affection_move_type": {
+                    "affection": 2,
+                    "move_type": "fairy"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "134": [],
@@ -1285,35 +1104,29 @@ var evolutions = {
     "137": [
         {
             "evolution": "233",
-            "methods": [
-                {
-                    "trade_with_item": "up-grade"
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade_with_item": "up-grade"
+            }
         }
     ],
     "138": [
         {
             "evolution": "139",
-            "methods": [
-                {
-                    "level": 40
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 40
+            }
         }
     ],
     "139": [],
     "140": [
         {
             "evolution": "141",
-            "methods": [
-                {
-                    "level": 40
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 40
+            }
         }
     ],
     "141": [],
@@ -1325,23 +1138,19 @@ var evolutions = {
     "147": [
         {
             "evolution": "148",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "148": [
         {
             "evolution": "149",
-            "methods": [
-                {
-                    "level": 55
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 55
+            }
         }
     ],
     "149": [],
@@ -1350,117 +1159,97 @@ var evolutions = {
     "152": [
         {
             "evolution": "153",
-            "methods": [
-                {
-                    "level": 16
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 16
+            }
         }
     ],
     "153": [
         {
             "evolution": "154",
-            "methods": [
-                {
-                    "level": 32
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 32
+            }
         }
     ],
     "154": [],
     "155": [
         {
             "evolution": "156",
-            "methods": [
-                {
-                    "level": 14
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 14
+            }
         }
     ],
     "156": [
         {
             "evolution": "157",
-            "methods": [
-                {
-                    "level": 36
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 36
+            }
         }
     ],
     "157": [],
     "158": [
         {
             "evolution": "159",
-            "methods": [
-                {
-                    "level": 18
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 18
+            }
         }
     ],
     "159": [
         {
             "evolution": "160",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "160": [],
     "161": [
         {
             "evolution": "162",
-            "methods": [
-                {
-                    "level": 15
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 15
+            }
         }
     ],
     "162": [],
     "163": [
         {
             "evolution": "164",
-            "methods": [
-                {
-                    "level": 20
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 20
+            }
         }
     ],
     "164": [],
     "165": [
         {
             "evolution": "166",
-            "methods": [
-                {
-                    "level": 18
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 18
+            }
         }
     ],
     "166": [],
     "167": [
         {
             "evolution": "168",
-            "methods": [
-                {
-                    "level": 22
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 22
+            }
         }
     ],
     "168": [],
@@ -1468,102 +1257,84 @@ var evolutions = {
     "170": [
         {
             "evolution": "171",
-            "methods": [
-                {
-                    "level": 27
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 27
+            }
         }
     ],
     "171": [],
     "172": [
         {
             "evolution": "25",
-            "methods": [
-                {
-                    "level_happiness": 160
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_happiness": 160
+            }
         }
     ],
     "173": [
         {
             "evolution": "35",
-            "methods": [
-                {
-                    "level_happiness": 160
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_happiness": 160
+            }
         }
     ],
     "174": [
         {
             "evolution": "39",
-            "methods": [
-                {
-                    "level_happiness": 160
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_happiness": 160
+            }
         }
     ],
     "175": [
         {
             "evolution": "176",
-            "methods": [
-                {
-                    "level_happiness": 160
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_happiness": 160
+            }
         }
     ],
     "176": [
         {
             "evolution": "468",
-            "methods": [
-                {
-                    "item": "shiny-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "shiny-stone"
+            }
         }
     ],
     "177": [
         {
             "evolution": "178",
-            "methods": [
-                {
-                    "level": 25
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 25
+            }
         }
     ],
     "178": [],
     "179": [
         {
             "evolution": "180",
-            "methods": [
-                {
-                    "level": 15
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 15
+            }
         }
     ],
     "180": [
         {
             "evolution": "181",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "181": [],
@@ -1571,12 +1342,10 @@ var evolutions = {
     "183": [
         {
             "evolution": "184",
-            "methods": [
-                {
-                    "level": 18
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 18
+            }
         }
     ],
     "184": [],
@@ -1585,78 +1354,64 @@ var evolutions = {
     "187": [
         {
             "evolution": "188",
-            "methods": [
-                {
-                    "level": 18
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 18
+            }
         }
     ],
     "188": [
         {
             "evolution": "189",
-            "methods": [
-                {
-                    "level": 27
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 27
+            }
         }
     ],
     "189": [],
     "190": [
         {
             "evolution": "424",
-            "methods": [
-                {
-                    "level_move": "double-hit"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_move": "double-hit"
+            }
         }
     ],
     "191": [
         {
             "evolution": "192",
-            "methods": [
-                {
-                    "item": "sun-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "sun-stone"
+            }
         }
     ],
     "192": [],
     "193": [
         {
             "evolution": "469",
-            "methods": [
-                {
-                    "level_move": "ancient-power"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_move": "ancient-power"
+            }
         }
     ],
     "194": [
         {
             "evolution": "195",
-            "methods": [
-                {
-                    "level": 20
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 20
+            }
         },
         {
             "evolution": "980",
-            "methods": [
-                {
-                    "level": 20
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 20
+            }
         }
     ],
     "195": [],
@@ -1665,24 +1420,20 @@ var evolutions = {
     "198": [
         {
             "evolution": "430",
-            "methods": [
-                {
-                    "item": "dusk-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "dusk-stone"
+            }
         }
     ],
     "199": [],
     "200": [
         {
             "evolution": "429",
-            "methods": [
-                {
-                    "item": "dusk-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "dusk-stone"
+            }
         }
     ],
     "201": [],
@@ -1690,76 +1441,64 @@ var evolutions = {
     "203": [
         {
             "evolution": "981",
-            "methods": [
-                {
-                    "level_move": "twin-beam"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_move": "twin-beam"
+            }
         }
     ],
     "204": [
         {
             "evolution": "205",
-            "methods": [
-                {
-                    "level": 31
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 31
+            }
         }
     ],
     "205": [],
     "206": [
         {
             "evolution": "982",
-            "methods": [
-                {
-                    "level_move": "hyper-drill"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_move": "hyper-drill"
+            }
         }
     ],
     "207": [
         {
             "evolution": "472",
-            "methods": [
-                {
-                    "level_item_time": {
-                        "item": "razor-fang",
-                        "time_of_day": "night"
-                    }
+            "onegame": true,
+            "method": {
+                "level_item_time": {
+                    "item": "razor-fang",
+                    "time_of_day": "night"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "208": [],
     "209": [
         {
             "evolution": "210",
-            "methods": [
-                {
-                    "level": 23
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 23
+            }
         }
     ],
     "210": [],
     "211": [
         {
             "evolution": "904",
-            "methods": [
-                {
-                    "move_special": {
-                        "move": "barb-barrage",
-                        "action": "strong-style-move"
-                    }
+            "onegame": true,
+            "method": {
+                "move_special": {
+                    "move": "barb-barrage",
+                    "action": "strong-style-move"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "212": [],
@@ -1768,108 +1507,90 @@ var evolutions = {
     "215": [
         {
             "evolution": "461",
-            "methods": [
-                {
-                    "level_item_time": {
-                        "item": "razor-claw",
-                        "time_of_day": "night"
-                    }
+            "onegame": true,
+            "method": {
+                "level_item_time": {
+                    "item": "razor-claw",
+                    "time_of_day": "night"
                 }
-            ],
-            "onegame": true
+            }
         },
         {
             "evolution": "903",
-            "methods": [
-                {
-                    "level_item_time": {
-                        "item": "razor-claw",
-                        "time_of_day": "day"
-                    }
+            "onegame": true,
+            "method": {
+                "level_item_time": {
+                    "item": "razor-claw",
+                    "time_of_day": "day"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "216": [
         {
             "evolution": "217",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "217": [
         {
             "evolution": "901",
-            "methods": [
-                {
-                    "item_time": {
-                        "item": "peat-block",
-                        "time_of_day": "full-moon"
-                    }
+            "onegame": true,
+            "method": {
+                "item_time": {
+                    "item": "peat-block",
+                    "time_of_day": "full-moon"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "218": [
         {
             "evolution": "219",
-            "methods": [
-                {
-                    "level": 38
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 38
+            }
         }
     ],
     "219": [],
     "220": [
         {
             "evolution": "221",
-            "methods": [
-                {
-                    "level": 33
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 33
+            }
         }
     ],
     "221": [
         {
             "evolution": "473",
-            "methods": [
-                {
-                    "level_move": "ancient-power"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_move": "ancient-power"
+            }
         }
     ],
     "222": [
         {
             "evolution": "864",
-            "methods": [
-                {
-                    "level": 38
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 38
+            }
         }
     ],
     "223": [
         {
             "evolution": "224",
-            "methods": [
-                {
-                    "level": 25
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 25
+            }
         }
     ],
     "224": [],
@@ -1879,12 +1600,10 @@ var evolutions = {
     "228": [
         {
             "evolution": "229",
-            "methods": [
-                {
-                    "level": 24
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 24
+            }
         }
     ],
     "229": [],
@@ -1892,111 +1611,93 @@ var evolutions = {
     "231": [
         {
             "evolution": "232",
-            "methods": [
-                {
-                    "level": 25
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 25
+            }
         }
     ],
     "232": [],
     "233": [
         {
             "evolution": "474",
-            "methods": [
-                {
-                    "trade_with_item": "dubious-disc"
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade_with_item": "dubious-disc"
+            }
         }
     ],
     "234": [
         {
             "evolution": "899",
-            "methods": [
-                {
-                    "move_special": {
-                        "move": "psyshield-bash",
-                        "action": "agile-style-move"
-                    }
+            "onegame": true,
+            "method": {
+                "move_special": {
+                    "move": "psyshield-bash",
+                    "action": "agile-style-move"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "235": [],
     "236": [
         {
             "evolution": "106",
-            "methods": [
-                {
-                    "level_stats": {
-                        "level": 20,
-                        "stats": "higher-attack-than-defense"
-                    }
+            "onegame": true,
+            "method": {
+                "level_stats": {
+                    "level": 20,
+                    "stats": "higher-attack-than-defense"
                 }
-            ],
-            "onegame": true
+            }
         },
         {
             "evolution": "107",
-            "methods": [
-                {
-                    "level_stats": {
-                        "level": 20,
-                        "stats": "higher-defense-than-attack"
-                    }
+            "onegame": true,
+            "method": {
+                "level_stats": {
+                    "level": 20,
+                    "stats": "higher-defense-than-attack"
                 }
-            ],
-            "onegame": true
+            }
         },
         {
             "evolution": "237",
-            "methods": [
-                {
-                    "level_stats": {
-                        "level": 20,
-                        "stats": "equal-attack-and-defense"
-                    }
+            "onegame": true,
+            "method": {
+                "level_stats": {
+                    "level": 20,
+                    "stats": "equal-attack-and-defense"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "237": [],
     "238": [
         {
             "evolution": "124",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "239": [
         {
             "evolution": "125",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "240": [
         {
             "evolution": "126",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "241": [],
@@ -2007,23 +1708,19 @@ var evolutions = {
     "246": [
         {
             "evolution": "247",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "247": [
         {
             "evolution": "248",
-            "methods": [
-                {
-                    "level": 55
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 55
+            }
         }
     ],
     "248": [],
@@ -2033,323 +1730,267 @@ var evolutions = {
     "252": [
         {
             "evolution": "253",
-            "methods": [
-                {
-                    "level": 16
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 16
+            }
         }
     ],
     "253": [
         {
             "evolution": "254",
-            "methods": [
-                {
-                    "level": 36
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 36
+            }
         }
     ],
     "254": [],
     "255": [
         {
             "evolution": "256",
-            "methods": [
-                {
-                    "level": 16
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 16
+            }
         }
     ],
     "256": [
         {
             "evolution": "257",
-            "methods": [
-                {
-                    "level": 36
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 36
+            }
         }
     ],
     "257": [],
     "258": [
         {
             "evolution": "259",
-            "methods": [
-                {
-                    "level": 16
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 16
+            }
         }
     ],
     "259": [
         {
             "evolution": "260",
-            "methods": [
-                {
-                    "level": 36
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 36
+            }
         }
     ],
     "260": [],
     "261": [
         {
             "evolution": "262",
-            "methods": [
-                {
-                    "level": 18
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 18
+            }
         }
     ],
     "262": [],
     "263": [
         {
             "evolution": "264",
-            "methods": [
-                {
-                    "level": 20
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 20
+            }
         }
     ],
     "264": [
         {
             "evolution": "862",
-            "methods": [
-                {
-                    "level_time": {
-                        "level": 35,
-                        "time_of_day": "night"
-                    }
+            "onegame": true,
+            "method": {
+                "level_time": {
+                    "level": 35,
+                    "time_of_day": "night"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "265": [
         {
             "evolution": "266",
-            "methods": [
-                {
-                    "level": 7
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 7
+            }
         },
         {
             "evolution": "268",
-            "methods": [
-                {
-                    "level": 7
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 7
+            }
         }
     ],
     "266": [
         {
             "evolution": "267",
-            "methods": [
-                {
-                    "level": 10
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 10
+            }
         }
     ],
     "267": [],
     "268": [
         {
             "evolution": "269",
-            "methods": [
-                {
-                    "level": 10
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 10
+            }
         }
     ],
     "269": [],
     "270": [
         {
             "evolution": "271",
-            "methods": [
-                {
-                    "level": 14
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 14
+            }
         }
     ],
     "271": [
         {
             "evolution": "272",
-            "methods": [
-                {
-                    "item": "water-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "water-stone"
+            }
         }
     ],
     "272": [],
     "273": [
         {
             "evolution": "274",
-            "methods": [
-                {
-                    "level": 14
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 14
+            }
         }
     ],
     "274": [
         {
             "evolution": "275",
-            "methods": [
-                {
-                    "item": "leaf-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "leaf-stone"
+            }
         }
     ],
     "275": [],
     "276": [
         {
             "evolution": "277",
-            "methods": [
-                {
-                    "level": 22
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 22
+            }
         }
     ],
     "277": [],
     "278": [
         {
             "evolution": "279",
-            "methods": [
-                {
-                    "level": 25
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 25
+            }
         }
     ],
     "279": [],
     "280": [
         {
             "evolution": "281",
-            "methods": [
-                {
-                    "level": 20
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 20
+            }
         }
     ],
     "281": [
         {
             "evolution": "282",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         },
         {
             "evolution": "475",
-            "methods": [
-                {
-                    "item_gender": {
-                        "item": "dawn-stone",
-                        "gender": "male"
-                    }
+            "onegame": true,
+            "method": {
+                "item_gender": {
+                    "item": "dawn-stone",
+                    "gender": "male"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "282": [],
     "283": [
         {
             "evolution": "284",
-            "methods": [
-                {
-                    "level": 22
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 22
+            }
         }
     ],
     "284": [],
     "285": [
         {
             "evolution": "286",
-            "methods": [
-                {
-                    "level": 23
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 23
+            }
         }
     ],
     "286": [],
     "287": [
         {
             "evolution": "288",
-            "methods": [
-                {
-                    "level": 18
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 18
+            }
         }
     ],
     "288": [
         {
             "evolution": "289",
-            "methods": [
-                {
-                    "level": 36
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 36
+            }
         }
     ],
     "289": [],
     "290": [
         {
             "evolution": "291",
-            "methods": [
-                {
-                    "level": 20
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 20
+            }
         },
         {
             "evolution": "292",
-            "methods": [
-                {
-                    "shed": true
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "shed": true
+            }
         }
     ],
     "291": [],
@@ -2357,69 +1998,57 @@ var evolutions = {
     "293": [
         {
             "evolution": "294",
-            "methods": [
-                {
-                    "level": 20
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 20
+            }
         }
     ],
     "294": [
         {
             "evolution": "295",
-            "methods": [
-                {
-                    "level": 40
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 40
+            }
         }
     ],
     "295": [],
     "296": [
         {
             "evolution": "297",
-            "methods": [
-                {
-                    "level": 24
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 24
+            }
         }
     ],
     "297": [],
     "298": [
         {
             "evolution": "183",
-            "methods": [
-                {
-                    "level_happiness": 160
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_happiness": 160
+            }
         }
     ],
     "299": [
         {
             "evolution": "476",
-            "methods": [
-                {
-                    "level_location": "magnetic-field"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_location": "magnetic-field"
+            }
         }
     ],
     "300": [
         {
             "evolution": "301",
-            "methods": [
-                {
-                    "item": "moon-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "moon-stone"
+            }
         }
     ],
     "301": [],
@@ -2428,47 +2057,39 @@ var evolutions = {
     "304": [
         {
             "evolution": "305",
-            "methods": [
-                {
-                    "level": 32
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 32
+            }
         }
     ],
     "305": [
         {
             "evolution": "306",
-            "methods": [
-                {
-                    "level": 42
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 42
+            }
         }
     ],
     "306": [],
     "307": [
         {
             "evolution": "308",
-            "methods": [
-                {
-                    "level": 37
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 37
+            }
         }
     ],
     "308": [],
     "309": [
         {
             "evolution": "310",
-            "methods": [
-                {
-                    "level": 26
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 26
+            }
         }
     ],
     "310": [],
@@ -2479,59 +2100,49 @@ var evolutions = {
     "315": [
         {
             "evolution": "407",
-            "methods": [
-                {
-                    "item": "shiny-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "shiny-stone"
+            }
         }
     ],
     "316": [
         {
             "evolution": "317",
-            "methods": [
-                {
-                    "level": 26
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 26
+            }
         }
     ],
     "317": [],
     "318": [
         {
             "evolution": "319",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "319": [],
     "320": [
         {
             "evolution": "321",
-            "methods": [
-                {
-                    "level": 40
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 40
+            }
         }
     ],
     "321": [],
     "322": [
         {
             "evolution": "323",
-            "methods": [
-                {
-                    "level": 33
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 33
+            }
         }
     ],
     "323": [],
@@ -2539,12 +2150,10 @@ var evolutions = {
     "325": [
         {
             "evolution": "326",
-            "methods": [
-                {
-                    "level": 32
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 32
+            }
         }
     ],
     "326": [],
@@ -2552,47 +2161,39 @@ var evolutions = {
     "328": [
         {
             "evolution": "329",
-            "methods": [
-                {
-                    "level": 35
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 35
+            }
         }
     ],
     "329": [
         {
             "evolution": "330",
-            "methods": [
-                {
-                    "level": 45
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 45
+            }
         }
     ],
     "330": [],
     "331": [
         {
             "evolution": "332",
-            "methods": [
-                {
-                    "level": 32
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 32
+            }
         }
     ],
     "332": [],
     "333": [
         {
             "evolution": "334",
-            "methods": [
-                {
-                    "level": 35
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 35
+            }
         }
     ],
     "334": [],
@@ -2603,74 +2204,62 @@ var evolutions = {
     "339": [
         {
             "evolution": "340",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "340": [],
     "341": [
         {
             "evolution": "342",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "342": [],
     "343": [
         {
             "evolution": "344",
-            "methods": [
-                {
-                    "level": 36
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 36
+            }
         }
     ],
     "344": [],
     "345": [
         {
             "evolution": "346",
-            "methods": [
-                {
-                    "level": 40
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 40
+            }
         }
     ],
     "346": [],
     "347": [
         {
             "evolution": "348",
-            "methods": [
-                {
-                    "level": 40
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 40
+            }
         }
     ],
     "348": [],
     "349": [
         {
             "evolution": "350",
-            "methods": [
-                {
-                    "level_beauty": {
-                        "beauty": 171
-                    }
+            "onegame": true,
+            "method": {
+                "level_beauty": {
+                    "beauty": 171
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "350": [],
@@ -2679,35 +2268,29 @@ var evolutions = {
     "353": [
         {
             "evolution": "354",
-            "methods": [
-                {
-                    "level": 37
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 37
+            }
         }
     ],
     "354": [],
     "355": [
         {
             "evolution": "356",
-            "methods": [
-                {
-                    "level": 37
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 37
+            }
         }
     ],
     "356": [
         {
             "evolution": "477",
-            "methods": [
-                {
-                    "trade_with_item": "reaper-cloth"
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade_with_item": "reaper-cloth"
+            }
         }
     ],
     "357": [],
@@ -2716,79 +2299,65 @@ var evolutions = {
     "360": [
         {
             "evolution": "202",
-            "methods": [
-                {
-                    "level": 15
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 15
+            }
         }
     ],
     "361": [
         {
             "evolution": "362",
-            "methods": [
-                {
-                    "level": 42
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 42
+            }
         },
         {
             "evolution": "478",
-            "methods": [
-                {
-                    "item_gender": {
-                        "item": "dawn-stone",
-                        "gender": "female"
-                    }
+            "onegame": true,
+            "method": {
+                "item_gender": {
+                    "item": "dawn-stone",
+                    "gender": "female"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "362": [],
     "363": [
         {
             "evolution": "364",
-            "methods": [
-                {
-                    "level": 32
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 32
+            }
         }
     ],
     "364": [
         {
             "evolution": "365",
-            "methods": [
-                {
-                    "level": 44
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 44
+            }
         }
     ],
     "365": [],
     "366": [
         {
             "evolution": "367",
-            "methods": [
-                {
-                    "trade_with_item": "deep-sea-tooth"
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade_with_item": "deep-sea-tooth"
+            }
         },
         {
             "evolution": "368",
-            "methods": [
-                {
-                    "trade_with_item": "deep-sea-scale"
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade_with_item": "deep-sea-scale"
+            }
         }
     ],
     "367": [],
@@ -2798,46 +2367,38 @@ var evolutions = {
     "371": [
         {
             "evolution": "372",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "372": [
         {
             "evolution": "373",
-            "methods": [
-                {
-                    "level": 50
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 50
+            }
         }
     ],
     "373": [],
     "374": [
         {
             "evolution": "375",
-            "methods": [
-                {
-                    "level": 20
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 20
+            }
         }
     ],
     "375": [
         {
             "evolution": "376",
-            "methods": [
-                {
-                    "level": 45
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 45
+            }
         }
     ],
     "376": [],
@@ -2854,205 +2415,171 @@ var evolutions = {
     "387": [
         {
             "evolution": "388",
-            "methods": [
-                {
-                    "level": 18
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 18
+            }
         }
     ],
     "388": [
         {
             "evolution": "389",
-            "methods": [
-                {
-                    "level": 32
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 32
+            }
         }
     ],
     "389": [],
     "390": [
         {
             "evolution": "391",
-            "methods": [
-                {
-                    "level": 14
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 14
+            }
         }
     ],
     "391": [
         {
             "evolution": "392",
-            "methods": [
-                {
-                    "level": 36
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 36
+            }
         }
     ],
     "392": [],
     "393": [
         {
             "evolution": "394",
-            "methods": [
-                {
-                    "level": 16
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 16
+            }
         }
     ],
     "394": [
         {
             "evolution": "395",
-            "methods": [
-                {
-                    "level": 36
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 36
+            }
         }
     ],
     "395": [],
     "396": [
         {
             "evolution": "397",
-            "methods": [
-                {
-                    "level": 14
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 14
+            }
         }
     ],
     "397": [
         {
             "evolution": "398",
-            "methods": [
-                {
-                    "level": 34
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 34
+            }
         }
     ],
     "398": [],
     "399": [
         {
             "evolution": "400",
-            "methods": [
-                {
-                    "level": 15
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 15
+            }
         }
     ],
     "400": [],
     "401": [
         {
             "evolution": "402",
-            "methods": [
-                {
-                    "level": 10
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 10
+            }
         }
     ],
     "402": [],
     "403": [
         {
             "evolution": "404",
-            "methods": [
-                {
-                    "level": 15
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 15
+            }
         }
     ],
     "404": [
         {
             "evolution": "405",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "405": [],
     "406": [
         {
             "evolution": "315",
-            "methods": [
-                {
-                    "level_happiness_time": {
-                        "happiness": 160,
-                        "time_of_day": "day"
-                    }
+            "onegame": true,
+            "method": {
+                "level_happiness_time": {
+                    "happiness": 160,
+                    "time_of_day": "day"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "407": [],
     "408": [
         {
             "evolution": "409",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "409": [],
     "410": [
         {
             "evolution": "411",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "411": [],
     "412": [
         {
             "evolution": "413",
-            "methods": [
-                {
-                    "level_gender": {
-                        "level": 20,
-                        "gender": "female"
-                    }
+            "onegame": true,
+            "method": {
+                "level_gender": {
+                    "level": 20,
+                    "gender": "female"
                 }
-            ],
-            "onegame": true
+            }
         },
         {
             "evolution": "414",
-            "methods": [
-                {
-                    "level_gender": {
-                        "level": 20,
-                        "gender": "male"
-                    }
+            "onegame": true,
+            "method": {
+                "level_gender": {
+                    "level": 20,
+                    "gender": "male"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "413": [],
@@ -3060,15 +2587,13 @@ var evolutions = {
     "415": [
         {
             "evolution": "416",
-            "methods": [
-                {
-                    "level_gender": {
-                        "level": 21,
-                        "gender": "female"
-                    }
+            "onegame": true,
+            "method": {
+                "level_gender": {
+                    "level": 21,
+                    "gender": "female"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "416": [],
@@ -3076,36 +2601,30 @@ var evolutions = {
     "418": [
         {
             "evolution": "419",
-            "methods": [
-                {
-                    "level": 26
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 26
+            }
         }
     ],
     "419": [],
     "420": [
         {
             "evolution": "421",
-            "methods": [
-                {
-                    "level": 25
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 25
+            }
         }
     ],
     "421": [],
     "422": [
         {
             "evolution": "423",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "423": [],
@@ -3113,24 +2632,20 @@ var evolutions = {
     "425": [
         {
             "evolution": "426",
-            "methods": [
-                {
-                    "level": 28
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 28
+            }
         }
     ],
     "426": [],
     "427": [
         {
             "evolution": "428",
-            "methods": [
-                {
-                    "level_happiness": 160
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_happiness": 160
+            }
         }
     ],
     "428": [],
@@ -3139,87 +2654,73 @@ var evolutions = {
     "431": [
         {
             "evolution": "432",
-            "methods": [
-                {
-                    "level": 38
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 38
+            }
         }
     ],
     "432": [],
     "433": [
         {
             "evolution": "358",
-            "methods": [
-                {
-                    "level_happiness_time": {
-                        "happiness": 220,
-                        "time_of_day": "night"
-                    }
+            "onegame": true,
+            "method": {
+                "level_happiness_time": {
+                    "happiness": 220,
+                    "time_of_day": "night"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "434": [
         {
             "evolution": "435",
-            "methods": [
-                {
-                    "level": 34
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 34
+            }
         }
     ],
     "435": [],
     "436": [
         {
             "evolution": "437",
-            "methods": [
-                {
-                    "level": 33
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 33
+            }
         }
     ],
     "437": [],
     "438": [
         {
             "evolution": "185",
-            "methods": [
-                {
-                    "level_move": "mimic"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_move": "mimic"
+            }
         }
     ],
     "439": [
         {
             "evolution": "122",
-            "methods": [
-                {
-                    "level_move": "mimic"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_move": "mimic"
+            }
         }
     ],
     "440": [
         {
             "evolution": "113",
-            "methods": [
-                {
-                    "level_item_time": {
-                        "item": "oval-stone",
-                        "time_of_day": "day"
-                    }
+            "onegame": true,
+            "method": {
+                "level_item_time": {
+                    "item": "oval-stone",
+                    "time_of_day": "day"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "441": [],
@@ -3227,85 +2728,71 @@ var evolutions = {
     "443": [
         {
             "evolution": "444",
-            "methods": [
-                {
-                    "level": 24
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 24
+            }
         }
     ],
     "444": [
         {
             "evolution": "445",
-            "methods": [
-                {
-                    "level": 48
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 48
+            }
         }
     ],
     "445": [],
     "446": [
         {
             "evolution": "143",
-            "methods": [
-                {
-                    "level_happiness": 160
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_happiness": 160
+            }
         }
     ],
     "447": [
         {
             "evolution": "448",
-            "methods": [
-                {
-                    "level_happiness_time": {
-                        "happiness": 160,
-                        "time_of_day": "day"
-                    }
+            "onegame": true,
+            "method": {
+                "level_happiness_time": {
+                    "happiness": 160,
+                    "time_of_day": "day"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "448": [],
     "449": [
         {
             "evolution": "450",
-            "methods": [
-                {
-                    "level": 34
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 34
+            }
         }
     ],
     "450": [],
     "451": [
         {
             "evolution": "452",
-            "methods": [
-                {
-                    "level": 40
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 40
+            }
         }
     ],
     "452": [],
     "453": [
         {
             "evolution": "454",
-            "methods": [
-                {
-                    "level": 37
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 37
+            }
         }
     ],
     "454": [],
@@ -3313,35 +2800,29 @@ var evolutions = {
     "456": [
         {
             "evolution": "457",
-            "methods": [
-                {
-                    "level": 31
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 31
+            }
         }
     ],
     "457": [],
     "458": [
         {
             "evolution": "226",
-            "methods": [
-                {
-                    "level_party": "remoraid"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_party": "remoraid"
+            }
         }
     ],
     "459": [
         {
             "evolution": "460",
-            "methods": [
-                {
-                    "level": 40
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 40
+            }
         }
     ],
     "460": [],
@@ -3382,246 +2863,204 @@ var evolutions = {
     "495": [
         {
             "evolution": "496",
-            "methods": [
-                {
-                    "level": 17
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 17
+            }
         }
     ],
     "496": [
         {
             "evolution": "497",
-            "methods": [
-                {
-                    "level": 36
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 36
+            }
         }
     ],
     "497": [],
     "498": [
         {
             "evolution": "499",
-            "methods": [
-                {
-                    "level": 17
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 17
+            }
         }
     ],
     "499": [
         {
             "evolution": "500",
-            "methods": [
-                {
-                    "level": 36
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 36
+            }
         }
     ],
     "500": [],
     "501": [
         {
             "evolution": "502",
-            "methods": [
-                {
-                    "level": 17
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 17
+            }
         }
     ],
     "502": [
         {
             "evolution": "503",
-            "methods": [
-                {
-                    "level": 36
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 36
+            }
         }
     ],
     "503": [],
     "504": [
         {
             "evolution": "505",
-            "methods": [
-                {
-                    "level": 20
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 20
+            }
         }
     ],
     "505": [],
     "506": [
         {
             "evolution": "507",
-            "methods": [
-                {
-                    "level": 16
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 16
+            }
         }
     ],
     "507": [
         {
             "evolution": "508",
-            "methods": [
-                {
-                    "level": 32
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 32
+            }
         }
     ],
     "508": [],
     "509": [
         {
             "evolution": "510",
-            "methods": [
-                {
-                    "level": 20
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 20
+            }
         }
     ],
     "510": [],
     "511": [
         {
             "evolution": "512",
-            "methods": [
-                {
-                    "item": "leaf-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "leaf-stone"
+            }
         }
     ],
     "512": [],
     "513": [
         {
             "evolution": "514",
-            "methods": [
-                {
-                    "item": "fire-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "fire-stone"
+            }
         }
     ],
     "514": [],
     "515": [
         {
             "evolution": "516",
-            "methods": [
-                {
-                    "item": "water-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "water-stone"
+            }
         }
     ],
     "516": [],
     "517": [
         {
             "evolution": "518",
-            "methods": [
-                {
-                    "item": "moon-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "moon-stone"
+            }
         }
     ],
     "518": [],
     "519": [
         {
             "evolution": "520",
-            "methods": [
-                {
-                    "level": 21
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 21
+            }
         }
     ],
     "520": [
         {
             "evolution": "521",
-            "methods": [
-                {
-                    "level": 32
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 32
+            }
         }
     ],
     "521": [],
     "522": [
         {
             "evolution": "523",
-            "methods": [
-                {
-                    "level": 27
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 27
+            }
         }
     ],
     "523": [],
     "524": [
         {
             "evolution": "525",
-            "methods": [
-                {
-                    "level": 25
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 25
+            }
         }
     ],
     "525": [
         {
             "evolution": "526",
-            "methods": [
-                {
-                    "trade": true
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade": true
+            }
         }
     ],
     "526": [],
     "527": [
         {
             "evolution": "528",
-            "methods": [
-                {
-                    "level_happiness": 160
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_happiness": 160
+            }
         }
     ],
     "528": [],
     "529": [
         {
             "evolution": "530",
-            "methods": [
-                {
-                    "level": 31
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 31
+            }
         }
     ],
     "530": [],
@@ -3629,46 +3068,38 @@ var evolutions = {
     "532": [
         {
             "evolution": "533",
-            "methods": [
-                {
-                    "level": 25
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 25
+            }
         }
     ],
     "533": [
         {
             "evolution": "534",
-            "methods": [
-                {
-                    "trade": true
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade": true
+            }
         }
     ],
     "534": [],
     "535": [
         {
             "evolution": "536",
-            "methods": [
-                {
-                    "level": 25
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 25
+            }
         }
     ],
     "536": [
         {
             "evolution": "537",
-            "methods": [
-                {
-                    "level": 36
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 36
+            }
         }
     ],
     "537": [],
@@ -3677,116 +3108,96 @@ var evolutions = {
     "540": [
         {
             "evolution": "541",
-            "methods": [
-                {
-                    "level": 20
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 20
+            }
         }
     ],
     "541": [
         {
             "evolution": "542",
-            "methods": [
-                {
-                    "level_happiness": 220
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_happiness": 220
+            }
         }
     ],
     "542": [],
     "543": [
         {
             "evolution": "544",
-            "methods": [
-                {
-                    "level": 22
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 22
+            }
         }
     ],
     "544": [
         {
             "evolution": "545",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "545": [],
     "546": [
         {
             "evolution": "547",
-            "methods": [
-                {
-                    "item": "sun-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "sun-stone"
+            }
         }
     ],
     "547": [],
     "548": [
         {
             "evolution": "549",
-            "methods": [
-                {
-                    "item": "sun-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "sun-stone"
+            }
         }
     ],
     "549": [],
     "550": [
         {
             "evolution": "902",
-            "methods": [
-                {
-                    "battle": "recoil-damage"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "battle": "recoil-damage"
+            }
         }
     ],
     "551": [
         {
             "evolution": "552",
-            "methods": [
-                {
-                    "level": 29
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 29
+            }
         }
     ],
     "552": [
         {
             "evolution": "553",
-            "methods": [
-                {
-                    "level": 40
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 40
+            }
         }
     ],
     "553": [],
     "554": [
         {
             "evolution": "555",
-            "methods": [
-                {
-                    "level": 35
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 35
+            }
         }
     ],
     "555": [],
@@ -3794,24 +3205,20 @@ var evolutions = {
     "557": [
         {
             "evolution": "558",
-            "methods": [
-                {
-                    "level": 34
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 34
+            }
         }
     ],
     "558": [],
     "559": [
         {
             "evolution": "560",
-            "methods": [
-                {
-                    "level": 39
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 39
+            }
         }
     ],
     "560": [],
@@ -3819,174 +3226,144 @@ var evolutions = {
     "562": [
         {
             "evolution": "563",
-            "methods": [
-                {
-                    "level": 34
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 34
+            }
         },
         {
             "evolution": "867",
-            "methods": [
-                {
-                    "battle": "take-damage"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "battle": "take-damage"
+            }
         }
     ],
     "563": [],
     "564": [
         {
             "evolution": "565",
-            "methods": [
-                {
-                    "level": 37
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 37
+            }
         }
     ],
     "565": [],
     "566": [
         {
             "evolution": "567",
-            "methods": [
-                {
-                    "level": 37
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 37
+            }
         }
     ],
     "567": [],
     "568": [
         {
             "evolution": "569",
-            "methods": [
-                {
-                    "level": 36
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 36
+            }
         }
     ],
     "569": [],
     "570": [
         {
             "evolution": "571",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "571": [],
     "572": [
         {
             "evolution": "573",
-            "methods": [
-                {
-                    "item": "shiny-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "shiny-stone"
+            }
         }
     ],
     "573": [],
     "574": [
         {
             "evolution": "575",
-            "methods": [
-                {
-                    "level": 32
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 32
+            }
         }
     ],
     "575": [
         {
             "evolution": "576",
-            "methods": [
-                {
-                    "level": 41
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 41
+            }
         }
     ],
     "576": [],
     "577": [
         {
             "evolution": "578",
-            "methods": [
-                {
-                    "level": 32
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 32
+            }
         }
     ],
     "578": [
         {
             "evolution": "579",
-            "methods": [
-                {
-                    "level": 41
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 41
+            }
         }
     ],
     "579": [],
     "580": [
         {
             "evolution": "581",
-            "methods": [
-                {
-                    "level": 35
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 35
+            }
         }
     ],
     "581": [],
     "582": [
         {
             "evolution": "583",
-            "methods": [
-                {
-                    "level": 35
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 35
+            }
         }
     ],
     "583": [
         {
             "evolution": "584",
-            "methods": [
-                {
-                    "level": 47
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 47
+            }
         }
     ],
     "584": [],
     "585": [
         {
             "evolution": "586",
-            "methods": [
-                {
-                    "level": 34
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 34
+            }
         }
     ],
     "586": [],
@@ -3994,36 +3371,30 @@ var evolutions = {
     "588": [
         {
             "evolution": "589",
-            "methods": [
-                {
-                    "trade_for": "shelmet"
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade_for": "shelmet"
+            }
         }
     ],
     "589": [],
     "590": [
         {
             "evolution": "591",
-            "methods": [
-                {
-                    "level": 39
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 39
+            }
         }
     ],
     "591": [],
     "592": [
         {
             "evolution": "593",
-            "methods": [
-                {
-                    "level": 40
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 40
+            }
         }
     ],
     "593": [],
@@ -4031,140 +3402,116 @@ var evolutions = {
     "595": [
         {
             "evolution": "596",
-            "methods": [
-                {
-                    "level": 36
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 36
+            }
         }
     ],
     "596": [],
     "597": [
         {
             "evolution": "598",
-            "methods": [
-                {
-                    "level": 40
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 40
+            }
         }
     ],
     "598": [],
     "599": [
         {
             "evolution": "600",
-            "methods": [
-                {
-                    "level": 38
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 38
+            }
         }
     ],
     "600": [
         {
             "evolution": "601",
-            "methods": [
-                {
-                    "level": 49
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 49
+            }
         }
     ],
     "601": [],
     "602": [
         {
             "evolution": "603",
-            "methods": [
-                {
-                    "level": 39
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 39
+            }
         }
     ],
     "603": [
         {
             "evolution": "604",
-            "methods": [
-                {
-                    "item": "thunder-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "thunder-stone"
+            }
         }
     ],
     "604": [],
     "605": [
         {
             "evolution": "606",
-            "methods": [
-                {
-                    "level": 42
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 42
+            }
         }
     ],
     "606": [],
     "607": [
         {
             "evolution": "608",
-            "methods": [
-                {
-                    "level": 41
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 41
+            }
         }
     ],
     "608": [
         {
             "evolution": "609",
-            "methods": [
-                {
-                    "item": "dusk-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "dusk-stone"
+            }
         }
     ],
     "609": [],
     "610": [
         {
             "evolution": "611",
-            "methods": [
-                {
-                    "level": 38
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 38
+            }
         }
     ],
     "611": [
         {
             "evolution": "612",
-            "methods": [
-                {
-                    "level": 48
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 48
+            }
         }
     ],
     "612": [],
     "613": [
         {
             "evolution": "614",
-            "methods": [
-                {
-                    "level": 37
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 37
+            }
         }
     ],
     "614": [],
@@ -4172,12 +3519,10 @@ var evolutions = {
     "616": [
         {
             "evolution": "617",
-            "methods": [
-                {
-                    "trade_for": "karrablast"
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade_for": "karrablast"
+            }
         }
     ],
     "617": [],
@@ -4185,12 +3530,10 @@ var evolutions = {
     "619": [
         {
             "evolution": "620",
-            "methods": [
-                {
-                    "level": 50
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 50
+            }
         }
     ],
     "620": [],
@@ -4198,59 +3541,49 @@ var evolutions = {
     "622": [
         {
             "evolution": "623",
-            "methods": [
-                {
-                    "level": 43
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 43
+            }
         }
     ],
     "623": [],
     "624": [
         {
             "evolution": "625",
-            "methods": [
-                {
-                    "level": 52
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 52
+            }
         }
     ],
     "625": [
         {
             "evolution": "983",
-            "methods": [
-                {
-                    "defeat": "bisharp-crest"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "defeat": "bisharp-crest"
+            }
         }
     ],
     "626": [],
     "627": [
         {
             "evolution": "628",
-            "methods": [
-                {
-                    "level": 54
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 54
+            }
         }
     ],
     "628": [],
     "629": [
         {
             "evolution": "630",
-            "methods": [
-                {
-                    "level": 54
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 54
+            }
         }
     ],
     "630": [],
@@ -4259,35 +3592,29 @@ var evolutions = {
     "633": [
         {
             "evolution": "634",
-            "methods": [
-                {
-                    "level": 50
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 50
+            }
         }
     ],
     "634": [
         {
             "evolution": "635",
-            "methods": [
-                {
-                    "level": 64
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 64
+            }
         }
     ],
     "635": [],
     "636": [
         {
             "evolution": "637",
-            "methods": [
-                {
-                    "level": 59
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 59
+            }
         }
     ],
     "637": [],
@@ -4306,189 +3633,157 @@ var evolutions = {
     "650": [
         {
             "evolution": "651",
-            "methods": [
-                {
-                    "level": 16
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 16
+            }
         }
     ],
     "651": [
         {
             "evolution": "652",
-            "methods": [
-                {
-                    "level": 36
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 36
+            }
         }
     ],
     "652": [],
     "653": [
         {
             "evolution": "654",
-            "methods": [
-                {
-                    "level": 16
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 16
+            }
         }
     ],
     "654": [
         {
             "evolution": "655",
-            "methods": [
-                {
-                    "level": 36
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 36
+            }
         }
     ],
     "655": [],
     "656": [
         {
             "evolution": "657",
-            "methods": [
-                {
-                    "level": 16
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 16
+            }
         }
     ],
     "657": [
         {
             "evolution": "658",
-            "methods": [
-                {
-                    "level": 36
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 36
+            }
         }
     ],
     "658": [],
     "659": [
         {
             "evolution": "660",
-            "methods": [
-                {
-                    "level": 20
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 20
+            }
         }
     ],
     "660": [],
     "661": [
         {
             "evolution": "662",
-            "methods": [
-                {
-                    "level": 17
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 17
+            }
         }
     ],
     "662": [
         {
             "evolution": "663",
-            "methods": [
-                {
-                    "level": 35
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 35
+            }
         }
     ],
     "663": [],
     "664": [
         {
             "evolution": "665",
-            "methods": [
-                {
-                    "level": 9
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 9
+            }
         }
     ],
     "665": [
         {
             "evolution": "666",
-            "methods": [
-                {
-                    "level": 12
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 12
+            }
         }
     ],
     "666": [],
     "667": [
         {
             "evolution": "668",
-            "methods": [
-                {
-                    "level": 35
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 35
+            }
         }
     ],
     "668": [],
     "669": [
         {
             "evolution": "670",
-            "methods": [
-                {
-                    "level": 19
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 19
+            }
         }
     ],
     "670": [
         {
             "evolution": "671",
-            "methods": [
-                {
-                    "item": "shiny-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "shiny-stone"
+            }
         }
     ],
     "671": [],
     "672": [
         {
             "evolution": "673",
-            "methods": [
-                {
-                    "level": 32
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 32
+            }
         }
     ],
     "673": [],
     "674": [
         {
             "evolution": "675",
-            "methods": [
-                {
-                    "level_party_type": {
-                        "level": 32,
-                        "type": "dark"
-                    }
+            "onegame": true,
+            "method": {
+                "level_party_type": {
+                    "level": 32,
+                    "type": "dark"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "675": [],
@@ -4496,149 +3791,125 @@ var evolutions = {
     "677": [
         {
             "evolution": "678",
-            "methods": [
-                {
-                    "level": 25
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 25
+            }
         }
     ],
     "678": [],
     "679": [
         {
             "evolution": "680",
-            "methods": [
-                {
-                    "level": 35
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 35
+            }
         }
     ],
     "680": [
         {
             "evolution": "681",
-            "methods": [
-                {
-                    "item": "dusk-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "dusk-stone"
+            }
         }
     ],
     "681": [],
     "682": [
         {
             "evolution": "683",
-            "methods": [
-                {
-                    "trade_with_item": "sachet"
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade_with_item": "sachet"
+            }
         }
     ],
     "683": [],
     "684": [
         {
             "evolution": "685",
-            "methods": [
-                {
-                    "trade_with_item": "whipped-dream"
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade_with_item": "whipped-dream"
+            }
         }
     ],
     "685": [],
     "686": [
         {
             "evolution": "687",
-            "methods": [
-                {
-                    "level_upside_down": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_upside_down": 30
+            }
         }
     ],
     "687": [],
     "688": [
         {
             "evolution": "689",
-            "methods": [
-                {
-                    "level": 39
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 39
+            }
         }
     ],
     "689": [],
     "690": [
         {
             "evolution": "691",
-            "methods": [
-                {
-                    "level": 48
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 48
+            }
         }
     ],
     "691": [],
     "692": [
         {
             "evolution": "693",
-            "methods": [
-                {
-                    "level": 37
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 37
+            }
         }
     ],
     "693": [],
     "694": [
         {
             "evolution": "695",
-            "methods": [
-                {
-                    "item": "sun-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "sun-stone"
+            }
         }
     ],
     "695": [],
     "696": [
         {
             "evolution": "697",
-            "methods": [
-                {
-                    "level_time": {
-                        "level": 39,
-                        "time_of_day": "day"
-                    }
+            "onegame": true,
+            "method": {
+                "level_time": {
+                    "level": 39,
+                    "time_of_day": "day"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "697": [],
     "698": [
         {
             "evolution": "699",
-            "methods": [
-                {
-                    "level_time": {
-                        "level": 39,
-                        "time_of_day": "night"
-                    }
+            "onegame": true,
+            "method": {
+                "level_time": {
+                    "level": 39,
+                    "time_of_day": "night"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "699": [],
@@ -4649,23 +3920,19 @@ var evolutions = {
     "704": [
         {
             "evolution": "705",
-            "methods": [
-                {
-                    "level": 40
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 40
+            }
         }
     ],
     "705": [
         {
             "evolution": "706",
-            "methods": [
-                {
-                    "level_rain": 50
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_rain": 50
+            }
         }
     ],
     "706": [],
@@ -4673,48 +3940,40 @@ var evolutions = {
     "708": [
         {
             "evolution": "709",
-            "methods": [
-                {
-                    "trade": true
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade": true
+            }
         }
     ],
     "709": [],
     "710": [
         {
             "evolution": "711",
-            "methods": [
-                {
-                    "trade": true
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "trade": true
+            }
         }
     ],
     "711": [],
     "712": [
         {
             "evolution": "713",
-            "methods": [
-                {
-                    "level": 37
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 37
+            }
         }
     ],
     "713": [],
     "714": [
         {
             "evolution": "715",
-            "methods": [
-                {
-                    "level": 48
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 48
+            }
         }
     ],
     "715": [],
@@ -4727,142 +3986,118 @@ var evolutions = {
     "722": [
         {
             "evolution": "723",
-            "methods": [
-                {
-                    "level": 17
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 17
+            }
         }
     ],
     "723": [
         {
             "evolution": "724",
-            "methods": [
-                {
-                    "level": 34
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 34
+            }
         }
     ],
     "724": [],
     "725": [
         {
             "evolution": "726",
-            "methods": [
-                {
-                    "level": 17
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 17
+            }
         }
     ],
     "726": [
         {
             "evolution": "727",
-            "methods": [
-                {
-                    "level": 34
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 34
+            }
         }
     ],
     "727": [],
     "728": [
         {
             "evolution": "729",
-            "methods": [
-                {
-                    "level": 17
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 17
+            }
         }
     ],
     "729": [
         {
             "evolution": "730",
-            "methods": [
-                {
-                    "level": 34
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 34
+            }
         }
     ],
     "730": [],
     "731": [
         {
             "evolution": "732",
-            "methods": [
-                {
-                    "level": 14
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 14
+            }
         }
     ],
     "732": [
         {
             "evolution": "733",
-            "methods": [
-                {
-                    "level": 28
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 28
+            }
         }
     ],
     "733": [],
     "734": [
         {
             "evolution": "735",
-            "methods": [
-                {
-                    "level_time": {
-                        "level": 20,
-                        "time_of_day": "day"
-                    }
+            "onegame": true,
+            "method": {
+                "level_time": {
+                    "level": 20,
+                    "time_of_day": "day"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "735": [],
     "736": [
         {
             "evolution": "737",
-            "methods": [
-                {
-                    "level": 20
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 20
+            }
         }
     ],
     "737": [
         {
             "evolution": "738",
-            "methods": [
-                {
-                    "level_location": "magnetic-field"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_location": "magnetic-field"
+            }
         }
     ],
     "738": [],
     "739": [
         {
             "evolution": "740",
-            "methods": [
-                {
-                    "level_location": "mount-lanakila"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_location": "mount-lanakila"
+            }
         }
     ],
     "740": [],
@@ -4870,27 +4105,23 @@ var evolutions = {
     "742": [
         {
             "evolution": "743",
-            "methods": [
-                {
-                    "level": 25
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 25
+            }
         }
     ],
     "743": [],
     "744": [
         {
             "evolution": "745",
-            "methods": [
-                {
-                    "level_time": {
-                        "level": 25,
-                        "time_of_day": "day"
-                    }
+            "onegame": true,
+            "method": {
+                "level_time": {
+                    "level": 25,
+                    "time_of_day": "day"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "745": [],
@@ -4898,113 +4129,95 @@ var evolutions = {
     "747": [
         {
             "evolution": "748",
-            "methods": [
-                {
-                    "level": 38
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 38
+            }
         }
     ],
     "748": [],
     "749": [
         {
             "evolution": "750",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "750": [],
     "751": [
         {
             "evolution": "752",
-            "methods": [
-                {
-                    "level": 22
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 22
+            }
         }
     ],
     "752": [],
     "753": [
         {
             "evolution": "754",
-            "methods": [
-                {
-                    "level_time": {
-                        "level": 34,
-                        "time_of_day": "day"
-                    }
+            "onegame": true,
+            "method": {
+                "level_time": {
+                    "level": 34,
+                    "time_of_day": "day"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "754": [],
     "755": [
         {
             "evolution": "756",
-            "methods": [
-                {
-                    "level": 24
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 24
+            }
         }
     ],
     "756": [],
     "757": [
         {
             "evolution": "758",
-            "methods": [
-                {
-                    "level_gender": {
-                        "level": 33,
-                        "gender": "female"
-                    }
+            "onegame": true,
+            "method": {
+                "level_gender": {
+                    "level": 33,
+                    "gender": "female"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "758": [],
     "759": [
         {
             "evolution": "760",
-            "methods": [
-                {
-                    "level": 27
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 27
+            }
         }
     ],
     "760": [],
     "761": [
         {
             "evolution": "762",
-            "methods": [
-                {
-                    "level": 18
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 18
+            }
         }
     ],
     "762": [
         {
             "evolution": "763",
-            "methods": [
-                {
-                    "level_move": "stomp"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_move": "stomp"
+            }
         }
     ],
     "763": [],
@@ -5014,24 +4227,20 @@ var evolutions = {
     "767": [
         {
             "evolution": "768",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "768": [],
     "769": [
         {
             "evolution": "770",
-            "methods": [
-                {
-                    "level": 42
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 42
+            }
         }
     ],
     "770": [],
@@ -5039,12 +4248,10 @@ var evolutions = {
     "772": [
         {
             "evolution": "773",
-            "methods": [
-                {
-                    "level_happiness": 160
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_happiness": 160
+            }
         }
     ],
     "773": [],
@@ -5059,23 +4266,19 @@ var evolutions = {
     "782": [
         {
             "evolution": "783",
-            "methods": [
-                {
-                    "level": 35
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 35
+            }
         }
     ],
     "783": [
         {
             "evolution": "784",
-            "methods": [
-                {
-                    "level": 45
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 45
+            }
         }
     ],
     "784": [],
@@ -5086,32 +4289,26 @@ var evolutions = {
     "789": [
         {
             "evolution": "790",
-            "methods": [
-                {
-                    "level": 43
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 43
+            }
         }
     ],
     "790": [
         {
             "evolution": "791",
-            "methods": [
-                {
-                    "level": 53
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 53
+            }
         },
         {
             "evolution": "792",
-            "methods": [
-                {
-                    "level": 53
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 53
+            }
         }
     ],
     "791": [],
@@ -5129,12 +4326,10 @@ var evolutions = {
     "803": [
         {
             "evolution": "804",
-            "methods": [
-                {
-                    "level_move": "dragon-pulse"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_move": "dragon-pulse"
+            }
         }
     ],
     "804": [],
@@ -5146,231 +4341,191 @@ var evolutions = {
     "810": [
         {
             "evolution": "811",
-            "methods": [
-                {
-                    "level": 16
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 16
+            }
         }
     ],
     "811": [
         {
             "evolution": "812",
-            "methods": [
-                {
-                    "level": 35
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 35
+            }
         }
     ],
     "812": [],
     "813": [
         {
             "evolution": "814",
-            "methods": [
-                {
-                    "level": 16
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 16
+            }
         }
     ],
     "814": [
         {
             "evolution": "815",
-            "methods": [
-                {
-                    "level": 35
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 35
+            }
         }
     ],
     "815": [],
     "816": [
         {
             "evolution": "817",
-            "methods": [
-                {
-                    "level": 16
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 16
+            }
         }
     ],
     "817": [
         {
             "evolution": "818",
-            "methods": [
-                {
-                    "level": 35
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 35
+            }
         }
     ],
     "818": [],
     "819": [
         {
             "evolution": "820",
-            "methods": [
-                {
-                    "level": 24
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 24
+            }
         }
     ],
     "820": [],
     "821": [
         {
             "evolution": "822",
-            "methods": [
-                {
-                    "level": 18
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 18
+            }
         }
     ],
     "822": [
         {
             "evolution": "823",
-            "methods": [
-                {
-                    "level": 38
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 38
+            }
         }
     ],
     "823": [],
     "824": [
         {
             "evolution": "825",
-            "methods": [
-                {
-                    "level": 10
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 10
+            }
         }
     ],
     "825": [
         {
             "evolution": "826",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "826": [],
     "827": [
         {
             "evolution": "828",
-            "methods": [
-                {
-                    "level": 18
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 18
+            }
         }
     ],
     "828": [],
     "829": [
         {
             "evolution": "830",
-            "methods": [
-                {
-                    "level": 20
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 20
+            }
         }
     ],
     "830": [],
     "831": [
         {
             "evolution": "832",
-            "methods": [
-                {
-                    "level": 24
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 24
+            }
         }
     ],
     "832": [],
     "833": [
         {
             "evolution": "834",
-            "methods": [
-                {
-                    "level": 22
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 22
+            }
         }
     ],
     "834": [],
     "835": [
         {
             "evolution": "836",
-            "methods": [
-                {
-                    "level": 25
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 25
+            }
         }
     ],
     "836": [],
     "837": [
         {
             "evolution": "838",
-            "methods": [
-                {
-                    "level": 18
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 18
+            }
         }
     ],
     "838": [
         {
             "evolution": "839",
-            "methods": [
-                {
-                    "level": 34
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 34
+            }
         }
     ],
     "839": [],
     "840": [
         {
             "evolution": "841",
-            "methods": [
-                {
-                    "item": "tart-apple"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "tart-apple"
+            }
         },
         {
             "evolution": "842",
-            "methods": [
-                {
-                    "item": "sweet-apple"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "sweet-apple"
+            }
         }
     ],
     "841": [],
@@ -5378,12 +4533,10 @@ var evolutions = {
     "843": [
         {
             "evolution": "844",
-            "methods": [
-                {
-                    "level": 36
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 36
+            }
         }
     ],
     "844": [],
@@ -5391,106 +4544,88 @@ var evolutions = {
     "846": [
         {
             "evolution": "847",
-            "methods": [
-                {
-                    "level": 26
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 26
+            }
         }
     ],
     "847": [],
     "848": [
         {
             "evolution": "849",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "849": [],
     "850": [
         {
             "evolution": "851",
-            "methods": [
-                {
-                    "level": 28
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 28
+            }
         }
     ],
     "851": [],
     "852": [
         {
             "evolution": "853",
-            "methods": [
-                {
-                    "level_move": "taunt"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level_move": "taunt"
+            }
         }
     ],
     "853": [],
     "854": [
         {
             "evolution": "855",
-            "methods": [
-                {
-                    "item": "cracked-pot"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "cracked-pot"
+            }
         }
     ],
     "855": [],
     "856": [
         {
             "evolution": "857",
-            "methods": [
-                {
-                    "level": 32
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 32
+            }
         }
     ],
     "857": [
         {
             "evolution": "858",
-            "methods": [
-                {
-                    "level": 42
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 42
+            }
         }
     ],
     "858": [],
     "859": [
         {
             "evolution": "860",
-            "methods": [
-                {
-                    "level": 32
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 32
+            }
         }
     ],
     "860": [
         {
             "evolution": "861",
-            "methods": [
-                {
-                    "level": 42
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 42
+            }
         }
     ],
     "861": [],
@@ -5503,12 +4638,10 @@ var evolutions = {
     "868": [
         {
             "evolution": "869",
-            "methods": [
-                {
-                    "spin": true
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "spin": true
+            }
         }
     ],
     "869": [],
@@ -5517,15 +4650,13 @@ var evolutions = {
     "872": [
         {
             "evolution": "873",
-            "methods": [
-                {
-                    "level_happiness_time": {
-                        "happiness": 160,
-                        "time_of_day": "night"
-                    }
+            "onegame": true,
+            "method": {
+                "level_happiness_time": {
+                    "happiness": 160,
+                    "time_of_day": "night"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "873": [],
@@ -5536,12 +4667,10 @@ var evolutions = {
     "878": [
         {
             "evolution": "879",
-            "methods": [
-                {
-                    "level": 34
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 34
+            }
         }
     ],
     "879": [],
@@ -5553,23 +4682,19 @@ var evolutions = {
     "885": [
         {
             "evolution": "886",
-            "methods": [
-                {
-                    "level": 50
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 50
+            }
         }
     ],
     "886": [
         {
             "evolution": "887",
-            "methods": [
-                {
-                    "level": 60
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 60
+            }
         }
     ],
     "887": [],
@@ -5579,12 +4704,10 @@ var evolutions = {
     "891": [
         {
             "evolution": "892",
-            "methods": [
-                {
-                    "interact": "tower"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "interact": "tower"
+            }
         }
     ],
     "892": [],
@@ -5604,175 +4727,145 @@ var evolutions = {
     "906": [
         {
             "evolution": "907",
-            "methods": [
-                {
-                    "level": 16
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 16
+            }
         }
     ],
     "907": [
         {
             "evolution": "908",
-            "methods": [
-                {
-                    "level": 36
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 36
+            }
         }
     ],
     "908": [],
     "909": [
         {
             "evolution": "910",
-            "methods": [
-                {
-                    "level": 16
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 16
+            }
         }
     ],
     "910": [
         {
             "evolution": "911",
-            "methods": [
-                {
-                    "level": 36
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 36
+            }
         }
     ],
     "911": [],
     "912": [
         {
             "evolution": "913",
-            "methods": [
-                {
-                    "level": 16
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 16
+            }
         }
     ],
     "913": [
         {
             "evolution": "914",
-            "methods": [
-                {
-                    "level": 36
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 36
+            }
         }
     ],
     "914": [],
     "915": [
         {
             "evolution": "916",
-            "methods": [
-                {
-                    "level": 18
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 18
+            }
         }
     ],
     "916": [],
     "917": [
         {
             "evolution": "918",
-            "methods": [
-                {
-                    "level": 15
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 15
+            }
         }
     ],
     "918": [],
     "919": [
         {
             "evolution": "920",
-            "methods": [
-                {
-                    "level": 24
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 24
+            }
         }
     ],
     "920": [],
     "921": [
         {
             "evolution": "922",
-            "methods": [
-                {
-                    "level": 18
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 18
+            }
         }
     ],
     "922": [
         {
             "evolution": "923",
-            "methods": [
-                {
-                    "walking": 1000
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "walking": 1000
+            }
         }
     ],
     "923": [],
     "924": [
         {
             "evolution": "925",
-            "methods": [
-                {
-                    "battle_level": 25
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "battle_level": 25
+            }
         }
     ],
     "925": [],
     "926": [
         {
             "evolution": "927",
-            "methods": [
-                {
-                    "level": 26
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 26
+            }
         }
     ],
     "927": [],
     "928": [
         {
             "evolution": "929",
-            "methods": [
-                {
-                    "level": 25
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 25
+            }
         }
     ],
     "929": [
         {
             "evolution": "930",
-            "methods": [
-                {
-                    "level": 35
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 35
+            }
         }
     ],
     "930": [],
@@ -5780,44 +4873,36 @@ var evolutions = {
     "932": [
         {
             "evolution": "933",
-            "methods": [
-                {
-                    "level": 24
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 24
+            }
         }
     ],
     "933": [
         {
             "evolution": "934",
-            "methods": [
-                {
-                    "level": 38
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 38
+            }
         }
     ],
     "934": [],
     "935": [
         {
             "evolution": "936",
-            "methods": [
-                {
-                    "item": "auspicious-armor"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "auspicious-armor"
+            }
         },
         {
             "evolution": "937",
-            "methods": [
-                {
-                    "item": "malicious-armor"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "malicious-armor"
+            }
         }
     ],
     "936": [],
@@ -5825,72 +4910,60 @@ var evolutions = {
     "938": [
         {
             "evolution": "939",
-            "methods": [
-                {
-                    "item": "thunder-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "thunder-stone"
+            }
         }
     ],
     "939": [],
     "940": [
         {
             "evolution": "941",
-            "methods": [
-                {
-                    "level": 25
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 25
+            }
         }
     ],
     "941": [],
     "942": [
         {
             "evolution": "943",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "943": [],
     "944": [
         {
             "evolution": "945",
-            "methods": [
-                {
-                    "level": 28
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 28
+            }
         }
     ],
     "945": [],
     "946": [
         {
             "evolution": "947",
-            "methods": [
-                {
-                    "walking": 1000
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "walking": 1000
+            }
         }
     ],
     "947": [],
     "948": [
         {
             "evolution": "949",
-            "methods": [
-                {
-                    "level": 30
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 30
+            }
         }
     ],
     "949": [],
@@ -5898,71 +4971,59 @@ var evolutions = {
     "951": [
         {
             "evolution": "952",
-            "methods": [
-                {
-                    "item": "fire-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "fire-stone"
+            }
         }
     ],
     "952": [],
     "953": [
         {
             "evolution": "954",
-            "methods": [
-                {
-                    "walking": 1000
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "walking": 1000
+            }
         }
     ],
     "954": [],
     "955": [
         {
             "evolution": "956",
-            "methods": [
-                {
-                    "level": 35
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 35
+            }
         }
     ],
     "956": [],
     "957": [
         {
             "evolution": "958",
-            "methods": [
-                {
-                    "level": 24
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 24
+            }
         }
     ],
     "958": [
         {
             "evolution": "959",
-            "methods": [
-                {
-                    "level": 38
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 38
+            }
         }
     ],
     "959": [],
     "960": [
         {
             "evolution": "961",
-            "methods": [
-                {
-                    "level": 26
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 26
+            }
         }
     ],
     "961": [],
@@ -5970,24 +5031,20 @@ var evolutions = {
     "963": [
         {
             "evolution": "964",
-            "methods": [
-                {
-                    "union_level": 38
-                }
-            ],
-            "onegame": false
+            "onegame": false,
+            "method": {
+                "union_level": 38
+            }
         }
     ],
     "964": [],
     "965": [
         {
             "evolution": "966",
-            "methods": [
-                {
-                    "level": 40
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 40
+            }
         }
     ],
     "966": [],
@@ -5996,27 +5053,23 @@ var evolutions = {
     "969": [
         {
             "evolution": "970",
-            "methods": [
-                {
-                    "level": 35
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 35
+            }
         }
     ],
     "970": [],
     "971": [
         {
             "evolution": "972",
-            "methods": [
-                {
-                    "level_time": {
-                        "level": 30,
-                        "time_of_day": "night"
-                    }
+            "onegame": true,
+            "method": {
+                "level_time": {
+                    "level": 30,
+                    "time_of_day": "night"
                 }
-            ],
-            "onegame": true
+            }
         }
     ],
     "972": [],
@@ -6024,12 +5077,10 @@ var evolutions = {
     "974": [
         {
             "evolution": "975",
-            "methods": [
-                {
-                    "item": "ice-stone"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "ice-stone"
+            }
         }
     ],
     "975": [],
@@ -6056,35 +5107,29 @@ var evolutions = {
     "996": [
         {
             "evolution": "997",
-            "methods": [
-                {
-                    "level": 35
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 35
+            }
         }
     ],
     "997": [
         {
             "evolution": "998",
-            "methods": [
-                {
-                    "level": 54
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "level": 54
+            }
         }
     ],
     "998": [],
     "999": [
         {
             "evolution": "1000",
-            "methods": [
-                {
-                    "item": "999-gimmighoul-coins"
-                }
-            ],
-            "onegame": true
+            "onegame": true,
+            "method": {
+                "item": "999-gimmighoul-coins"
+            }
         }
     ],
     "1000": [],
