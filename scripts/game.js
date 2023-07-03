@@ -77,9 +77,12 @@ function highlightEvolutions(thismon, mons, cls, items, game, itr){
                             "level_upside_down", "level_rain", "level_affection_move_type", "level_party_type",
                             "interact", "defeat", "level_location", "level_party", "level_stats", "level_move",
                             "move_special", "battle", "battle_level", "spin", "shed", "walking"].includes(k)){ //doable unlimited in all games
+                        if (evolutions[thismon][i].evolution in games[game].limited)
+                            mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML = "Unlimited Via Breeding";
+                        else
+                            mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML = "Requires Evolution";
                         mons[evolutions[thismon][i].evolution - 1].classList.remove("sLimited","sLimitedEvolution");
                         mons[evolutions[thismon][i].evolution - 1].classList.add(cls);
-                        mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML = "Requires Evolution";
                         //iterate by checking next evolution
                         highlightEvolutions(evolutions[thismon][i].evolution, mons, cls, items, game, itr);
                         highlightBreeding(evolutions[thismon][i].evolution, mons, items, game, itr + 1);
