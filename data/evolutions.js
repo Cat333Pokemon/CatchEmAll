@@ -18,7 +18,7 @@ var evolutions_7 = {
             "evolution": "28",
             "method":
             {
-                "item": "ice-stone"
+                "item": "Ice Stone"
             }
             ,
             "onegame": true
@@ -29,7 +29,7 @@ var evolutions_7 = {
             "evolution": "38",
             "method":
             {
-                "item": "ice-stone"
+                "item": "Ice Stone"
             }
             ,
             "onegame": true
@@ -85,7 +85,7 @@ var evolutions_7 = {
             "evolution": "470",
             "method":
             {
-                "item": "leaf-stone"
+                "item": "Leaf Stone"
             }
             ,
             "onegame": true
@@ -94,7 +94,7 @@ var evolutions_7 = {
             "evolution": "471",
             "method":
             {
-                "item": "ice-stone"
+                "item": "Ice Stone"
             }
             ,
             "onegame": true
@@ -105,7 +105,7 @@ var evolutions_7 = {
             "evolution": "555",
             "method":
             {
-                "item": "ice-stone"
+                "item": "Ice Stone"
             }
             ,
             "onegame": true
@@ -120,7 +120,7 @@ var evolutions_8 = {
         "evolution": "462",
         "method":
             {
-            "item": "thunder-stone"
+            "item": "Thunder Stone"
             }
         ,
         "onegame": true
@@ -131,7 +131,7 @@ var evolutions_8 = {
         "evolution": "476",
         "method": 
             {
-            "item": "thunder-stone"
+            "item": "Thunder Stone"
             }
         ,
         "onegame": true
@@ -142,7 +142,7 @@ var evolutions_8 = {
         "evolution": "738",
         "method": 
             {
-            "item": "thunder-stone"
+            "item": "Thunder Stone"
             }
         ,
         "onegame": "unknown"
@@ -156,7 +156,7 @@ var evolutions_9 = {
             "evolution": "740",
             "method": [
                 {
-                    "item": "ice-stone"
+                    "item": "Ice Stone"
                 }
             ],
             "onegame": true
@@ -217,7 +217,7 @@ var evolutions_feebas =
             }
         },
         {
-            "trade_with_item": "prism-scale"
+            "trade_with_item": "Prism Scale"
         },
         {
             "level_beauty": {
@@ -378,7 +378,7 @@ var evolutions = {
             "evolution": "26",
             "onegame": true,
             "method": {
-                "item": "thunder-stone"
+                "item": "Thunder Stone"
             }
         }
     ],
@@ -407,7 +407,7 @@ var evolutions = {
             "evolution": "31",
             "onegame": true,
             "method": {
-                "item": "moon-stone"
+                "item": "Moon Stone"
             }
         }
     ],
@@ -426,7 +426,7 @@ var evolutions = {
             "evolution": "34",
             "onegame": true,
             "method": {
-                "item": "moon-stone"
+                "item": "Moon Stone"
             }
         }
     ],
@@ -436,7 +436,7 @@ var evolutions = {
             "evolution": "36",
             "onegame": true,
             "method": {
-                "item": "moon-stone"
+                "item": "Moon Stone"
             }
         }
     ],
@@ -446,7 +446,7 @@ var evolutions = {
             "evolution": "38",
             "onegame": true,
             "method": {
-                "item": "fire-stone"
+                "item": "Fire Stone"
             }
         }
     ],
@@ -456,7 +456,7 @@ var evolutions = {
             "evolution": "40",
             "onegame": true,
             "method": {
-                "item": "moon-stone"
+                "item": "Moon Stone"
             }
         }
     ],
@@ -493,14 +493,14 @@ var evolutions = {
             "evolution": "45",
             "onegame": true,
             "method": {
-                "item": "leaf-stone"
+                "item": "Leaf Stone"
             }
         },
         {
             "evolution": "182",
             "onegame": true,
             "method": {
-                "item": "sun-stone"
+                "item": "Sun Stone"
             }
         }
     ],
@@ -588,7 +588,7 @@ var evolutions = {
             "evolution": "59",
             "onegame": true,
             "method": {
-                "item": "fire-stone"
+                "item": "Fire Stone"
             }
         }
     ],
@@ -607,14 +607,14 @@ var evolutions = {
             "evolution": "62",
             "onegame": true,
             "method": {
-                "item": "water-stone"
+                "item": "Water Stone"
             }
         },
         {
             "evolution": "186",
             "onegame": false,
             "method": {
-                "trade_with_item": "kings-rock"
+                "trade_with_item": "King's Rock"
             }
         }
     ],
@@ -671,7 +671,7 @@ var evolutions = {
             "evolution": "71",
             "onegame": true,
             "method": {
-                "item": "leaf-stone"
+                "item": "Leaf Stone"
             }
         }
     ],
@@ -727,7 +727,7 @@ var evolutions = {
             "evolution": "199",
             "onegame": false,
             "method": {
-                "trade_with_item": "kings-rock"
+                "trade_with_item": "King's Rock"
             }
         }
     ],
@@ -794,7 +794,7 @@ var evolutions = {
             "evolution": "91",
             "onegame": true,
             "method": {
-                "item": "water-stone"
+                "item": "Water Stone"
             }
         }
     ],
@@ -823,7 +823,7 @@ var evolutions = {
             "evolution": "208",
             "onegame": false,
             "method": {
-                "trade_with_item": "metal-coat"
+                "trade_with_item": "Metal Coat"
             }
         }
     ],
@@ -862,7 +862,7 @@ var evolutions = {
             "evolution": "103",
             "onegame": true,
             "method": {
-                "item": "leaf-stone"
+                "item": "Leaf Stone"
             }
         }
     ],
@@ -912,7 +912,7 @@ var evolutions = {
             "evolution": "464",
             "onegame": false,
             "method": {
-                "trade_with_item": "protector"
+                "trade_with_item": "Protector"
             }
         }
     ],
@@ -949,7 +949,7 @@ var evolutions = {
             "evolution": "230",
             "onegame": false,
             "method": {
-                "trade_with_item": "dragon-scale"
+                "trade_with_item": "Dragon Scale"
             }
         }
     ],
@@ -968,7 +968,7 @@ var evolutions = {
             "evolution": "121",
             "onegame": true,
             "method": {
-                "item": "water-stone"
+                "item": "Water Stone"
             }
         }
     ],
@@ -987,7 +987,7 @@ var evolutions = {
             "evolution": "212",
             "onegame": false,
             "method": {
-                "trade_with_item": "metal-coat"
+                "trade_with_item": "Metal Coat"
             }
         },
         {
@@ -1004,7 +1004,7 @@ var evolutions = {
             "evolution": "466",
             "onegame": false,
             "method": {
-                "trade_with_item": "electirizer"
+                "trade_with_item": "Electirizer"
             }
         }
     ],
@@ -1013,7 +1013,7 @@ var evolutions = {
             "evolution": "467",
             "onegame": false,
             "method": {
-                "trade_with_item": "magmarizer"
+                "trade_with_item": "Magmarizer"
             }
         }
     ],
@@ -1036,21 +1036,21 @@ var evolutions = {
             "evolution": "134",
             "onegame": true,
             "method": {
-                "item": "water-stone"
+                "item": "Water Stone"
             }
         },
         {
             "evolution": "135",
             "onegame": true,
             "method": {
-                "item": "thunder-stone"
+                "item": "Thunder Stone"
             }
         },
         {
             "evolution": "136",
             "onegame": true,
             "method": {
-                "item": "fire-stone"
+                "item": "Fire Stone"
             }
         },
         {
@@ -1106,7 +1106,7 @@ var evolutions = {
             "evolution": "233",
             "onegame": false,
             "method": {
-                "trade_with_item": "up-grade"
+                "trade_with_item": "Upgrade"
             }
         }
     ],
@@ -1305,7 +1305,7 @@ var evolutions = {
             "evolution": "468",
             "onegame": true,
             "method": {
-                "item": "shiny-stone"
+                "item": "Shiny Stone"
             }
         }
     ],
@@ -1384,7 +1384,7 @@ var evolutions = {
             "evolution": "192",
             "onegame": true,
             "method": {
-                "item": "sun-stone"
+                "item": "Sun Stone"
             }
         }
     ],
@@ -1422,7 +1422,7 @@ var evolutions = {
             "evolution": "430",
             "onegame": true,
             "method": {
-                "item": "dusk-stone"
+                "item": "Dusk Stone"
             }
         }
     ],
@@ -1432,7 +1432,7 @@ var evolutions = {
             "evolution": "429",
             "onegame": true,
             "method": {
-                "item": "dusk-stone"
+                "item": "Dusk Stone"
             }
         }
     ],
@@ -1472,7 +1472,7 @@ var evolutions = {
             "onegame": true,
             "method": {
                 "level_item_time": {
-                    "item": "razor-fang",
+                    "item": "Razor Fang",
                     "time_of_day": "night"
                 }
             }
@@ -1510,7 +1510,7 @@ var evolutions = {
             "onegame": true,
             "method": {
                 "level_item_time": {
-                    "item": "razor-claw",
+                    "item": "Razor Claw",
                     "time_of_day": "night"
                 }
             }
@@ -1520,7 +1520,7 @@ var evolutions = {
             "onegame": true,
             "method": {
                 "level_item_time": {
-                    "item": "razor-claw",
+                    "item": "Razor Claw",
                     "time_of_day": "day"
                 }
             }
@@ -1541,7 +1541,7 @@ var evolutions = {
             "onegame": true,
             "method": {
                 "item_time": {
-                    "item": "peat-block",
+                    "item": "Peat Block",
                     "time_of_day": "full-moon"
                 }
             }
@@ -1623,7 +1623,7 @@ var evolutions = {
             "evolution": "474",
             "onegame": false,
             "method": {
-                "trade_with_item": "dubious-disc"
+                "trade_with_item": "Dubious Disc"
             }
         }
     ],
@@ -1865,7 +1865,7 @@ var evolutions = {
             "evolution": "272",
             "onegame": true,
             "method": {
-                "item": "water-stone"
+                "item": "Water Stone"
             }
         }
     ],
@@ -1884,7 +1884,7 @@ var evolutions = {
             "evolution": "275",
             "onegame": true,
             "method": {
-                "item": "leaf-stone"
+                "item": "Leaf Stone"
             }
         }
     ],
@@ -1931,7 +1931,7 @@ var evolutions = {
             "onegame": true,
             "method": {
                 "item_gender": {
-                    "item": "dawn-stone",
+                    "item": "Dawn Stone",
                     "gender": "male"
                 }
             }
@@ -2047,7 +2047,7 @@ var evolutions = {
             "evolution": "301",
             "onegame": true,
             "method": {
-                "item": "moon-stone"
+                "item": "Moon Stone"
             }
         }
     ],
@@ -2102,7 +2102,7 @@ var evolutions = {
             "evolution": "407",
             "onegame": true,
             "method": {
-                "item": "shiny-stone"
+                "item": "Shiny Stone"
             }
         }
     ],
@@ -2289,7 +2289,7 @@ var evolutions = {
             "evolution": "477",
             "onegame": false,
             "method": {
-                "trade_with_item": "reaper-cloth"
+                "trade_with_item": "Reaper Cloth"
             }
         }
     ],
@@ -2318,7 +2318,7 @@ var evolutions = {
             "onegame": true,
             "method": {
                 "item_gender": {
-                    "item": "dawn-stone",
+                    "item": "Dawn Stone",
                     "gender": "female"
                 }
             }
@@ -2349,14 +2349,14 @@ var evolutions = {
             "evolution": "367",
             "onegame": false,
             "method": {
-                "trade_with_item": "deep-sea-tooth"
+                "trade_with_item": "Deep Sea Tooth"
             }
         },
         {
             "evolution": "368",
             "onegame": false,
             "method": {
-                "trade_with_item": "deep-sea-scale"
+                "trade_with_item": "Deep Sea Scale"
             }
         }
     ],
@@ -2717,7 +2717,7 @@ var evolutions = {
             "onegame": true,
             "method": {
                 "level_item_time": {
-                    "item": "oval-stone",
+                    "item": "Oval Stone",
                     "time_of_day": "day"
                 }
             }
@@ -2961,7 +2961,7 @@ var evolutions = {
             "evolution": "512",
             "onegame": true,
             "method": {
-                "item": "leaf-stone"
+                "item": "Leaf Stone"
             }
         }
     ],
@@ -2971,7 +2971,7 @@ var evolutions = {
             "evolution": "514",
             "onegame": true,
             "method": {
-                "item": "fire-stone"
+                "item": "Fire Stone"
             }
         }
     ],
@@ -2981,7 +2981,7 @@ var evolutions = {
             "evolution": "516",
             "onegame": true,
             "method": {
-                "item": "water-stone"
+                "item": "Water Stone"
             }
         }
     ],
@@ -2991,7 +2991,7 @@ var evolutions = {
             "evolution": "518",
             "onegame": true,
             "method": {
-                "item": "moon-stone"
+                "item": "Moon Stone"
             }
         }
     ],
@@ -3148,7 +3148,7 @@ var evolutions = {
             "evolution": "547",
             "onegame": true,
             "method": {
-                "item": "sun-stone"
+                "item": "Sun Stone"
             }
         }
     ],
@@ -3158,7 +3158,7 @@ var evolutions = {
             "evolution": "549",
             "onegame": true,
             "method": {
-                "item": "sun-stone"
+                "item": "Sun Stone"
             }
         }
     ],
@@ -3285,7 +3285,7 @@ var evolutions = {
             "evolution": "573",
             "onegame": true,
             "method": {
-                "item": "shiny-stone"
+                "item": "Shiny Stone"
             }
         }
     ],
@@ -3452,7 +3452,7 @@ var evolutions = {
             "evolution": "604",
             "onegame": true,
             "method": {
-                "item": "thunder-stone"
+                "item": "Thunder Stone"
             }
         }
     ],
@@ -3481,7 +3481,7 @@ var evolutions = {
             "evolution": "609",
             "onegame": true,
             "method": {
-                "item": "dusk-stone"
+                "item": "Dusk Stone"
             }
         }
     ],
@@ -3759,7 +3759,7 @@ var evolutions = {
             "evolution": "671",
             "onegame": true,
             "method": {
-                "item": "shiny-stone"
+                "item": "Shiny Stone"
             }
         }
     ],
@@ -3812,7 +3812,7 @@ var evolutions = {
             "evolution": "681",
             "onegame": true,
             "method": {
-                "item": "dusk-stone"
+                "item": "Dusk Stone"
             }
         }
     ],
@@ -3822,7 +3822,7 @@ var evolutions = {
             "evolution": "683",
             "onegame": false,
             "method": {
-                "trade_with_item": "sachet"
+                "trade_with_item": "Sachet"
             }
         }
     ],
@@ -3832,7 +3832,7 @@ var evolutions = {
             "evolution": "685",
             "onegame": false,
             "method": {
-                "trade_with_item": "whipped-dream"
+                "trade_with_item": "Whipped Dream"
             }
         }
     ],
@@ -3882,7 +3882,7 @@ var evolutions = {
             "evolution": "695",
             "onegame": true,
             "method": {
-                "item": "sun-stone"
+                "item": "Sun Stone"
             }
         }
     ],
@@ -4912,7 +4912,7 @@ var evolutions = {
             "evolution": "939",
             "onegame": true,
             "method": {
-                "item": "thunder-stone"
+                "item": "Thunder Stone"
             }
         }
     ],
@@ -4973,7 +4973,7 @@ var evolutions = {
             "evolution": "952",
             "onegame": true,
             "method": {
-                "item": "fire-stone"
+                "item": "Fire Stone"
             }
         }
     ],
@@ -5079,7 +5079,7 @@ var evolutions = {
             "evolution": "975",
             "onegame": true,
             "method": {
-                "item": "ice-stone"
+                "item": "Ice Stone"
             }
         }
     ],

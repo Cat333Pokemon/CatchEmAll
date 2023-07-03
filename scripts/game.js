@@ -10,50 +10,61 @@ function dbg(msg){
     }else{
         document.getElementById("debugbox").style.display = '';
         document.getElementById("debug").innerHTML += "<br />" + msg;
-        console.log(msg);
+        //console.log(msg);
     }
 }
 
-function variableEvolutions(thismon){
+function variableEvolutions(thismon, game){
     //check ones like Pikachu in Yellow, Feebas by version, Eevee by version, etc.
     //checks for Gen 7 should be added in the future
+    switch (parseInt(thismon)){
+        case 26: //Raichu
+            if (game == "yellow")
+                return false;
+            break;
+        case 470: //Leafeon
+        case 471: //Glaceon
+            if (game != "heartgold" && game != "soulsilver")
+                return false;
+            break;
+        default:
+    }
+    return true;
 }
 
 //using evolutions `evo`, highlight item in `mons` with the specified class `cls`, plus item list and size of generation
-function highlightEvolutions(thismon, mons, cls, items, total){
+function highlightEvolutions(thismon, mons, cls, items, total, game){
     if (evolutions[thismon].length > 0){
         for (let i = 0; i < evolutions[thismon].length; i++){
             //Skip Pokémon past this generation, and any with more classes that should've already been iterated
-            if (evolutions[thismon][i].evolution <= total && mons[evolutions[thismon][i].evolution - 1].classList.length == 1){ 
+            if (variableEvolutions(evolutions[thismon][i].evolution, game) &&
+                    evolutions[thismon][i].evolution <= total &&
+                    mons[evolutions[thismon][i].evolution - 1].classList.length == 1){
                 if (evolutions[thismon][i].onegame === true){ //can evolve in one game
                     let k = Object.keys(evolutions[thismon][i].method)[0];
-                    if (["level"].includes(k)){ //doable unlimited in all games
+                    if (["level", "level_gender", "level_time", "level_happiness", "level_happiness_time",
+                            "level_upside_down", "level_rain", "level_affection_move_type"].includes(k)){ //doable unlimited in all games
                         mons[evolutions[thismon][i].evolution - 1].classList.add(cls);
                         mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML = "Requires Evolution";
                         //iterate by checking next evolution
-                        highlightEvolutions(evolutions[thismon][i].evolution, mons, cls, items, total);
+                        highlightEvolutions(evolutions[thismon][i].evolution, mons, cls, items, total, game);
                     }else if (k == "item"){
                         let uitem = evolutions[thismon][i].method[k];
-                        console.log(items);
-                        /*if (!(uitem in itemcounter)) //how many of each item are needed
-                            itemcounter[uitem] = 1;
-                        else
-                            itemcounter[uitem]++;*/
                         mons[evolutions[thismon][i].evolution - 1].setAttribute("itemNeeded", uitem);
 
                         if (uitem in items){
                             //This could potentially be moved to the item checking at the bottom of game()
                             mons[evolutions[thismon][i].evolution - 1].classList.add("sLimited");
                             mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML =
-                                "Only " + items[uitem] + " " + uitem;
+                                uitem + "<br />(Only " + items[uitem] + ")";
                             //iterate by checking next evolution
-                            highlightEvolutions(evolutions[thismon][i].evolution, mons, "sLimited", items, total);
+                            highlightEvolutions(evolutions[thismon][i].evolution, mons, "sLimited", items, total, game);
                         }else{
                             mons[evolutions[thismon][i].evolution - 1].classList.add(cls);
                             mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML =
-                                "Unlimited " + uitem;
+                                uitem + "<br />(Unlimited)";
                             //iterate by checking next evolution
-                            highlightEvolutions(evolutions[thismon][i].evolution, mons, cls, items, total);
+                            highlightEvolutions(evolutions[thismon][i].evolution, mons, cls, items, total, game);
                         }
                     }
                     
@@ -64,7 +75,7 @@ function highlightEvolutions(thismon, mons, cls, items, total){
                     mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML = "Requires Trading";
                 
                     //iterate by checking next evolution
-                    highlightEvolutions(evolutions[thismon][i].evolution, mons, "sTrade", items, total);
+                    highlightEvolutions(evolutions[thismon][i].evolution, mons, "sTrade", items, total, game);
                     //trc++; //trade
                 }
             }else{
@@ -146,7 +157,7 @@ function game(g){
             //m[gm.unlimited[i] - 1].classList.remove("sUnlimitedEvolution"); //remove evolution class if set earlier
             //m[gm.unlimited[i] - 1].classList.remove("sTrade"); //remove trade class if set earlier
             //m[gm.unlimited[i] - 1].classList.add("sUnlimited");
-            highlightEvolutions(gm.unlimited[i], m, "sUnlimitedEvolution", ("items" in gm ? gm.items : {}), gm.total);
+            highlightEvolutions(gm.unlimited[i], m, "sUnlimitedEvolution", ("items" in gm ? gm.items : {}), gm.total, g);
             m[gm.unlimited[i] - 1].querySelector(".num").innerHTML = "Unlimited";
             ulc++;
         }
@@ -200,10 +211,15 @@ function game(g){
                 if (m[c - 1].classList.length == 1){ //not already on unlimited list
                     m[c - 1].classList.add("sLimited");
                     m[c - 1].querySelector(".num") . innerHTML = gm.limited[c];
-                    highlightEvolutions(c, m, "sLimitedEvolution", ("items" in gm ? gm.items : {}), gm.total);
+                    highlightEvolutions(c, m, "sLimitedEvolution", ("items" in gm ? gm.items : {}), gm.total, g);
                     lic++;
+                }else if (m[c - 1].classList.contains("sTrade")){ //available trade evolution
+                    m[c - 1].classList.remove("sTrade");
+                    m[c - 1].classList.add("sLimited");
+                    m[c - 1].querySelector(".num") . innerHTML = gm.limited[c];
+                    highlightEvolutions(c, m, "sLimitedEvolution", ("items" in gm ? gm.items : {}), gm.total, g);
                 }else{
-                    dbg("Extraneous unlimited (also in limited list) - this is OK: #" + c);
+                    dbg("Extraneous unlimited (also in limited list) - this may or may not be OK: #" + c);
                     m[c - 1].querySelector(".num") . innerHTML = "Unlimited Via Evolution";
                     //This is OK because an unlimited number are available via evolution, but a limited number can be caught directly
                 }
@@ -274,7 +290,7 @@ function game(g){
                 m[i].classList.add("sFuture"); //hide later Pokémon regardless of what happens below
             }else if (m[i].classList.length == 1 && m[i].getAttribute("class") === "mon" && i < gm.total){ //has not been changed
                 m[i].classList.add("sUnavailable");
-                m[i].querySelector(".num").innerHTML = "Unavailable";
+                m[i].querySelector(".num").innerHTML = "Not Available";
                 unc++;
             }else if(m[i].classList.length > 2){ //too many classes on this mon
                 console.log(m[i].classList);
@@ -328,7 +344,7 @@ function game(g){
             }
         }
         
-        //console.log(`limited: ${uli}, chyes: ${chyes}, chno: ${chno}`);
+        console.log(`unlimited: ${ulc}, limited: ${uli}, chyes: ${chyes}, chno: ${chno}`);
 
         //display counters on screen
         document.getElementById("cUnlimited").innerHTML = ulc;
@@ -338,7 +354,8 @@ function game(g){
             document.querySelectorAll(".mon.sTrade:not(.sFuture)").length;
         document.getElementById("cUnavailable").innerHTML =
             document.querySelectorAll(".mon.sUnavailable").length;
-        let tot = ulc + lic + chyes + (engames.length > 1 ? trc : 0); //logic must be more complex for trades
+        
+        let tot = ulc + uli + chyes + (engames.length > 1 ? trc : 0); //logic must be more complex for trades
 
         document.getElementById("cTotal").innerHTML = gm.total;
         document.getElementById("cAvailable").innerHTML = tot;
