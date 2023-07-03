@@ -42,24 +42,47 @@ function variableEvolutions(thismon, game){
     return true;
 }
 
-//using evolutions `evo`, highlight item in `mons` with the specified class `cls`, plus item list and size of generation
-function highlightEvolutions(thismon, mons, cls, items, total, game){
-    if (evolutions[thismon].length > 0){
+/*  Breeding helper
+    Let's not bother with the choices list; is Ditto ever a choice?
+    This code isn't perfect because it also assumes every female of a single instance has a breeding partner
+    in the same egg group. However, to account for that would require introducing the entire egg group system,
+    and that is just outside of the scope of this project. Those will be defined in variableEvolutions() above
+    if they ever come up.
+*/
+function hasDitto(game){
+    if (132 in games[game].limited || games[game].unlimited.includes(132))
+        return true;
+    else
+        return false;
+}
+
+//using Pokémon ID `thismon`, highlight item in `mons` with the specified class `cls`, plus item list and size of generation
+//Iteration count used when switching between evolutions and breeding
+function highlightEvolutions(thismon, mons, cls, items, game, itr){
+    //if (thismon == 175)
+    //    debugger;
+    //if (itr > 0)
+    //    console.log("evolution: " + thismon);
+    if (itr < 4 && evolutions[thismon].length > 0){
         for (let i = 0; i < evolutions[thismon].length; i++){
             //Skip Pokémon past this generation, and any with more classes that should've already been iterated
             if (variableEvolutions(evolutions[thismon][i].evolution, game) &&
-                    evolutions[thismon][i].evolution <= total &&
-                    mons[evolutions[thismon][i].evolution - 1].classList.length == 1){
+                    evolutions[thismon][i].evolution <= games[game].total &&
+                    (mons[evolutions[thismon][i].evolution - 1].classList.length == 1 ||
+                        mons[evolutions[thismon][i].evolution - 1].classList.contains("sLimited") ||
+                        mons[evolutions[thismon][i].evolution - 1].classList.contains("sLimitedEvolution"))){
                 if (evolutions[thismon][i].onegame === true){ //can evolve in one game
                     let k = Object.keys(evolutions[thismon][i].method)[0];
                     if (["level", "level_gender", "level_time", "level_happiness", "level_happiness_time",
                             "level_upside_down", "level_rain", "level_affection_move_type", "level_party_type",
                             "interact", "defeat", "level_location", "level_party", "level_stats", "level_move",
                             "move_special", "battle", "battle_level", "spin", "shed", "walking"].includes(k)){ //doable unlimited in all games
+                        mons[evolutions[thismon][i].evolution - 1].classList.remove("sLimited","sLimitedEvolution");
                         mons[evolutions[thismon][i].evolution - 1].classList.add(cls);
                         mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML = "Requires Evolution";
                         //iterate by checking next evolution
-                        highlightEvolutions(evolutions[thismon][i].evolution, mons, cls, items, total, game);
+                        highlightEvolutions(evolutions[thismon][i].evolution, mons, cls, items, game, itr);
+                        highlightBreeding(evolutions[thismon][i].evolution, mons, items, game, itr + 1);
                     }else if (["item","item_gender","item_time","level_item_time"].includes(k)){
                         let uitem = evolutions[thismon][i].method[k];
                         if (typeof uitem === "object") //object that contains multiple elements, including the item
@@ -68,33 +91,43 @@ function highlightEvolutions(thismon, mons, cls, items, total, game){
 
                         if (uitem in items){
                             //This could potentially be moved to the item checking at the bottom of game()
-                            mons[evolutions[thismon][i].evolution - 1].classList.add("sLimited");
-                            mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML =
-                                uitem + "<br />(Only " + items[uitem] + ")";
+                            if (!mons[evolutions[thismon][i].evolution - 1].classList.contains("sLimited")){
+                                mons[evolutions[thismon][i].evolution - 1].classList.add("sLimited");
+                                mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML =
+                                    (items[uitem] > 0 ? uitem + "<br />(Only " + items[uitem] + ")" : "No " + uitem + " Available");
+                            }else if (evolutions[thismon][i].evolution in games[game].limited){ //in limited list
+                                if (items[uitem] > 0) //item can get more
+                                    mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML += " / " +
+                                        uitem;
+                                mons[evolutions[thismon][i].evolution - 1].removeAttribute("itemNeeded");
+                                    //Item not needed to get ONE, so don't evaluate it
+                            }
+                            
+                            
                             //iterate by checking next evolution
-                            highlightEvolutions(evolutions[thismon][i].evolution, mons, "sLimited", items, total, game);
+                            highlightEvolutions(evolutions[thismon][i].evolution, mons, "sLimited", items, game, itr);
+                            highlightBreeding(evolutions[thismon][i].evolution, mons, items, game, itr + 1);
                         }else{
+                            mons[evolutions[thismon][i].evolution - 1].classList.remove("sLimited","sLimitedEvolution");
                             mons[evolutions[thismon][i].evolution - 1].classList.add(cls);
                             mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML =
                                 uitem + "<br />(Unlimited)";
                             //iterate by checking next evolution
-                            highlightEvolutions(evolutions[thismon][i].evolution, mons, cls, items, total, game);
+                            highlightEvolutions(evolutions[thismon][i].evolution, mons, cls, items, game, itr);
+                            highlightBreeding(evolutions[thismon][i].evolution, mons, items, game, itr + 1);
                         }
                     }
-                    
-                    
-                    //ulc++; //unlimited
-                }else{ //mark as "trade" for now
+                }else if (!mons[evolutions[thismon][i].evolution - 1].classList.contains("sLimited")){ //mark as "trade" for now
                     // types: "trade", "trade_for", "trade_with_item", "union_level"
                     mons[evolutions[thismon][i].evolution - 1].classList.add("sTrade");
                     mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML = "Requires Trading";
                 
                     //iterate by checking next evolution
-                    highlightEvolutions(evolutions[thismon][i].evolution, mons, "sTrade", items, total, game);
-                    //trc++; //trade
+                    highlightEvolutions(evolutions[thismon][i].evolution, mons, "sTrade", items, game, itr);
+                    highlightBreeding(evolutions[thismon][i].evolution, mons, items, game, itr + 1);
                 }
             }else{
-                if (evolutions[thismon][i].evolution > total){
+                if (evolutions[thismon][i].evolution > games[game].total){
                     dbg("Pokédex number too high: #" + (evolutions[thismon][i].evolution));
                 }else if (mons[evolutions[thismon][i].evolution - 1].classList.contains("sUnlimitedEvolution")){
                     dbg("Removing evolution requirement: #" + (evolutions[thismon][i].evolution - 1));
@@ -103,6 +136,54 @@ function highlightEvolutions(thismon, mons, cls, items, total, game){
                 }
             }
             
+        }
+    }
+}
+
+//Breeding is ALWAYS available in unlimited numbers, with iteration count
+function highlightBreeding(thismon, mons, items, game, itr){
+    //if (itr > 0)
+    //    console.log("breeding: " + thismon);
+    if (itr < 4 && games[game].breeding && (hasDitto(game) || !noFemales.includes(thismon))){
+        if (breeding[thismon] !== null){
+            if (typeof breeding[thismon] === "object"){ //multiple children
+                for (let x in breeding[thismon]){
+                    if (x <= games[game].total){ // within Pokédex
+                        if (breeding[thismon][x] === null){ //no item required
+                            mons[x - 1].setAttribute("breedable", "true");
+                            if (!mons[x - 1].classList.contains("sUnlimited") && !mons[x - 1].classList.contains("sUnlimitedEvolution") ){
+                                //not unlimited in wild (already evaluated with evolutions)
+                                if (mons[x - 1].classList.contains("sLimited") || mons[x - 1].classList.contains("sLimitedEvolution")){
+                                    //remove limited
+                                    mons[x - 1].classList.remove("sLimited","sLimitedEvolution");
+                                    mons[x - 1].querySelector(".num").innerHTML = "Unlimited Via Breeding";
+                                }else{
+                                    mons[x - 1].querySelector(".num").innerHTML = "Requires Breeding";
+                                }
+                                mons[x - 1].classList.add("sUnlimitedEvolution");
+                                highlightEvolutions(x, mons, "sUnlimitedEvolution", items, game, itr + 1);
+                            }
+                        }else{ //item required
+                            console.log(x + ": " + breeding[thismon][x]);
+                            //not done
+                        }
+                    }
+                }
+            }else if (breeding[thismon] <= games[game].total){ //one child within Pokédex
+                mons[breeding[thismon] - 1].setAttribute("breedable", "true");
+                if (!mons[breeding[thismon] - 1].classList.contains("sUnlimited") && !mons[breeding[thismon] - 1].classList.contains("sUnlimitedEvolution")){
+                    //not unlimited in wild (already evaluated with evolutions)
+                    if (mons[breeding[thismon] - 1].classList.contains("sLimited") || mons[breeding[thismon] - 1].classList.contains("sLimitedEvolution")){
+                        //remove limited
+                        mons[breeding[thismon] - 1].classList.remove("sLimited","sLimitedEvolution");
+                        mons[breeding[thismon] - 1].querySelector(".num").innerHTML = "Unlimited Via Breeding";
+                    }else{
+                        mons[breeding[thismon] - 1].querySelector(".num").innerHTML = "Requires Breeding";
+                    }
+                    mons[breeding[thismon] - 1].classList.add("sUnlimitedEvolution");
+                    highlightEvolutions(breeding[thismon], mons, "sUnlimitedEvolution", items, game, itr + 1);
+                }
+            }
         }
     }
 }
@@ -172,7 +253,8 @@ function game(g){
             //m[gm.unlimited[i] - 1].classList.remove("sUnlimitedEvolution"); //remove evolution class if set earlier
             //m[gm.unlimited[i] - 1].classList.remove("sTrade"); //remove trade class if set earlier
             //m[gm.unlimited[i] - 1].classList.add("sUnlimited");
-            highlightEvolutions(gm.unlimited[i], m, "sUnlimitedEvolution", ("items" in gm ? gm.items : {}), gm.total, g);
+            highlightEvolutions(gm.unlimited[i], m, "sUnlimitedEvolution", ("items" in gm ? gm.items : {}), g, 0);
+            highlightBreeding(gm.unlimited[i], m, ("items" in gm ? gm.items : {}), g, 0);
             m[gm.unlimited[i] - 1].querySelector(".num").innerHTML = "Unlimited";
             ulc++;
         }
@@ -226,27 +308,32 @@ function game(g){
                 if (m[c - 1].classList.length == 1){ //not already on unlimited list
                     m[c - 1].classList.add("sLimited");
                     m[c - 1].querySelector(".num") . innerHTML = gm.limited[c];
-                    highlightEvolutions(c, m, "sLimitedEvolution", ("items" in gm ? gm.items : {}), gm.total, g);
+                    highlightEvolutions(c, m, "sLimitedEvolution", ("items" in gm ? gm.items : {}), g, 0);
+                    highlightBreeding(c, m, ("items" in gm ? gm.items : {}), g, 0);
                     lic++;
                 }else if (m[c - 1].classList.contains("sTrade")){ //available trade evolution
                     m[c - 1].classList.remove("sTrade");
                     m[c - 1].classList.add("sLimited");
                     m[c - 1].querySelector(".num") . innerHTML = gm.limited[c];
-                    highlightEvolutions(c, m, "sLimitedEvolution", ("items" in gm ? gm.items : {}), gm.total, g);
+                    highlightEvolutions(c, m, "sLimitedEvolution", ("items" in gm ? gm.items : {}), g, 0);
+                    highlightBreeding(c, m, ("items" in gm ? gm.items : {}), g, 0);
                 }else{
                     dbg("Extraneous unlimited (also in limited list) - this may or may not be OK: #" + c);
-                    m[c - 1].querySelector(".num") . innerHTML = "Unlimited Via Evolution";
+                    if (!m[c - 1].hasAttribute("breedable"))
+                        m[c - 1].querySelector(".num") . innerHTML = "Unlimited Via Evolution";
+                    else
+                        m[c - 1].querySelector(".num") . innerHTML = "Unlimited Via Breeding";
                     //This is OK because an unlimited number are available via evolution, but a limited number can be caught directly
                 }
             }
         }
-        if (!!gm.trade){
+        /*if (!!gm.trade){
             for (i = 0; i < gm.trade.length; i++){
                 m[gm.trade[i] - 1].classList.add("sTrade");
                 m[gm.trade[i] - 1].querySelector(".num").innerHTML = "Trade Evolution";
                 trc++;
             }
-        }
+        }*/
         if (!!gm.special){
             for (i = 0; i < gm.special.length; i++){
                 m[gm.special[i] - 1].classList.add("sTrade");
@@ -347,15 +434,22 @@ function game(g){
             document.getElementById("itemsNeeded").innerHTML += `<br /><b>${k}:</b> ${itemcounter[k]} needed (${(k in gt ? gt[k] : "unlimited")} available)`;
             if (k in gt && itemcounter[k] > gt[k]){
                 dbg(`Not enough items: ${k}. ${gt[k]} available but ${itemcounter[k]} needed.`);
-                
-                //not enough items, so change these to choices instead of fully available
                 itNeeded = document.querySelectorAll('.mon[itemNeeded="'+k+'"]');
                 uli -= itNeeded.length;
-                chyes += gt[k];
-                chno += (itemcounter[k] - gt[k]);
-                for (let p = 0; p < itNeeded.length; p++){
-                    itNeeded[p].setAttribute("class", "mon sChoice");
-                }
+                
+                if (gt[k] == 0){ //no items available
+                    
+                    for (let p = 0; p < itNeeded.length; p++){
+                        itNeeded[p].setAttribute("class", "mon sUnavailable");
+                    }
+                }else{ //some but not enough available
+                    //not enough items, so change these to choices instead of fully available
+                    chyes += gt[k];
+                    chno += (itemcounter[k] - gt[k]);
+                    for (let p = 0; p < itNeeded.length; p++){
+                        itNeeded[p].setAttribute("class", "mon sChoice");
+                    }
+                } 
             }
         }
         

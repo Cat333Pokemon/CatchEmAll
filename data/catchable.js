@@ -76,44 +76,8 @@ var pokemonlist = ["","Bulbasaur","Ivysaur","Venusaur","Charmander","Charmeleon"
 "Iron Jugulis","Iron Moth","Iron Thorns","Frigibax","Arctibax","Baxcalibur","Gimmighoul","Gholdengo","Wo-Chien","Chien-Pao","Ting-Lu","Chi-Yu",
 "Roaring Moon","Iron Valiant","Koraidon","Miraidon","Walking Wake","Iron Leaves"];
 
-// new structure for future usage
-var pokemon = [
-    {},
-    /*0001*/ {name: "Bulbasaur", evolve: {2: {level: 16}}, breed: {1: null}},
-    /*0002*/ {name: "Ivysaur", evolve: {3: {level: 32}}, breed: {1: null}},
-    /*0003*/ {name: "Venusaur", breed: {1: null}},
-    /*0004*/ {name: "Charmander", evolve: {5: {level: 16}}, breed: {4: null}},
-    /*0005*/ {name: "Charmeleon", evolve: {6: {level: 36}}, breed: {4: null}},
-    /*0006*/ {name: "Charizard", breed: {4: null}},
-    /*0007*/ {name: "Squirtle", evolve: {8: {level: 16}}, breed: {7: null}},
-    /*0008*/ {name: "Wartortle", evolve: {9: {level: 36}}, breed: {7: null}},
-    /*0009*/ {name: "Blastoise", breed: {7: null}},
-    /*0010*/ {name: "Caterpie", evolve: {11: {level: 7}}, breed: {10: null}},
-    /*0011*/ {name: "Metapod", evolve: {12: {level: 10}}, breed: {10: null}},
-    /*0012*/ {name: "Butterfree", breed: {10: null}},
-    /* ... */
-    /*0133*/ /*{name: "Eevee", evolve: {
-        134: {item: "water-stone"},
-        135: {item: "thunder-stone"},
-        136: {item: "fire-stone"},
-        196: {friendship: "day"},
-        197: {friendship: "night"},
-        470: {location: "moss-rock",},
-        471: {location: "ice-rock",},
-        700: "affection"
-    }, breed: 133},
-    134: {name: "Vaporeon", breed: 133},
-    135: {name: "Jolteon", breed: 133},
-    136: {name: "Flareon", breed: 133},
-    196: {name: "Espeon", breed: 133},
-    197: {name: "Umbreon", breed: 133},
-    470: {name: "Leafeon", breed: 133},
-    471: {name: "Glaceon", breed: 133},
-    700: {name: "Sylveon", breed: 133},*/
-]
-
 //Pokémon that are male only or have an unknown gender, requiring Ditto to breed
-noFemales = [32,33,34,106,107,128,237,313,414,475,538,539,627,628,859,860,861,
+var noFemales = [32,33,34,106,107,128,237,313,414,475,538,539,627,628,859,860,861,
     81,82,100,101,120,121,137,233,292,337,338,343,344,374,375,376,436,437,462,474,
     479,489,490,599,600,601,615,622,623,703,774,781,854,855,870,924,925];
 
@@ -187,21 +151,6 @@ var yellow = {
     trade: [65,76,94]
 };
 
-/*
-var gold = {
-    total: 251,
-    breeding: true,
-    choices: {"Starter":[[152,153,154],[155,156,157],[158,159,160]]},
-    unlimited: [10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,27,28,29,30,31,32,33,34,35,36,39,40,41,42,43,44,46,47,48,49,50,51,54,55,60,61,
-        63,64,66,67,69,70,72,73,74,75,77,78,79,80,81,82,83,84,85,86,87,88,89,90,92,93,95,96,97,98,99,100,101,102,104,105,108,109,110,
-        111,112,113,114,115,116,117,118,119,120,122,123,124,125,126,127,128,129,130,131,132,137,147,148,149,
-        161,162,163,164,169,170,171,172,173,174,177,178,182,183,184,187,188,189,190,191,192,193,194,195,198,200,201,202,204,205,206,209,210,
-        211,213,214,215,218,219,220,221,222,228,229,234,235,238,239,240,241,242,246,247,248],
-    limited: {243:"Only One",244:"Only One",245:"Only One",249:"Only One",250:"Only One"},
-    limitedBreedable: [133,142,185,143,175,176,236],
-    choicesBreedable: {"Hitmon":[[106],[107],[237]], "Eeveelution":[[196],[197]]},
-    trade: [65,68,76,94,186,199,208,212,230,233]
-}*/
 var gold = {
     generation: 2,
     total: 251,
@@ -385,22 +334,8 @@ var xd = {
 
 //API data
 var games = {
-    "yellow": {
-        "generation": 1,
-        "total": 151,
-        "breeding": false,
-        "unlimited": [10,11,16,17,19,20,21,22,27,28,29,30,32,33,35,37,39,40,41,42,43,44,46,47,48,49,50,51,54,55,56,57,58,60,61,63,64,66,67,
-            69,70,72,73,74,75,77,79,80,81,82,83,84,85,86,87,88,89,90,92,93,95,96,98,99,100,102,104,105,108,111,112,113,114,115,116,
-            117,118,119,120,123,127,128,129,130,132,137,147,148],
-        "limited": {
-            101:"Only Two",
-            1:"Gift",4:"Gift",7:"Gift",25:"Starter",131:"Gift",133:"Gift",142:"Gift",
-            143:"Only Two",144:"Only One",145:"Only One",146:"Only One",150:"Only One",
-            68:"In-game Trade",122:"In-game Trade",
-        },
-        "choices": {"Hitmon":[[106],[107]],"Eeveelution":[[134],[135],[136]],"Fossil":[[138,139],[140,141]]},
-        "items": {"Moon Stone": 5}
-    },
+
+    /* Generation 1 */
     "red": {
         "generation": 1,
         "total": 151,
@@ -445,13 +380,34 @@ var games = {
         "choices": {"Starter":[[1,2,3],[4,5,6],[7,8,9]],"Hitmon":[[106],[107]],"Eeveelution":[[134],[135],[136]],"Fossil":[[138,139],[140,141]]},
         "items": {"Moon Stone": 5}
     },
+    "yellow": {
+        "generation": 1,
+        "total": 151,
+        "breeding": false,
+        "unlimited": [10,11,16,17,19,20,21,22,27,28,29,30,32,33,35,37,39,40,41,42,43,44,46,47,48,49,50,51,54,55,56,57,58,60,61,63,64,66,67,
+            69,70,72,73,74,75,77,79,80,81,82,83,84,85,86,87,88,89,90,92,93,95,96,98,99,100,102,104,105,108,111,112,113,114,115,116,
+            117,118,119,120,123,127,128,129,130,132,137,147,148],
+        "limited": {
+            101:"Only Two",
+            1:"Gift",4:"Gift",7:"Gift",25:"Starter",131:"Gift",133:"Gift",142:"Gift",
+            143:"Only Two",144:"Only One",145:"Only One",146:"Only One",150:"Only One",
+            68:"In-game Trade",122:"In-game Trade",
+        },
+        "choices": {"Hitmon":[[106],[107]],"Eeveelution":[[134],[135],[136]],"Fossil":[[138,139],[140,141]]},
+        "items": {"Moon Stone": 5}
+    },
 
+    //for testing breeding and item requirements
     /*"gold": {
         "generation": 2,
         "total": 251,
-        "breeding": true
+        "breeding": true,
+        "unlimited": [132, 133],
+        "limited": {"26": "Only One"},
+        "items": {"Thunder Stone": 1}
     },*/
 
+    /* Generation 2 */
     "gold": {
         "generation": 2,
         "total": 251,
@@ -3791,6 +3747,7 @@ var games = {
     "ruby": {
         "generation": 3,
         "total": 386,
+        "breeding": true,
         "unlimited": [
             25,
             27,
@@ -3952,6 +3909,7 @@ var games = {
     "sapphire": {
         "generation": 3,
         "total": 386,
+        "breeding": true,
         "unlimited": [
             25,
             27,
@@ -4113,6 +4071,7 @@ var games = {
     "emerald": {
         "generation": 3,
         "total": 386,
+        "breeding": true,
         "unlimited": [
             25,
             27,
