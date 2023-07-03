@@ -17,12 +17,22 @@ function dbg(msg){
 function variableEvolutions(thismon, game){
     //check ones like Pikachu in Yellow, Feebas by version, Eevee by version, etc.
     //checks for Gen 7 should be added in the future
+
+    //Time not in FireRed/LeafGreen
+    //Breeding requires special rules in Ruby/Sapphire when not including one of the other GBA games
+    //Some move-based evolutions may not be possible in some games?
     switch (parseInt(thismon)){
-        case 26: //Raichu
+        case 26: //Raichu (not available in Yellow)
             if (game == "yellow")
                 return false;
             break;
-        case 470: //Leafeon
+        case 226: //Mantine (requires Remoraid in party)
+
+            break;
+        case 350: //Milotic (beauty or Prism Scale) -- level_beauty not added in highlightEvolutions()
+            
+            break;
+        case 470: //Leafeon (by location)
         case 471: //Glaceon
             if (game != "heartgold" && game != "soulsilver")
                 return false;
@@ -43,13 +53,17 @@ function highlightEvolutions(thismon, mons, cls, items, total, game){
                 if (evolutions[thismon][i].onegame === true){ //can evolve in one game
                     let k = Object.keys(evolutions[thismon][i].method)[0];
                     if (["level", "level_gender", "level_time", "level_happiness", "level_happiness_time",
-                            "level_upside_down", "level_rain", "level_affection_move_type"].includes(k)){ //doable unlimited in all games
+                            "level_upside_down", "level_rain", "level_affection_move_type", "level_party_type",
+                            "interact", "defeat", "level_location", "level_party", "level_stats", "level_move",
+                            "move_special", "battle", "battle_level", "spin", "shed", "walking"].includes(k)){ //doable unlimited in all games
                         mons[evolutions[thismon][i].evolution - 1].classList.add(cls);
                         mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML = "Requires Evolution";
                         //iterate by checking next evolution
                         highlightEvolutions(evolutions[thismon][i].evolution, mons, cls, items, total, game);
-                    }else if (k == "item"){
+                    }else if (["item","item_gender","item_time","level_item_time"].includes(k)){
                         let uitem = evolutions[thismon][i].method[k];
+                        if (typeof uitem === "object") //object that contains multiple elements, including the item
+                            uitem = uitem.item;
                         mons[evolutions[thismon][i].evolution - 1].setAttribute("itemNeeded", uitem);
 
                         if (uitem in items){
@@ -71,6 +85,7 @@ function highlightEvolutions(thismon, mons, cls, items, total, game){
                     
                     //ulc++; //unlimited
                 }else{ //mark as "trade" for now
+                    // types: "trade", "trade_for", "trade_with_item", "union_level"
                     mons[evolutions[thismon][i].evolution - 1].classList.add("sTrade");
                     mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML = "Requires Trading";
                 
