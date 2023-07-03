@@ -454,13 +454,13 @@ var games = {
         "items": {"Moon Stone": 5}
     },
 
-    "gold": {
+    /*"gold": {
         "generation": 2,
         "total": 251,
         "breeding": true
-    },
+    },*/
 
-    "goldtest": {
+    "gold": {
         "generation": 2,
         "total": 251,
         "breeding": true,

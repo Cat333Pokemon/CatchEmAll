@@ -5502,7 +5502,10 @@ var evolutions = {
     "1010": []
 };
 
-var evonew = {};
+var evonew = {}; //evolutions
+
+var babynew = {}; //breeding
+var baby = -1;
 
 //add to evonew; k = key, v = value
 function evopush(k, v){
@@ -5513,7 +5516,6 @@ function evopush(k, v){
     
     let f; //used for evolution key
     for (let i = 0; i < v.length; i++){
-        
         f = Object.keys(v[i])[0];
         evonew[k].push({
             evolution: f, //this should always provide the numeric value
@@ -5521,12 +5523,17 @@ function evopush(k, v){
             onegame: v[i].onegame
         });
 
+        console.log(f);
+        babynew[f] = baby; //add to breeding chain
+
         evopush(f, v[i][f]); //iterate to third stages (and beyond?)
     }
 }
 
 
 for (k in evolutions){
+    baby = parseInt(k);
+    babynew[k] = baby;
     evopush(k, evolutions[k]);
 }
-document.getElementById("x").innerHTML = JSON.stringify(evonew);
+document.getElementById("x").innerHTML = "Evolutions:\n" + JSON.stringify(evonew) + "\n\nBreeding:\n" + JSON.stringify(babynew);
