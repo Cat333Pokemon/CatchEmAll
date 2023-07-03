@@ -34,7 +34,7 @@ function variableEvolutions(thismon, game){
             break;
         case 470: //Leafeon (by location)
         case 471: //Glaceon
-            if (game != "heartgold" && game != "soulsilver")
+            if (game == "heartgold" || game == "soulsilver")
                 return false;
             break;
         default:
@@ -71,8 +71,8 @@ function highlightEvolutions(thismon, mons, cls, items, game, itr){
                     (mons[evolutions[thismon][i].evolution - 1].classList.length == 1 ||
                         mons[evolutions[thismon][i].evolution - 1].classList.contains("sLimited") ||
                         mons[evolutions[thismon][i].evolution - 1].classList.contains("sLimitedEvolution"))){
+                let k = Object.keys(evolutions[thismon][i].method)[0];
                 if (evolutions[thismon][i].onegame === true){ //can evolve in one game
-                    let k = Object.keys(evolutions[thismon][i].method)[0];
                     if (["level", "level_gender", "level_time", "level_happiness", "level_happiness_time",
                             "level_upside_down", "level_rain", "level_affection_move_type", "level_party_type",
                             "interact", "defeat", "level_location", "level_party", "level_stats", "level_move",
@@ -121,6 +121,10 @@ function highlightEvolutions(thismon, mons, cls, items, game, itr){
                     // types: "trade", "trade_for", "trade_with_item", "union_level"
                     mons[evolutions[thismon][i].evolution - 1].classList.add("sTrade");
                     mons[evolutions[thismon][i].evolution - 1].querySelector(".num").innerHTML = "Requires Trading";
+
+                    if (k == "trade_with_item"){
+                        mons[evolutions[thismon][i].evolution - 1].setAttribute("itemNeeded", evolutions[thismon][i].method[k]);
+                    }
                 
                     //iterate by checking next evolution
                     highlightEvolutions(evolutions[thismon][i].evolution, mons, "sTrade", items, game, itr);
@@ -149,23 +153,28 @@ function highlightBreeding(thismon, mons, items, game, itr){
             if (typeof breeding[thismon] === "object"){ //multiple children
                 for (let x in breeding[thismon]){
                     if (x <= games[game].total){ // within Pokédex
-                        if (breeding[thismon][x] === null){ //no item required
+                        if (breeding[thismon][x] === null || !(breeding[thismon][x] in items)){ //no item required, or item available in unlimited numbers
                             mons[x - 1].setAttribute("breedable", "true");
                             if (!mons[x - 1].classList.contains("sUnlimited") && !mons[x - 1].classList.contains("sUnlimitedEvolution") ){
                                 //not unlimited in wild (already evaluated with evolutions)
                                 if (mons[x - 1].classList.contains("sLimited") || mons[x - 1].classList.contains("sLimitedEvolution")){
                                     //remove limited
                                     mons[x - 1].classList.remove("sLimited","sLimitedEvolution");
-                                    mons[x - 1].querySelector(".num").innerHTML = "Unlimited Via Breeding";
+                                    mons[x - 1].querySelector(".num").innerHTML = "Unlimited Via Breeding" +
+                                        (breeding[thismon][x] === null ? "" : "<br />(" + breeding[thismon][x] + ")");
                                 }else{
-                                    mons[x - 1].querySelector(".num").innerHTML = "Requires Breeding";
+                                    mons[x - 1].querySelector(".num").innerHTML = "Requires Breeding" +
+                                        (breeding[thismon][x] === null ? "" : "<br />(" + breeding[thismon][x] + ")");
                                 }
                                 mons[x - 1].classList.add("sUnlimitedEvolution");
                                 highlightEvolutions(x, mons, "sUnlimitedEvolution", items, game, itr + 1);
                             }
                         }else{ //item required
-                            console.log(x + ": " + breeding[thismon][x]);
-                            //not done
+                            //console.log(x + ": " + breeding[thismon][x]);
+                            //Like before, we'll assume the item is available unless it otherwise is stated not to be
+                            if (breeding[thismon][x] in items){
+
+                            }
                         }
                     }
                 }
@@ -431,7 +440,7 @@ function game(g){
         let avl;
         let gt = ("items" in gm ? gm.items : {});
         for (let k of ics){
-            document.getElementById("itemsNeeded").innerHTML += `<br /><b>${k}:</b> ${itemcounter[k]} needed (${(k in gt ? gt[k] : "unlimited")} available)`;
+            document.getElementById("itemsNeeded").innerHTML += `<b>${k}:</b> ${itemcounter[k]} needed (${(k in gt ? gt[k] : "unlimited")} available)<br />`;
             if (k in gt && itemcounter[k] > gt[k]){
                 dbg(`Not enough items: ${k}. ${gt[k]} available but ${itemcounter[k]} needed.`);
                 itNeeded = document.querySelectorAll('.mon[itemNeeded="'+k+'"]');
