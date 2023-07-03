@@ -5502,6 +5502,41 @@ var evolutions = {
     "1010": []
 };
 
+//All Pokémon are assumed to be breedable except these
+var neverBreedable = [30,31,132,144,145,146,150,151,201,243,244,245,249,250,251,377,378,379,380,381,382,383,384,385,386,
+    480,481,482,483,484,485,486,487,488,491,492,493,494,638,639,640,641,642,643,644,645,646,647,648,649,
+    716,717,718,719,720,721,772,773,785,786,787,788,789,790,791,792,793,794,795,796,797,798,799,800,801,802,803,804,
+    805,806,807,808,809,880,881,882,883,888,889,890,891,892,893,894,895,896,897,898,905,
+    984,985,986,987,988,989,990,991,992,993,994,995,999,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010];
+
+//These Pokémon can breed if they evolve
+var babies = [172,173,174,175,236,238,239,240,298,360,406,433,438,439,440,446,447,458,848];
+
+//Breeding that varies when holding items
+var babies_items = {
+    183: {183:null, 298:"Sea Incense"},  //Marill
+    184: {183:null, 298:"Sea Incense"},  //Azumarill
+    202: {202:null, 360:"Lax Incense"},  //Wobbuffet
+    315: {315:null, 406:"Rose Incense"}, //Roselia
+    407: {315:null, 406:"Rose Incense"}, //Roserade
+    358: {358:null, 433:"Pure Incense"}, //Chimecho
+    185: {185:null, 438:"Rock Incense"}, //Sudowoodo
+    122: {122:null, 439:"Odd Incense"},  //Mr. Mime
+    866: {122:null, 439:"Odd Incense"},  //Mr. Rime
+    113: {113:null, 440:"Luck Incense"}, //Chansey
+    242: {113:null, 440:"Luck Incense"}, //Blissey
+    226: {226:null, 458:"Wave Incense"}, //Mantine
+    143: {143:null, 446:"Full Incense"}, //Snorlax
+
+    //Special; breeding has a 50% chance to produce either egg
+    29:  {29: null, 32: null}, //Nidoran F
+    32:  {29: null, 32: null}, //Nidoran M
+    33:  {29: null, 32: null}, //Nidorino
+    34:  {29: null, 32: null}, //Nidoking
+    313: {313:null, 314:null}, //Volbeat
+    314: {313:null, 314:null}  //Illumise
+};
+
 var evonew = {}; //evolutions
 
 var babynew = {}; //breeding
@@ -5516,7 +5551,7 @@ function evopush(k, v){
     
     let f; //used for evolution key
     for (let i = 0; i < v.length; i++){
-        f = Object.keys(v[i])[0];
+        f = parseInt(Object.keys(v[i])[0]);
         evonew[k].push({
             evolution: f, //this should always provide the numeric value
             method: ("method" in v[i] ? (v[i].method.length > 1 ? v[i].method : v[i].method[0]) : {}),
@@ -5524,7 +5559,12 @@ function evopush(k, v){
         });
 
         console.log(f);
-        babynew[f] = baby; //add to breeding chain
+
+        //items to get babies (mostly)
+        if (f in babies_items)
+            babynew[f] = babies_items[f]; 
+        else
+            babynew[f] = (babies.includes(f) || neverBreedable.includes(f) ? null : baby); //add to breeding chain
 
         evopush(f, v[i][f]); //iterate to third stages (and beyond?)
     }
@@ -5533,7 +5573,15 @@ function evopush(k, v){
 
 for (k in evolutions){
     baby = parseInt(k);
-    babynew[k] = baby;
+
+    if (k in babies_items)
+        babynew[k] = babies_items[k];
+    else
+        babynew[k] = (babies.includes(baby) || neverBreedable.includes(baby) ? null : baby);
+    
+    if (baby == 490)
+        babynew[k] = 489; //override for Manaphy
+    
     evopush(k, evolutions[k]);
 }
-document.getElementById("x").innerHTML = "Evolutions:\n" + JSON.stringify(evonew) + "\n\nBreeding:\n" + JSON.stringify(babynew);
+document.getElementById("x").innerHTML = "Evolutions:\n" + JSON.stringify(evonew) + "\n\nBreeding:\n" + JSON.stringify(babynew,null,1);
