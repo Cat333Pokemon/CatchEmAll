@@ -109,3 +109,13 @@ button img{
 summary{
     cursor: pointer;
 }
+
+/* Breeding notices */
+#nobreeding, #noditto{
+    display: none;
+    float: left;
+    border: 2px solid #A00;
+    margin: 10px;
+    padding: 3px;
+    max-width: 30em;
+}

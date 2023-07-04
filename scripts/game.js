@@ -30,7 +30,8 @@ function variableEvolutions(thismon, game){
 
             break;
         case 350: //Milotic (beauty or Prism Scale) -- level_beauty not added in highlightEvolutions()
-            
+            if (["firered","leafgreen","colosseum","xd"].includes(game))
+                return false;
             break;
         case 470: //Leafeon (by location)
         case 471: //Glaceon
@@ -59,6 +60,7 @@ function hasDitto(game){
 //using Pokémon ID `thismon`, highlight item in `mons` with the specified class `cls`, plus item list and size of generation
 //Iteration count used when switching between evolutions and breeding
 function highlightEvolutions(thismon, mons, cls, items, game, itr){
+    thismon = parseInt(thismon);
     //if (thismon == 175)
     //    debugger;
     //if (itr > 0)
@@ -73,7 +75,7 @@ function highlightEvolutions(thismon, mons, cls, items, game, itr){
                         mons[evolutions[thismon][i].evolution - 1].classList.contains("sLimitedEvolution"))){
                 let k = Object.keys(evolutions[thismon][i].method)[0];
                 if (evolutions[thismon][i].onegame === true){ //can evolve in one game
-                    if (["level", "level_gender", "level_time", "level_happiness", "level_happiness_time",
+                    if (["level", "level_gender", "level_time", "level_happiness", "level_happiness_time", "level_beauty",
                             "level_upside_down", "level_rain", "level_affection_move_type", "level_party_type",
                             "interact", "defeat", "level_location", "level_party", "level_stats", "level_move",
                             "move_special", "battle", "battle_level", "spin", "shed", "walking"].includes(k)){ //doable unlimited in all games
@@ -149,6 +151,7 @@ function highlightEvolutions(thismon, mons, cls, items, game, itr){
 
 //Breeding is ALWAYS available in unlimited numbers, with iteration count
 function highlightBreeding(thismon, mons, items, game, itr){
+    thismon = parseInt(thismon);
     //if (itr > 0)
     //    console.log("breeding: " + thismon);
     if (itr < 4 && games[game].breeding && (hasDitto(game) || !noFemales.includes(thismon))){
@@ -156,28 +159,31 @@ function highlightBreeding(thismon, mons, items, game, itr){
             if (typeof breeding[thismon] === "object"){ //multiple children
                 for (let x in breeding[thismon]){
                     if (x <= games[game].total){ // within Pokédex
-                        if (breeding[thismon][x] === null || !(breeding[thismon][x] in items)){ //no item required, or item available in unlimited numbers
+                        let titem = breeding[thismon][x]
+                        if (titem === null || !(titem in items) || (titem in items && items[titem] > 0)){ //no item required, or item available
                             mons[x - 1].setAttribute("breedable", "true");
+                            if (titem !== null)
+                                mons[x - 1].setAttribute("itemNeededUnlimited", titem);
+
                             if (!mons[x - 1].classList.contains("sUnlimited") && !mons[x - 1].classList.contains("sUnlimitedEvolution") ){
                                 //not unlimited in wild (already evaluated with evolutions)
                                 if (mons[x - 1].classList.contains("sLimited") || mons[x - 1].classList.contains("sLimitedEvolution")){
                                     //remove limited
                                     mons[x - 1].classList.remove("sLimited","sLimitedEvolution");
                                     mons[x - 1].querySelector(".num").innerHTML = "Unlimited Via Breeding" +
-                                        (breeding[thismon][x] === null ? "" : "<br />(" + breeding[thismon][x] + ")");
+                                        (titem === null ? "" : "<br />(" + titem + ")");
+                                    dbg("Removing limited due to breeding (multiple offspring choices): #" + x);
                                 }else{
                                     mons[x - 1].querySelector(".num").innerHTML = "Requires Breeding" +
-                                        (breeding[thismon][x] === null ? "" : "<br />(" + breeding[thismon][x] + ")");
+                                        (titem === null ? "" : "<br />(" + titem + ")");
                                 }
                                 mons[x - 1].classList.add("sUnlimitedEvolution");
                                 highlightEvolutions(x, mons, "sUnlimitedEvolution", items, game, itr + 1);
                             }
-                        }else{ //item required
-                            //console.log(x + ": " + breeding[thismon][x]);
-                            //Like before, we'll assume the item is available unless it otherwise is stated not to be
-                            if (breeding[thismon][x] in items){
-
-                            }
+                        }else{ //item required but not available
+                            mons[x - 1].classList.add("sUnavailable");
+                            mons[x - 1].querySelector(".num").innerHTML = "No " + breeding[thismon][x] + " Available";
+                            mons[x - 1].setAttribute("itemNeededUnlimited", titem);
                         }
                     }
                 }
@@ -189,6 +195,7 @@ function highlightBreeding(thismon, mons, items, game, itr){
                         //remove limited
                         mons[breeding[thismon] - 1].classList.remove("sLimited","sLimitedEvolution");
                         mons[breeding[thismon] - 1].querySelector(".num").innerHTML = "Unlimited Via Breeding";
+                        dbg("Removing limited due to breeding (1 offspring choice): #" + breeding[thismon]);
                     }else{
                         mons[breeding[thismon] - 1].querySelector(".num").innerHTML = "Requires Breeding";
                     }
@@ -242,6 +249,10 @@ function game(g){
         for (let j = 0; j < itNeeded.length; j++){
             itNeeded[j].removeAttribute("itemNeeded");
         }
+        itNeeded = document.querySelectorAll(".mon[itemNeededUnlimited]");
+        for (let j = 0; j < itNeeded.length; j++){
+            itNeeded[j].removeAttribute("itemNeededUnlimited");
+        }
 
         /*let gm = window[g.split("_")[0]];
         let ver = window[g.split("_")[1]];
@@ -262,6 +273,7 @@ function game(g){
                 dbg("Removing limited class: #" + gm.unlimited[i]);
             m[gm.unlimited[i] - 1].setAttribute("class", "mon sUnlimited"); //remove other classes if set earlier
             m[gm.unlimited[i] - 1].removeAttribute("itemNeeded"); //no item needed if available in unlimited quantity
+            m[gm.unlimited[i] - 1].removeAttribute("itemNeededUnlimited"); //no item needed if available in unlimited quantity
             //m[gm.unlimited[i] - 1].classList.remove("sUnlimitedEvolution"); //remove evolution class if set earlier
             //m[gm.unlimited[i] - 1].classList.remove("sTrade"); //remove trade class if set earlier
             //m[gm.unlimited[i] - 1].classList.add("sUnlimited");
@@ -432,7 +444,7 @@ function game(g){
         //Item checking should be handled here
         itemcounter = {};
         itNeeded = document.querySelectorAll(".mon[itemNeeded]");
-        for (let j = 0; j < itNeeded.length; j++){
+        for (let j = 0; j < itNeeded.length; j++){ //count how many of each item are needed
             if (itNeeded[j].getAttribute("itemNeeded") in itemcounter)
                 itemcounter[itNeeded[j].getAttribute("itemNeeded")]++;
             else
@@ -440,9 +452,9 @@ function game(g){
         }
         document.getElementById("itemsNeeded").innerHTML = "";
         let ics = Object.keys(itemcounter).sort();
-        let avl;
+        let k;
         let gt = ("items" in gm ? gm.items : {});
-        for (let k of ics){
+        for (k of ics){ //For each item, check if there are enough to go around
             document.getElementById("itemsNeeded").innerHTML += `<b>${k}:</b> ${itemcounter[k]} needed (${(k in gt ? gt[k] : "unlimited")} available)<br />`;
             if (k in gt && itemcounter[k] > gt[k]){
                 dbg(`Not enough items: ${k}. ${gt[k]} available but ${itemcounter[k]} needed.`);
@@ -464,6 +476,17 @@ function game(g){
                 } 
             }
         }
+        //Only one needed because it's not consumed, and these should already have been handled in the breeding section
+        itNeeded = document.querySelectorAll(".mon[itemNeededUnlimited]");
+        for (let j = 0; j < itNeeded.length; j++){
+            k = itNeeded[j].getAttribute("itemNeededUnlimited");
+            if (!(k in itemcounter)){
+                //We're done with the item counter, this next line is just to prevent displaying this twice
+                itemcounter[k] = 1;
+                document.getElementById("itemsNeeded").innerHTML +=
+                    `<b>${k}:</b> 1 needed (${(k in gt ? gt[k] : "unlimited")} available)<br />`;
+            }
+        }
         
         console.log(`unlimited: ${ulc}, limited: ${uli}, chyes: ${chyes}, chno: ${chno}`);
 
@@ -481,6 +504,15 @@ function game(g){
         document.getElementById("cTotal").innerHTML = gm.total;
         document.getElementById("cAvailable").innerHTML = tot;
         document.getElementById("cTotalUnavailable").innerHTML = gm.total - tot;
+
+        //Show breeding notes
+        if (games[g].breeding){
+            document.getElementById("nobreeding").style.display = 'none';
+            document.getElementById("noditto").style.display = (hasDitto(g) ? 'none' : 'inline-block');
+        }else{
+            document.getElementById("nobreeding").style.display = 'inline-block';
+            document.getElementById("noditto").style.display = 'none';
+        }
                 
     }else
         alert("Not added yet: " + g);
